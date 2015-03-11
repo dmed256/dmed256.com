@@ -5,11 +5,11 @@
   <h2 class="ui dividing header"> David Medina </h2>
 
   <div class="sidebar">
-    <img src="/images/profile/david.jpg" class="ui rounded image" style="width: 200px; border-radius: 20px;">
+    <img src="/images/profile/david.jpg" class="ui rounded image" style="width: 200px; border-radius: 20px; margin: auto">
 
     <h4 class="ui dividing header"> About me </h4>
 
-    I'm pretty passionate about coding and like to get out of my comfort zone to learn and produce neat stuff
+    I'm really passionate about coding and like to get out of my comfort zone to learn and produce neat stuff
 
     </br>
     </br>
@@ -24,7 +24,7 @@
 
     <h4 class="ui dividing header"> Contact Info </h4>
 
-    If anything I do is interesting to you, it would make my day to get a message about it!
+    If anything I do is interesting to you, it would make my day to chat about it!
 
     <div style="width: 200px; margin: auto; padding: 20px 0 20px 0; text-align: center">
       <a href="mailto: <?php email() ?>"                          tooltip="Email"    class="f_os light tooltip"> <i class="large mail outline link icon"></i> </a>
@@ -38,25 +38,29 @@
     <!-- <div class="bodyHeader"></div> -->
     <div class="bodyContainer2">
       <div class="bodyContainer">
-        <div class="feed">
-          <div class="bigFeed"></div>
-          <div class="smallFeed"></div>
+        <div class="feedContainer">
+          <div class="decompressed feed">
+            <h4 class="ui dividing header"> OCCA Tutorials 02: Unified Virtual Address + Managed Memory + Shared Memory </h4>
+          </div>
+          <div class="compressed feed">
+            <h4 class="ui dividing header"> hello </h4>
+          </div>
         </div>
-        <div class="feed">
-          <div class="bigFeed"></div>
-          <div class="smallFeed"></div>
+        <div class="feedContainer">
+          <div class="decompressed feed"></div>
+          <div class="compressed feed"></div>
         </div>
-        <div class="feed">
-          <div class="bigFeed"></div>
-          <div class="smallFeed"></div>
+        <div class="feedContainer">
+          <div class="decompressed feed"></div>
+          <div class="compressed feed"></div>
         </div>
-        <div class="feed">
-          <div class="bigFeed"></div>
-          <div class="smallFeed"></div>
+        <div class="feedContainer">
+          <div class="decompressed feed"></div>
+          <div class="compressed feed"></div>
         </div>
-        <div class="feed">
-          <div class="bigFeed"></div>
-          <div class="smallFeed"></div>
+        <div class="feedContainer">
+          <div class="decompressed feed"></div>
+          <div class="compressed feed"></div>
         </div>
       </div>
     </div>

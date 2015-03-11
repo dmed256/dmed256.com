@@ -1,14 +1,22 @@
 var compressed    = false;
 var compressWidth = 600;
 
+function compressBody(){
+  $(".bodyContainer2").css('width', '210px')
+}
+
+function decompressBody(){
+  $(".bodyContainer2").css('width', '610px');
+}
+
 function compressFeeds(){
-  $(".feed .bigFeed").css('display'  , 'none')
-  $(".feed .smallFeed").css('display', 'block')
+  $(".decompressed.feed").addClass('hidden');
+  $(".compressed.feed").removeClass('hidden');
 }
 
 function decompressFeeds(){
-  $(".feed .bigFeed").css('display'  , 'block')
-  $(".feed .smallFeed").css('display', 'none')
+  $(".decompressed.feed").removeClass('hidden');
+  $(".compressed.feed").addClass('hidden');
 }
 
 function compressFooter(){
@@ -32,6 +40,7 @@ function updateResize(){
 
   if(compressing){
     if(!compressed){
+      compressBody();
       compressFeeds();
       compressFooter();
 
@@ -40,6 +49,7 @@ function updateResize(){
   }
   else{
     if(compressed){
+      decompressBody();
       decompressFeeds();
       decompressFooter();
 

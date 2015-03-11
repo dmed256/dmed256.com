@@ -114,14 +114,14 @@ div#id_body, div#id_body2 {
 }
 
 div#id_bodyContents {
-    min-width: 600px;
+    min-width: 830px;
     max-width: 1024px;
 }
 
 #id_body.fixed.body {
     display: block;
 
-    min-width: 600px;
+    min-width: 830px;
     max-width: 1024px;
 
     margin-left: auto;
@@ -133,7 +133,7 @@ div#id_bodyContents {
 .fixed.pushed.body {
     display: block;
 
-    min-width: 600px;
+    min-width: 805px;
     max-width: 1000px;
 
     margin-left: 230px;
@@ -160,7 +160,7 @@ div#id_bodyContents {
     margin: 0px 20px 20px 20px;
 
     width : calc(100% - 290px);
-    height: 800px;
+    height: 830px;
 
     overflow: auto;
 
@@ -182,7 +182,7 @@ div#id_bodyContents {
     position: absolute;
     top: 0px; /* 40px; */
 
-    width : 100%;
+    width : 610px;
     height: 100%; /* calc(10/* 0% - 80px); *\/ */
     /* background-color: green; */
 
@@ -193,6 +193,7 @@ div#id_bodyContents {
     position: absolute;
     top: 0px; /* 40px; */
 
+    padding: 10px;
     padding-right: 300px;
 
     width : calc(100% + 300px);
@@ -215,33 +216,45 @@ div#id_bodyContents {
 /*---[ End of Body ]---*/
 
 /*---[ Feed ]----------*/
-.feed:first-child {
+.feedContainer:first-child {
     margin-top: 0px;
+}
+
+.feedContainer {
+    position: relative;
+
+    width : 100%;
+
+    margin: 30px 10px 30px 0px;
+}
+
+.feedContainer::after {
+    display: block;
+
+    content: "";
+
+    height: 1px;
+    width : 80%;
+
+    margin-top  : 10px;
+    margin-left : auto;
+    margin-right: auto;
+
+    background: #DDDDDD;
 }
 
 .feed {
     width: 100%;
-    height: 200px;
 
-    margin: 30px 0px 30px 0px;
+    padding: 20px;
 }
 
-.bigFeed {
-    width: 100%;
-    height: 100%;
-
-    border-radius: 10px;
-
-    background-color: orange;
-}
-
-.smallFeed {
+.compressed.feed {
     width: 200px;
-    height: 100%;
+}
 
-    border-radius: 10px;
-
-    background-color: blue;
+.hidden.feed {
+    display: none;
 }
 /*---[ End of Feed ]---*/
 
