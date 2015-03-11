@@ -35,36 +35,19 @@
   </div> <!--[ Sidebar ]-->
 
   <div class="container">
-    <!-- <div class="bodyHeader"></div> -->
     <div class="bodyContainer2">
       <div class="bodyContainer">
-        <div class="feedContainer">
-          <div class="decompressed feed">
-            <h4 class="ui dividing header"> OCCA Tutorials 02: Unified Virtual Address + Managed Memory + Shared Memory </h4>
-          </div>
-          <div class="compressed feed">
-            <h4 class="ui dividing header"> hello </h4>
-          </div>
+        <div class="feed" date="March 10, 2015">
+          <h4 class="ui dividing header"> OCCA Tutorials 02: Unified Virtual Address + Managed Memory + Shared Memory </h4>
+          sdjkfl
+          jksdlf
         </div>
-        <div class="feedContainer">
-          <div class="decompressed feed"></div>
-          <div class="compressed feed"></div>
-        </div>
-        <div class="feedContainer">
-          <div class="decompressed feed"></div>
-          <div class="compressed feed"></div>
-        </div>
-        <div class="feedContainer">
-          <div class="decompressed feed"></div>
-          <div class="compressed feed"></div>
-        </div>
-        <div class="feedContainer">
-          <div class="decompressed feed"></div>
-          <div class="compressed feed"></div>
-        </div>
+        <div class="feed" date="March 10"></div>
+        <div class="feed" date="March 10"></div>
+        <div class="feed" date="March 10"></div>
+        <div class="feed" date="March 10"></div>
       </div>
     </div>
-    <!-- <div class="bodyFooter"></div> -->
   </div>
 </div>
 
