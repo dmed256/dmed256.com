@@ -161,7 +161,7 @@ body {
     height: 830px;
 }
 
-.bodyContainer2 {
+#id_bodyContainer2 {
     position: absolute;
     top: 0px;
     /* top: 40px; */
@@ -171,16 +171,19 @@ body {
     /* height: calc(100% - 80px); */
 
     overflow: hidden;
+
+    border-radius: 10px;
+    padding: 20px;
 }
 
-.bodyContainer {
+#id_bodyContainer {
     position: absolute;
     top: 0px;
 
-    padding: 10px;
+    padding-top: 20px;
     padding-right: 300px;
 
-    width : calc(100% + 300px);
+    width : calc(100% + 280px);
     height: 100%;
 
     overflow: auto;
@@ -224,18 +227,18 @@ div.ui.feedDivider {
     width: calc(100% - 200px);
     margin: auto;
 
-    color: rgb(81, 134, 174);
+    color: #5186AE;
 }
 /*---[ End of Feed ]---*/
 
 .linkStyle {
-    color: rgb(81, 134, 174)
+    color: #5186AE
 
     font-family: "ralewayBold";
 }
 
 a.link {
-    color: rgb(81, 134, 174);
+    color: #5186AE;
 
     font-family: "ralewayBold";
 }
