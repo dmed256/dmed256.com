@@ -158,11 +158,13 @@ body {
 
     min-width: 500px;
     width: calc(100% - 290px);
-    height: 830px;
+    height: 780px;
 }
 
 #id_bodyContainer2 {
     position: absolute;
+    display: block;
+
     top: 0px;
     /* top: 40px; */
 
@@ -172,12 +174,14 @@ body {
 
     overflow: hidden;
 
-    border-radius: 30px;
     padding: 20px;
+    z-index : 0;
 }
 
 #id_bodyContainer {
     position: absolute;
+    display: block;
+
     top: 0px;
 
     padding-top: 20px;
@@ -187,26 +191,61 @@ body {
     height: 100%;
 
     overflow: auto;
+
+    z-index: -1;
 }
 
-.bodyHeader {
+#id_bodyTopShadow {
     position: absolute;
     top: 0px;
 
     width: 100%;
     height: 40px;
 
+    border-radius: 30px;
+
     overflow: none;
+    z-index : 97;
 }
 
-.bodyFooter {
+#id_bodyBottomShadow {
+    position: absolute;
+    bottom: 0px;
+    /* bottom: 80px; /\* (height) 40 + (body padding) (20 + 20) *\/ */
+
+    width: 100%;
+    height: 40px;
+
+    border-radius: 30px;
+
+    background-color: rgba(0,0,0,0);
+
+    z-index : 97;
+}
+
+#id_bodyHeader {
+    position: absolute;
+    top: 0px;
+
+    width: 100%;
+    height: 40px;
+
+    border-radius: 30px;
+
+    z-index : 97;
+}
+
+#id_bodyFooter {
     position: absolute;
     bottom: 0px;
 
     width: 100%;
     height: 40px;
 
+    border-radius: 30px;
+
     overflow: none;
+    z-index : 97;
 }
 /*---[ End of Body ]---*/
 
@@ -445,4 +484,13 @@ pre.api.inline.code.block, code.api.inline.code.block {
 h4 code.api.inline.code {
     font-size: 18px;
     font-weight: normal;
+}
+/*---[ End of Highlight ]---*/
+
+iframe.youtube {
+    position: relative;
+
+    display: block;
+    margin: auto;
+    z-index : -1;
 }

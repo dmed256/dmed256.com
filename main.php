@@ -184,7 +184,7 @@ function addCopyright($startYear){
 }
 
 function email(){
-  echo 'dmed256@gmail.com';
+  echo 'dmed256@gmail.com?Subject=Hi';
 }
 
 ?>
