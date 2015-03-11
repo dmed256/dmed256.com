@@ -6,20 +6,20 @@ function checkBodyScroll(){
     var bodyScrollTop    = body.scrollTop();
     var bodyScrollBottom = body[0].scrollHeight - (bodyScrollTop + body.height());
 
-    var uShadow = 'inset 0 -10px 10px -10px #5186AE';
-    var dShadow = 'inset 0   8px  8px  -8px #F19D5C';
+    var uShadow = 'inset 0   8px  8px  -8px #F19D5C';
+    var dShadow = 'inset 0 -10px 10px -10px #5186AE';
 
     if(0 < bodyScrollTop){
-      if(20 < bodyScrollBottom)
-        bodyWrapper.css('box-shadow', uShadow + ', ' + dShadow);
-      else
+      if(bodyScrollBottom <= 20)
         bodyWrapper.css('box-shadow', uShadow);
+      else
+        bodyWrapper.css('box-shadow', uShadow + ', ' + dShadow);
     }
     else{
-      if(20 < bodyScrollBottom)
-        bodyWrapper.css('box-shadow', dShadow);
-      else
+      if(bodyScrollBottom <= 20)
         bodyWrapper.css('box-shadow', 'none');
+      else
+        bodyWrapper.css('box-shadow', dShadow);
     }
   }
 }
@@ -48,5 +48,6 @@ $(document).ready( function(){
 
   var body = $('#id_bodyContainer');
 
+  checkBodyScroll();
   body.scroll(checkBodyScroll)
 });
