@@ -6,18 +6,18 @@ function checkBodyScroll(){
     var bodyScrollTop    = body.scrollTop();
     var bodyScrollBottom = body[0].scrollHeight - (bodyScrollTop + body.height());
 
-    var uShadowColor = '#5186AE';
-    var dShadowColor = '#F19D5C';
+    var uShadow = 'inset 0 -10px 10px -10px #5186AE';
+    var dShadow = 'inset 0   8px  8px  -8px #F19D5C';
 
     if(0 < bodyScrollTop){
       if(20 < bodyScrollBottom)
-        bodyWrapper.css('box-shadow', 'inset 0 10px 10px -10px' + uShadowColor + ', inset 0 -10px 10px -10px' + dShadowColor);
+        bodyWrapper.css('box-shadow', uShadow + ', ' + dShadow);
       else
-        bodyWrapper.css('box-shadow', 'inset 0 10px 10px -10px' + uShadowColor);
+        bodyWrapper.css('box-shadow', uShadow);
     }
     else{
       if(20 < bodyScrollBottom)
-        bodyWrapper.css('box-shadow', 'inset 0 -10px 10px -10px' + dShadowColor);
+        bodyWrapper.css('box-shadow', dShadow);
       else
         bodyWrapper.css('box-shadow', 'none');
     }
