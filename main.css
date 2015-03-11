@@ -1,0 +1,462 @@
+@font-face {
+    font-family: "openSansLight";
+    src: url("/library/fonts/openSans/light.ttf");
+}
+
+@font-face {
+    font-family: "openSansRegular";
+    src: url("/library/fonts/openSans/regular.ttf");
+}
+
+@font-face {
+    font-family: "openSansBold";
+    src: url("/library/fonts/openSans/bold.ttf");
+}
+
+@font-face {
+    font-family: "ralewayLight";
+    src: url("/library/fonts/raleway/light.ttf");
+}
+
+@font-face {
+    font-family: "ralewayRegular";
+    src: url("/library/fonts/raleway/regular.ttf");
+}
+
+@font-face {
+    font-family: "ralewayBold";
+    src: url("/library/fonts/raleway/bold.ttf");
+}
+
+@font-face {
+    font-family: "cutive";
+    src: url("/library/fonts/cutive/regular.ttf");
+}
+
+@font-face {
+    font-family: "bigJohn";
+    src: url("/library/fonts/bigJohn/bigJohn.otf");
+}
+
+@font-face {
+    font-family: "slimJoe";
+    src: url("/library/fonts/bigJohn/slimJoe.otf");
+}
+
+/*---[ Start of cleanStickyFooter ]---*/
+html, body {
+    height: 100%;
+    font-family: "ralewayRegular";
+    font-size: 16px;
+}
+
+body {
+    margin : 0px;
+    padding: 0px;
+    background: none !important;
+}
+
+div#id_bodyWrapper {
+    width     : 100%;
+    min-height: 100% !important;
+    height    : auto !important;
+    height    : 100%;
+    margin    : 0px 0px -40px 0px;
+}
+
+div#id_footerWrapper {
+    width : 100%;
+    height: 40px;
+}
+
+div#id_bodyWrapper2 {
+    width  : 100%;
+    padding: 0px 0px 41px 0px;
+}
+
+div#id_footerWrapper, div#id_bodyWrapper2 {
+    min-width: 100%;
+}
+
+div#id_footer {
+    min-width: 100%;
+    margin: 0px auto;
+}
+
+#id_footer {
+    border-top-style: solid;
+    border-top-color: rgba(0, 0, 0, 0.1);
+    border-top-width: 1px;
+
+    background-color: white;
+    color           : rgb(100,100,100);
+
+    height     : 40px;
+    line-height: 40px;
+    text-align : center;
+
+    font-family: 'openSansLight';
+    font-size  : 13px;
+}
+
+/*---[ End of cleanStickyFooter ]---*/
+
+/*---[ Body ]---*/
+body {
+    margin: 0px;
+    background-color: white;
+}
+
+div#id_body, div#id_body2 {
+    height: 100%;
+
+    line-height: 200%;
+}
+
+div#id_bodyContents {
+    min-width: 600px;
+    max-width: 1024px;
+}
+
+#id_body.fixed.body {
+    display: block;
+
+    min-width: 600px;
+    max-width: 1024px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 30px 20px 0px 20px;
+}
+
+.fixed.pushed.body {
+    display: block;
+
+    min-width: 600px;
+    max-width: 1000px;
+
+    margin-left: 230px;
+
+    margin-top  : 30px;
+    padding-left : 20px;
+    padding-right: 20px;
+}
+
+.body .sidebar {
+    float: left;
+
+    width: 250px;
+    height: 100%;
+
+    font-size  : 14px;
+    line-height: 20px;
+}
+
+.body .container {
+    position: relative;
+    float: left;
+
+    margin: 0px 20px 20px 20px;
+
+    width : calc(100% - 290px);
+    height: 800px;
+
+    overflow: auto;
+
+    /* background-color: blue; */
+}
+
+.bodyHeader {
+    position: absolute;
+    top: 0px;
+
+    width: 100%;
+    height: 40px;
+    /* background-color: orange; */
+
+    overflow: none;
+}
+
+.bodyContainer2 {
+    position: absolute;
+    top: 0px; /* 40px; */
+
+    width : 100%;
+    height: 100%; /* calc(10/* 0% - 80px); *\/ */
+    /* background-color: green; */
+
+    overflow: hidden;
+}
+
+.bodyContainer {
+    position: absolute;
+    top: 0px; /* 40px; */
+
+    padding-right: 300px;
+
+    width : calc(100% + 300px);
+    height: 100%; /* calc(10/* 0% - 80px); *\/ */
+    /* background-color: green; */
+
+    overflow: auto;
+}
+
+.bodyFooter {
+    position: absolute;
+    bottom: 0px;
+
+    width: 100%;
+    height: 40px;
+    /* background-color: orange; */
+
+    overflow: none;
+}
+/*---[ End of Body ]---*/
+
+/*---[ Feed ]----------*/
+.feed:first-child {
+    margin-top: 0px;
+}
+
+.feed {
+    width: 100%;
+    height: 200px;
+
+    margin: 30px 0px 30px 0px;
+}
+
+.bigFeed {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+
+    background-color: orange;
+}
+
+.smallFeed {
+    width: 200px;
+    height: 100%;
+
+    border-radius: 10px;
+
+    background-color: blue;
+}
+/*---[ End of Feed ]---*/
+
+.linkStyle {
+    color: rgb(81, 134, 174)
+
+    font-family: "ralewayBold";
+}
+
+a.link {
+    color: rgb(81, 134, 174);
+
+    font-family: "ralewayBold";
+}
+
+a.link:hover {
+    text-decoration: underline;
+}
+
+a img {
+    border: none;
+}
+
+.f_14 {
+    font-size: 14px;
+}
+
+.f_os {
+    font-family: "openSansRegular";
+}
+
+.f_os.light {
+    font-family: "openSansLight";
+}
+
+.f_os.bold {
+    font-family: "openSansBold";
+}
+
+.f_rw {
+    font-family: "ralewayRegular";
+}
+
+.f_rw.light {
+    font-family: "ralewayLight";
+}
+
+.f_rw.bold {
+    font-family: "ralewayBold";
+}
+
+h2.header, h3.header, h4.header, h5.header {
+    font-family: "openSansLight";
+}
+
+h5.header {
+    font-size: 14px !important;
+
+    margin-top   : 15px !important;
+    margin-bottom: 5px !important;
+}
+
+.boxed.header {
+    padding: 8px 12px 8px 12px;
+
+    border-style: solid;
+    border-width: 1px;
+
+    background-color: #FBFCFE;
+    border-color    : #6992B5;
+
+    border-radius : 4px;
+}
+
+.indent1 { margin-left: 20px; }
+.indent2 { margin-left: 40px; }
+.indent3 { margin-left: 60px; }
+.indent4 { margin-left: 80px; }
+
+.dSpacing1 { margin-bottom: 10px !important; }
+.dSpacing2 { margin-bottom: 20px !important; }
+.dSpacing3 { margin-bottom: 30px !important; }
+.dSpacing4 { margin-bottom: 40px !important; }
+
+.uSpacing1 { margin-top: 10px !important; }
+.uSpacing2 { margin-top: 20px !important; }
+.uSpacing3 { margin-top: 30px !important; }
+.uSpacing4 { margin-top: 40px !important; }
+
+.udSpacing1 { margin-top: 10px !important; margin-bottom: 10px !important; }
+.udSpacing2 { margin-top: 20px !important; margin-bottom: 20px !important; }
+.udSpacing3 { margin-top: 30px !important; margin-bottom: 30px !important; }
+.udSpacing4 { margin-top: 40px !important; margin-bottom: 40px !important; }
+
+.highlight {
+    color: #2BB399;
+}
+
+span.highlight {
+    font-family: "ralewayBold";
+}
+
+span.warning {
+    color: #FAA16D;
+
+    font-family: "ralewayBold";
+    text-decoration: underline;
+}
+
+a.noDecor {
+    text-decoration: none;
+}
+
+/*  ---[ Shared API ]---*/
+.c.ready.g { color: #6EA47B; }
+.c.ready.y { color: #D9D375; }
+.c.ready.r { color: #EF665C; }
+.bc.ready.g { border-color: #6EA47B; }
+.bc.ready.y { border-color: #EDA160; }
+.bc.ready.r { border-color: #EF665C; }
+/*  ===[ Shared API ]===*/
+
+a.tooltip {
+    text-decoration: none;
+
+    color: rgb(50, 50, 50);
+}
+
+a.tooltip .icon {
+    margin-left : 4px;
+    margin-right: 4px;
+    line-height: 17px;
+}
+
+a.tooltip {
+    display : inline;
+    position: relative;
+}
+
+a.tooltip:hover:after {
+    background: rgba(0,0,0,.4);
+    color     : #fff;
+
+    border-radius: 5px;
+
+    bottom: 20px;
+
+    content: attr(tooltip);
+
+    position: absolute;
+    padding : 00px 10px;
+    left    : 20%;
+    z-index : 98;
+
+    height: 30px;
+    line-height: 30px;
+}
+
+/*---[ Highlight ]---*/
+pre.code.block, code.code.block {
+    margin: auto;
+
+    /*
+       [1 + 10] + width + [10 + 1]
+       .^_box-shadow       ^_border
+     */
+    width: calc(100% - 22px);
+
+    font-size: 14px;
+
+    border-style : solid;
+    border-width : 0px 0px 0px 10px;
+
+    background-color: rgba(0, 0, 0, 0.01);
+    border-color    : transparent;
+
+    line-height:20px;
+}
+
+pre.api.code.block, code.api.code.block {
+    margin: 0px;
+
+    width: calc(100%);
+
+    font-size: 14px;
+
+    background-color: transparent;
+    border-color    : transparent;
+
+    border-width : 0px;
+    margin-left  : 0px;
+    padding-left : 0px;
+
+    line-height:20px;
+}
+
+pre.api.inline.code.block, code.api.inline.code.block {
+    display: inline-block;
+
+    margin : 0px;
+    padding: 0px;
+
+    line-height:20px;
+}
+
+pre.api.inline.boxed.code.block, code.api.inline.boxed.code.block {
+    padding: 3px 6px 3px 6px;
+    background-color: #FAF0DA;
+}
+
+pre.api.inline.code.block, code.api.inline.code.block {
+    display: inline !important;
+}
+
+h4 code.api.inline.code {
+    font-size: 18px;
+    font-weight: normal;
+}
