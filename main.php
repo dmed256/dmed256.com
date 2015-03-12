@@ -4,6 +4,7 @@ function addHeader($pageTitle){
   ob_start();
 
   include($_SERVER['DOCUMENT_ROOT'] . '/header.php');
+
   $headerContents = ob_get_contents();
 
   ob_end_clean();
