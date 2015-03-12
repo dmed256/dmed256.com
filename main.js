@@ -61,7 +61,9 @@ $(document).ready( function(){
 
   $('.tabBodyContainer').scroll(checkBodyScroll);
 
-  $('#id_bodyHeader .menu .item').click(checkBodyScroll());
+  $('#id_bodyHeader .menu .item').click( function(e) {
+    checkBodyScroll()
+  });
 
   // From [davidsimpson.me]
   $('iframe[src^="//www.youtube.com/embed"]').each(function(){
