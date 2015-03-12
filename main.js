@@ -1,12 +1,8 @@
 function checkBodyScroll(){
-  if($('#id_feedTab').hasClass('active')){
-    var bodyWrapper = $('#id_feedBodyContainer2');
-    var body        = $('#id_feedBodyContainer');
-  }
-  else if($('#id_upcomingTab').hasClass('active')){
-    var bodyWrapper = $('#id_upcomingBodyContainer2');
-    var body        = $('#id_upcomingBodyContainer');
-  }
+  var activeTab = $('.active.item', '#id_bodyHeader .menu');
+
+  var bodyWrapper = $('#id_' + activeTab.attr('data-tab') + 'BodyContainer2');
+  var body        = $('#id_' + activeTab.attr('data-tab') + 'BodyContainer');
 
   var topShadow    = $('#id_bodyTopShadow');
   var bottomShadow = $('#id_bodyBottomShadow');
@@ -54,8 +50,7 @@ $(document).ready( function(){
 
   checkBodyScroll();
 
-  $('#id_feedBodyContainer').scroll(checkBodyScroll)
-  $('#id_upcomingBodyContainer').scroll(checkBodyScroll)
+  $('.tabContentWrapper').scroll(checkBodyScroll);
 
   $('#id_bodyHeader .menu .item').click(function(){
     checkBodyScroll();

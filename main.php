@@ -187,4 +187,12 @@ function email(){
   echo 'dmed256@gmail.com?Subject=Hi';
 }
 
+function addFeedContent(){
+  include($_SERVER['DOCUMENT_ROOT'] . '/feedContent.php');
+}
+
+function addUpcomingContent(){
+  include($_SERVER['DOCUMENT_ROOT'] . '/upcomingContent.php');
+}
+
 ?>
