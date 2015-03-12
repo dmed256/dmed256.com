@@ -39,20 +39,28 @@
       <div class="ui tabular menu">
         <a class="item active" data-tab="feed"    > Feed   </a>
         <a class="item"        data-tab="upcoming"> Upcoming </a>
+        <a class="item"        data-tab="projects"> Projects </a>
       </div>
     </div>
     <div id="id_bodyTopShadow"></div>
     <div id="id_feedTab" class="ui active tab" data-tab="feed">
-      <div id="id_feedBodyContainer2">
-        <div id="id_feedBodyContainer" class="tabContentWrapper">
-          <?php addFeedContent() ?>
+      <div class="tabBodyContainer2">
+        <div class="tabBodyContainer">
+          <?php addTabContent('feed') ?>
         </div>
       </div>
     </div>
     <div id="id_upcomingTab" class="ui tab" data-tab="upcoming">
-      <div id="id_upcomingBodyContainer2">
-        <div id="id_upcomingBodyContainer" class="tabContentWrapper">
-          <?php addUpcomingContent() ?>
+      <div class="tabBodyContainer2">
+        <div class="tabBodyContainer">
+          <?php addTabContent('upcoming') ?>
+        </div>
+      </div>
+    </div>
+    <div id="id_projectsTab" class="ui tab" data-tab="projects">
+      <div class="tabBodyContainer2">
+        <div class="tabBodyContainer">
+          <?php addTabContent('projects') ?>
         </div>
       </div>
     </div>

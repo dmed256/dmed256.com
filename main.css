@@ -207,7 +207,7 @@ body {
     /* bottom: 80px; /\* (height) 40 + (body padding) (20 + 20) *\/ */
 }
 
-#id_feedBodyContainer2, #id_upcomingBodyContainer2 {
+.tabBodyContainer2 {
     position: absolute;
     display: block;
 
@@ -223,7 +223,7 @@ body {
     z-index : 0;
 }
 
-#id_feedBodyContainer, #id_upcomingBodyContainer {
+.tabBodyContainer {
     position: absolute;
     display: block;
 

@@ -1,8 +1,9 @@
 function checkBodyScroll(){
-  var activeTab = $('.active.item', '#id_bodyHeader .menu');
+  var activeTab  = $('.active.item', '#id_bodyHeader .menu');
+  var tabContent = $('#id_' + activeTab.attr('data-tab') + 'Tab');
 
-  var bodyWrapper = $('#id_' + activeTab.attr('data-tab') + 'BodyContainer2');
-  var body        = $('#id_' + activeTab.attr('data-tab') + 'BodyContainer');
+  var bodyWrapper = $(tabContent).find('.tabBodyContainer2');
+  var body        = $(bodyWrapper).find('.tabBodyContainer');
 
   var topShadow    = $('#id_bodyTopShadow');
   var bottomShadow = $('#id_bodyBottomShadow');
@@ -23,6 +24,10 @@ function checkBodyScroll(){
       bottomShadow.css('box-shadow', 'none');
     else
       bottomShadow.css('box-shadow', dShadow);
+  }
+  else{
+    topShadow.css('box-shadow', 'none');
+    bottomShadow.css('box-shadow', 'none');
   }
 }
 
@@ -50,7 +55,7 @@ $(document).ready( function(){
 
   checkBodyScroll();
 
-  $('.tabContentWrapper').scroll(checkBodyScroll);
+  $('.tabBodyContainer').scroll(checkBodyScroll);
 
   $('#id_bodyHeader .menu .item').click(function(){
     checkBodyScroll();
