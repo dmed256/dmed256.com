@@ -1,6 +1,6 @@
 <?php
 
-function _addHeader($pageTitle){
+function addHeader($pageTitle){
   ob_start();
 
   include($_SERVER['DOCUMENT_ROOT'] . '/header.php');
@@ -11,34 +11,7 @@ function _addHeader($pageTitle){
   echo str_replace('<!--TITLE-->', $pageTitle, $headerContents);
 }
 
-function addHeader($pageTitle){
-  _addHeader($pageTitle);
-  startBody();
-  startBodyWrapper();
-}
-
-function startBody(){
-  echo ('<body>');
-}
-
-function startBodyWrapper(){
-  echo ('<div id="id_bodyWrapper">' .
-        '  <div id="id_bodyWrapper2">');
-}
-
-function endBody(){
-  echo ('</body>');
-}
-
-function endBodyWrapper(){
-  echo ('  </div>' .
-        '</div>');
-}
-
 function addFooter(){
-  endBodyWrapper();
-  endBody();
-
   include($_SERVER['DOCUMENT_ROOT'] . '/footer.php');
 }
 
