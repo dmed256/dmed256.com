@@ -1,6 +1,12 @@
 function checkBodyScroll(){
-  var bodyWrapper = $('#id_bodyContainer2');
-  var body        = $('#id_bodyContainer');
+  if($('#id_feedTab').hasClass('active')){
+    var bodyWrapper = $('#id_feedBodyContainer2');
+    var body        = $('#id_feedBodyContainer');
+  }
+  else if($('#id_upcomingTab').hasClass('active')){
+    var bodyWrapper = $('#id_upcomingBodyContainer2');
+    var body        = $('#id_upcomingBodyContainer');
+  }
 
   var topShadow    = $('#id_bodyTopShadow');
   var bottomShadow = $('#id_bodyBottomShadow');
@@ -32,9 +38,9 @@ $(document).ready( function(){
     exclusive   : false
   });
 
-  // Remove [active] on dropdown menus
-  $('.top.menu .right.menu .topMenu.item .menu a.item')
-    .off('click');
+  $('#id_bodyHeader .menu .item').tab({
+    context: '#id_bodyContainer'
+  });
 
   //---[ Highlight ]---
   $('.code.block').each( function(i, block){
@@ -46,10 +52,14 @@ $(document).ready( function(){
     $(this).before('<div class="ui horizontal divider feedDivider">' + feedData + '</div>');
   });
 
-  var body = $('#id_bodyContainer');
-
   checkBodyScroll();
-  body.scroll(checkBodyScroll)
+
+  $('#id_feedBodyContainer').scroll(checkBodyScroll)
+  $('#id_upcomingBodyContainer').scroll(checkBodyScroll)
+
+  $('#id_bodyHeader .menu .item').click(function(){
+    checkBodyScroll();
+  });
 
   // From [davidsimpson.me]
   $('iframe[src^="//www.youtube.com/embed"]').each(function(){
