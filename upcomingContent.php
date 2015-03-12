@@ -5,7 +5,5 @@
 
 <div class="feed" dividerText="May, 2015">
   <h4 class="ui dividing header"> PhD Defense </h4>
-  Got moved from August -> May
-  </br>
   Haven't scheduled the day or room yet
 </div>

@@ -40,8 +40,7 @@ $(document).ready( function(){
   });
 
   $('#id_bodyHeader .menu .item').tab({
-    context: '#id_bodyContainer',
-    history: false
+    context: '#id_bodyContainer'
   });
 
   //---[ Highlight ]---
