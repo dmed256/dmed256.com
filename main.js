@@ -41,6 +41,8 @@ $(document).ready( function(){
 
   $('#id_bodyHeader .menu .item').tab({
     context: '#id_bodyContainer',
+    history: true,
+    path   : '/'
   });
 
   //---[ Highlight ]---

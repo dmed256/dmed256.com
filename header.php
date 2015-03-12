@@ -6,7 +6,6 @@
 
     <link rel="stylesheet" type="text/css" href="/library/semantic/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="/library/highlight/styles/tomorrow.css">
-    <!-- <link rel="stylesheet" type="text/css" href="/library/highlight/styles/default.css"> -->
 
     <link type="text/css" rel="stylesheet" href="/main.css">
 
@@ -23,8 +22,8 @@
           }());
       </script>
 
-      <script type="text/javascript" src="/library/js/jquery.address.js"></script>
       <script type="text/javascript" src="/library/js/jquery.min.js"></script>
+      <script type="text/javascript" src="/library/js/jquery.history.min.js"></script>
 
       <script type="text/javascript" src="/library/semantic/semantic.min.js"></script>
 
