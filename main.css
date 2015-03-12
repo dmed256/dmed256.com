@@ -45,7 +45,7 @@
 
 /*---[ Start of cleanStickyFooter ]---*/
 html, body {
-    min-width: 830px;
+    min-width: 1024px;
     height: 100%;
 
     font-family: "ralewayRegular";
@@ -80,7 +80,7 @@ div#id_bodyWrapper2 {
 }
 
 div#id_footerWrapper {
-    min-width: 830px;
+    min-width: 1024px;
 }
 
 div#id_footer {
@@ -107,7 +107,7 @@ div#id_footer {
 
 /*---[ Body ]---*/
 body {
-    min-width: 830px;
+    min-width: 1024px;
 
     margin: 0px;
     background-color: white;
@@ -131,7 +131,7 @@ body {
 #id_body.fixed.body {
     display: block;
 
-    min-width: 830px;
+    min-width: 1024px;
     max-width: 1024px;
 
     margin-left: auto;

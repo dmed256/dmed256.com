@@ -1,6 +1,6 @@
 function checkBodyScroll(){
   var activeTab  = $('.active.item', '#id_bodyHeader .menu');
-  var tabContent = $('#id_' + activeTab.attr('data-tab') + 'Tab');
+  var tabContent = $('div[data-tab="' + activeTab.attr('data-tab') + '"');
 
   var bodyWrapper = $(tabContent).find('.tabBodyContainer2');
   var body        = $(bodyWrapper).find('.tabBodyContainer');
@@ -40,7 +40,8 @@ $(document).ready( function(){
   });
 
   $('#id_bodyHeader .menu .item').tab({
-    context: '#id_bodyContainer'
+    context: '#id_bodyContainer',
+    history: false
   });
 
   //---[ Highlight ]---
@@ -49,8 +50,10 @@ $(document).ready( function(){
   });
 
   $('.feed').each( function(){
-    var feedData = $(this).attr('date');
-    $(this).before('<div class="ui horizontal divider feedDivider">' + feedData + '</div>');
+    if( $(this).is('[dividerText]') ){
+      var feedData = $(this).attr('dividerText');
+      $(this).before('<div class="ui horizontal divider feedDivider">' + feedData + '</div>');
+    }
   });
 
   checkBodyScroll();
