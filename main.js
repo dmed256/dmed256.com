@@ -68,4 +68,5 @@ $(document).ready( function(){
     var separator = (url.indexOf('?') > 0) ? '&' : '?';
     $(this).attr('src', url + separator + 'rel=0&wmode=transparent');
   });
+
 });
