@@ -1,5 +1,5 @@
 <div class="feed">
-  <h2 class="ui dividing feed header"> OCCA </h2>
+  <h2 class="ui dividing header"> OCCA </h2>
   <img src="/images/projects/occa/occaFlow.png" style="display: block; height: 400px; margin: auto;"></img>
   <div class="indent1">
     <div style="line-height: 20px"></br></div>
