@@ -15,17 +15,17 @@
   <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/XYf73mqQBLE" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<div class="feed" dividerText="*February 14, 2015">
+<div class="feed" dividerText="February 11, 2015">
   <h4 class="ui dividing feed header"> Visit to Chevron: Talk </h4>
   OKL: A Unified Language for Parallel Architectures
 </div>
 
-<div class="feed" dividerText="*February 04, 2015">
+<div class="feed" dividerText="February 04, 2015">
   <h4 class="ui dividing feed header"> PhD Proposal </h4>
   OKL: A Unified Language for Parallel Architectures
 </div>
 
-<div class="feed" dividerText="*October 2014">
+<div class="feed" dividerText="October 02, 2014">
   <h4 class="ui dividing feed header"> Paper on Arxiv </h4>
   High-Order Finite-differences on Multi-threaded Architectures using OCCA (<a href="papers/highOrderFD.pdf" class="link">PDF</a>)
   </br>
@@ -34,17 +34,17 @@
   ArXiv preprint can be found at <a href="http://arxiv.org/abs/1410.1387" class="link">http://arxiv.org/abs/1410.1387</a>
 </div>
 
-<div class="feed" dividerText="*June 01, 2014">
+<div class="feed" dividerText="June 24, 2014">
   <h4 class="ui dividing feed header"> ICOSAHOM '14: Talk </h4>
   OCCA: A Unified Approach to Multi-Threading Languages
 </div>
 
-<div class="feed" dividerText="*March 01, 2014">
+<div class="feed" dividerText="March 06, 2014">
   <h4 class="ui dividing feed header"> Rice Oil &amp; Gas Workshop '14: Poster </h4>
   OCCA: A Unified Approach to Multi-Threading Languages
 </div>
 
-<div class="feed" dividerText="*April 24, 2014">
+<div class="feed" dividerText="April 23, 2014">
   <h4 class="ui dividing feed header"> Master's Thesis Defense </h4>
   OCCA: A Unified Approach to Multi-Threading Languages (<a href="papers/masters.pdf" class="link">PDF</a>)
 </div>
