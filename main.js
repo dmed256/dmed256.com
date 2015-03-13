@@ -12,22 +12,19 @@ function checkBodyScroll(){
     var bodyScrollTop    = body.scrollTop();
     var bodyScrollBottom = body[0].scrollHeight - (bodyScrollTop + body.height());
 
-    var uShadow = 'inset 0   8px  8px  -8px #F19D5C';
-    var dShadow = 'inset 0 -10px 10px -10px #5186AE';
-
     if(0 < bodyScrollTop)
-      topShadow.css('box-shadow', uShadow);
+      topShadow.css('display', 'block');
     else
-      topShadow.css('box-shadow', 'none');
+      topShadow.css('display', 'none');
 
     if(bodyScrollBottom <= 20)
-      bottomShadow.css('box-shadow', 'none');
+      bottomShadow.css('display', 'none');
     else
-      bottomShadow.css('box-shadow', dShadow);
+      bottomShadow.css('display', 'block');
   }
   else{
-    topShadow.css('box-shadow', 'none');
-    bottomShadow.css('box-shadow', 'none');
+    topShadow.css('display', 'none');
+    bottomShadow.css('display', 'none');
   }
 }
 

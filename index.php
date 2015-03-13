@@ -7,22 +7,21 @@
   <div class="sidebar">
     <img src="/images/profile/david.jpg" class="ui rounded image" style="width: 200px; border-radius: 20px; margin: auto">
 
-    <h4 class="ui dividing header"> About me </h4>
-
-    I'm really passionate about coding and like to get out of my comfort zone to learn and produce neat stuff
+    <h4 class="ui dividing header" style="margin-bottom: 10px"> About me </h4>
+    I'm really passionate about <?php highlight('coding') ?> and like to get out of my comfort zone to learn and produce neat stuff
 
     </br>
     </br>
-    Most of my research work deals with HPC / heterogeneous-computing with a focus on numerical methods
+    Most of my <?php highlight('research') ?> work deals with HPC / heterogeneous-computing with a focus on numerical methods
 
-    <h4 class="ui dividing header"> Projects </h4>
+    <h4 class="ui dividing header" style="margin-bottom: 10px"> Projects </h4>
 
     I'm currently mostly working on <a href="http://libocca.org" class="link">OCCA</a>
     </br>
     </br>
     I've been lucky to work with an awesome team led by <a href="http://tcew.github.io/" class="link">Professor Warburton</a> and have collaborated with cool folks at the Argonne Labs
 
-    <h4 class="ui dividing header"> Contact Info </h4>
+    <h4 class="ui dividing header" style="margin-bottom: 10px"> Contact Info </h4>
 
     If anything I do is interesting to you, it would make my day to chat about it!
 
@@ -37,16 +36,16 @@
   <div id="id_bodyContainer" class="container">
     <div id="id_bodyHeader">
       <div class="ui tabular menu">
-        <a class="item active" data-tab="feed"    > Feed     </a>
+        <a class="item active" data-tab="posts"   > Posts     </a>
         <a class="item"        data-tab="upcoming"> Upcoming </a>
         <a class="item"        data-tab="projects"> Projects </a>
       </div>
     </div>
     <div id="id_bodyTopShadow"></div>
-    <div class="ui active tab" data-tab="feed">
+    <div class="ui active tab" data-tab="posts">
       <div class="tabBodyContainer2">
         <div class="tabBodyContainer">
-          <?php addTabContent('feed') ?>
+          <?php addTabContent('posts') ?>
         </div>
       </div>
     </div>
