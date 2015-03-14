@@ -1,6 +1,6 @@
 <div class="feed" dividerText="March 14, 2015">
   <h4 class="ui dividing feed header"> SIAM CSE '15: Talk </h4>
-  OCCA: An Extensible Portability Layer for Many-core Programming
+  OCCA: An Extensible Portability Layer for Many-core Programming (<a href="/pdfs/talks/cse15.pdf" class="link">PDF</a>)
 </div>
 
 <div class="feed" dividerText="March 04-05, 2015">
@@ -32,7 +32,7 @@
 
 <div class="feed" dividerText="October 02, 2014">
   <h4 class="ui dividing feed header"> Paper on Arxiv </h4>
-  High-Order Finite-differences on Multi-threaded Architectures using OCCA (<a href="papers/highOrderFD.pdf" class="link">PDF</a>)
+  High-Order Finite-differences on Multi-threaded Architectures using OCCA (<a href="/pdfs/papers/highOrderFD.pdf" class="link">PDF</a>)
   </br>
   David S. Medina, Amik St-Cyr, T. Warburton
   </br>
@@ -51,5 +51,5 @@
 
 <div class="feed" dividerText="April 23, 2014">
   <h4 class="ui dividing feed header"> Master's Thesis Defense </h4>
-  OCCA: A Unified Approach to Multi-Threading Languages (<a href="papers/masters.pdf" class="link">PDF</a>)
+  OCCA: A Unified Approach to Multi-Threading Languages (<a href="/pdfs/papers/masters.pdf" class="link">PDF</a>)
 </div>
