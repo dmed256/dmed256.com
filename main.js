@@ -39,7 +39,8 @@ $(document).ready( function(){
   $('#id_bodyHeader .menu .item').tab({
     context: '#id_bodyContainer',
     history: true,
-    path   : '/'
+    path   : '/',
+    onTabLoad: function(){ checkBodyScroll(); }
   });
 
   //---[ Highlight ]---
@@ -57,10 +58,6 @@ $(document).ready( function(){
   checkBodyScroll();
 
   $('.tabBodyContainer').scroll(checkBodyScroll);
-
-  $('#id_bodyHeader .menu .item').click( function(e) {
-    checkBodyScroll()
-  });
 
   // From [davidsimpson.me]
   $('iframe[src^="//www.youtube.com/embed"]').each(function(){
