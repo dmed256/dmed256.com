@@ -1,5 +1,5 @@
-<div class="feed" dividerText="March 14, 2015">
-  <h4 class="ui dividing feed header"> SIAM CSE '15: Talk </h4>
+<div class="feed" dividerText="March 14-15, 2015">
+  <h4 class="ui dividing feed header"> SIAM CSE '15: Talk + Poster </h4>
   OCCA: An Extensible Portability Layer for Many-core Programming (<a href="/pdfs/talks/cse15.pdf" class="link">PDF</a>)
 </div>
 

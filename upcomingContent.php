@@ -1,8 +1,3 @@
-<div class="feed" dividerText="March 15, 2015">
-  <h4 class="ui dividing feed header"> SIAM CSE '15: Poster </h4>
-  OCCA: An Extensible Portability Layer for Many-core Programming
-</div>
-
 <div class="feed" dividerText="April 01-10, 2015">
   <h4 class="ui dividing feed header"> Visit to Sandia National Lab: Seminar Talk </h4>
   OKL: A Unified Language for Parallel Architectures
