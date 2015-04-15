@@ -1,4 +1,4 @@
-<div class="feed" dividerText="April 01-10, 2015">
+<div class="feed" dividerText="May 7, 2015">
   <h4 class="ui dividing feed header"> Visit to Sandia National Lab: Seminar Talk </h4>
   OKL: A Unified Language for Parallel Architectures
 </div>
