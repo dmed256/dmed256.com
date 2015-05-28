@@ -1,3 +1,13 @@
+<div class="feed" dividerText="May 26, 2015">
+  <h4 class="ui dividing feed header"> PhD Defense </h4>
+  OKL: A Unified Language for Parallel Architectures
+</div>
+
+<div class="feed" dividerText="May 7, 2015">
+  <h4 class="ui dividing feed header"> Visit to Sandia National Lab: Seminar Talk </h4>
+  OKL: A Unified Language for Parallel Architectures
+</div>
+
 <div class="feed" dividerText="March 14-15, 2015">
   <h4 class="ui dividing feed header"> SIAM CSE '15: Talk + Poster </h4>
   OCCA: An Extensible Portability Layer for Many-core Programming (<a href="/pdfs/talks/cse15.pdf" class="link">PDF</a>)
