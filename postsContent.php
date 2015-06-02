@@ -1,3 +1,8 @@
+<div class="feed" dividerText="June 1 - July 11, 2015">
+  <h4 class="ui dividing feed header"> Visiting Researcher at LLNL </h4>
+  Continue working on OCCA (thesis work) and collaborate with LLNL guys in ASQ/CASC.
+</div>
+
 <div class="feed" dividerText="May 26, 2015">
   <h4 class="ui dividing feed header"> PhD Defense </h4>
   OKL: A Unified Language for Parallel Architectures
