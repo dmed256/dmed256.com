@@ -2,24 +2,30 @@
 <?php addHeader('David S Medina') ?>
 
 <div id="id_body" class="fixed body">
-  <h2 class="ui dividing header"> David Medina </h2>
+  <h2 class="ui dividing header">
+    <img src="/images/profile/david.jpg" class="ui rounded image avatar"></img>
+    David Medina
+
+    <div class="contact info">
+      <a href="mailto:<?php email() ?>"                           tooltip="Email"    class="f_os light tooltip"> <i class="large mail outline link icon"></i> </a>
+      <a href="https://github.com/dmed256"                        tooltip="Github"   class="f_os light tooltip"> <i class="large github square link icon"></i> </a>
+      <a href="https://twitter.com/dmed256?>"                     tooltip="Twitter"  class="f_os light tooltip"> <i class="large twitter outline link icon"></i> </a>
+      <a href="http://www.linkedin.com/pub/david-medina/50/3/17a" tooltip="LinkedIn" class="f_os light tooltip"> <i class="large linkedin square sign link icon"></i> </a>
+    </div>
+  </h2>
 
   <div class="sidebar">
     <img src="/images/profile/david.jpg" class="ui rounded image" style="width: 200px; border-radius: 20px; margin: auto">
 
     <h4 class="ui dividing header" style="margin-bottom: 10px"> About me </h4>
-    I'm really passionate about <?php highlight('coding') ?> and like to get out of my comfort zone to learn and produce neat stuff
-
+    I'm really passionate about <?php highlight('coding') ?> and like to get out of my comfort zone for learning and producing neat stuff
     </br>
     </br>
-    Most of my <?php highlight('research') ?> work deals with HPC / heterogeneous-computing with a focus on numerical methods
+    I've been lucky to work with an awesome advisor, <a href="http://tcew.github.io/" class="link">Professor Warburton</a>, and folks from national labs (LLNL, ANL)
 
     <h4 class="ui dividing header" style="margin-bottom: 10px"> Projects </h4>
 
-    I'm currently mostly working on <a href="http://libocca.org" class="link">OCCA</a>
-    </br>
-    </br>
-    I've been lucky to work with an awesome team led by <a href="http://tcew.github.io/" class="link">Professor Warburton</a> and have collaborated with cool folks at the Argonne Labs
+    I'm currently focusing on <a href="http://libocca.org" class="link">OCCA</a>
 
     <h4 class="ui dividing header" style="margin-bottom: 10px"> Contact Info </h4>
 

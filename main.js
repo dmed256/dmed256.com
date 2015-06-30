@@ -1,3 +1,88 @@
+function isValid(v){
+  return ((typeof(v) !== typeof(undefined)) &&
+          (v         !== false));
+}
+
+function windowResize(){
+  var window = $(this);
+
+  applyMini(window);
+}
+
+function loadMenuTab(){
+  checkBodyScroll();
+  setupFeedHeaders();
+}
+
+function applyMini(window){
+  var tags = ['html',
+
+              'body',
+              '#id_body.fixed.body',
+              '#id_bodyContainer',
+
+              '#id_body .header',
+
+              '.body .sidebar',
+
+              '#id_bodyHeader',
+              '#id_bodyFooter',
+
+              '#id_footerWrapper',
+              '#id_footerName',
+              '#id_footerInfo'];
+
+  var tagCount = tags.length;
+
+  if(window.width() < 1024){
+    for(var i = 0; i < tagCount; ++i){
+      $(tags[i]).addClass('mini');
+    }
+  }
+  else {
+    for(var i = 0; i < tagCount; ++i){
+      $(tags[i]).removeClass('mini');
+    }
+  }
+}
+
+function setupFeedHeaders(){
+  $(".ui.tab.active div.feed").each(function(index){
+    if($(this).hasClass('updated'))
+      return true;
+
+    var date  = $(this).attr('date');
+    var title = $(this).attr('title');
+
+    $(this).addClass("ui raised updated segment");
+
+    if(!isValid(date) &&
+       !isValid(title)){
+
+      return true;
+    }
+
+    $(this).prepend('<div class="container">');
+
+    var container   = $(this).find('.container');
+    var headerWidth = '0';
+
+    if(isValid(date)){
+      $(container).append('<div class="ui right ribbon label">' + date + '</div>');
+
+      var ribbon  = $(container).find('.ribbon');
+      headerWidth = (ribbon.outerWidth() - 20).toString();
+    }
+
+    $(container).append('<h4 class="ui dividing header">' + title + '</h4>');
+
+    var header = $(container).find('.header');
+
+    header.css('width'      , 'calc(100% - ' + headerWidth + 'px)');
+    header.css('margin-left', headerWidth + 'px');
+  });
+}
+
 function checkBodyScroll(){
   var activeTab  = $('.active.item', '#id_bodyHeader .menu');
   var tabContent = $('div[data-tab="' + activeTab.attr('data-tab') + '"');
@@ -12,23 +97,34 @@ function checkBodyScroll(){
     var bodyScrollTop    = body.scrollTop();
     var bodyScrollBottom = body[0].scrollHeight - (bodyScrollTop + body.height());
 
-    if(0 < bodyScrollTop)
+    var showingTop    = (0 < bodyScrollTop);
+    var showingBottom = (bodyScrollBottom <= 20);
+
+    if(showingTop)
       topShadow.css('display', 'block');
     else
       topShadow.css('display', 'none');
 
-    if(bodyScrollBottom <= 20)
+    if(showingBottom)
       bottomShadow.css('display', 'none');
     else
       bottomShadow.css('display', 'block');
+
+    tabContent.removeClass('noScroll');
   }
   else{
     topShadow.css('display', 'none');
     bottomShadow.css('display', 'none');
+
+    body.addClass('noScroll');
   }
 }
 
 $(document).ready( function(){
+  windowResize();
+  checkBodyScroll();
+
+  $(window).on('resize', function(){ windowResize() });
 
   $('.ui.api.accordion').accordion({
     collapsible : false,
@@ -40,22 +136,13 @@ $(document).ready( function(){
     context: '#id_bodyContainer',
     history: true,
     path   : '/',
-    onTabLoad: function(){ checkBodyScroll(); }
+    onTabLoad: function(){ loadMenuTab() }
   });
 
   //---[ Highlight ]---
   $('.code.block').each( function(i, block){
     hljs.highlightBlock(block);
   });
-
-  $('.feed').each( function(){
-    if( $(this).is('[dividerText]') ){
-      var feedData = $(this).attr('dividerText');
-      $(this).before('<div class="ui horizontal divider feedDivider">' + feedData + '</div>');
-    }
-  });
-
-  checkBodyScroll();
 
   $('.tabBodyContainer').scroll(checkBodyScroll);
 

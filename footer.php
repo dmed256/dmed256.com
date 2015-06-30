@@ -3,10 +3,10 @@
 
     <div id="id_footerWrapper">
       <div id="id_footer">
-        <div id="id_footerName" style="min-width: 220px; display: inline-block; text-align:right">
+        <div id="id_footerName">
           <a href="/" class="link">David S Medina</a>
         </div>
-        <div id="id_footerInfo" style="width: 220px; display: inline-block; text-align:left">
+        <div id="id_footerInfo">
           | <?php highlight('Ping me') ?>:
           <a href="mailto:<?php email() ?>"                           tooltip="Email"    class="f_os light tooltip"> <i class="large mail outline link icon"></i> </a>
           <a href="https://github.com/dmed256"                        tooltip="Github"   class="f_os light tooltip"> <i class="large github square link icon"></i> </a>

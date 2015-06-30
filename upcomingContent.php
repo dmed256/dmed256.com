@@ -1,4 +1,6 @@
-<div class="feed" dividerText="August 3, 2015">
-  <h4 class="ui dividing feed header"> Two Sigma </h4>
+<div class="feed"
+     date="August 3"
+     title="Two Sigma">
+
   Start working =)
 </div>
