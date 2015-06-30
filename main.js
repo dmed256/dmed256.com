@@ -7,6 +7,13 @@ function windowResize(){
   var window = $(this);
 
   applyMini(window);
+
+  var bodyHeight = window.height().toString();
+  var body       = $('#id_bodyContainer');
+
+  $(body).css('height'    , bodyHeight);
+  $(body).css('min-height', bodyHeight);
+  $(body).css('max-height', bodyHeight);
 }
 
 function loadMenuTab(){
