@@ -1,54 +1,9 @@
-@font-face {
-    font-family: "openSansLight";
-    src: url("/library/fonts/openSans/light.ttf");
-}
-
-@font-face {
-    font-family: "openSansRegular";
-    src: url("/library/fonts/openSans/regular.ttf");
-}
-
-@font-face {
-    font-family: "openSansBold";
-    src: url("/library/fonts/openSans/bold.ttf");
-}
-
-@font-face {
-    font-family: "ralewayLight";
-    src: url("/library/fonts/raleway/light.ttf");
-}
-
-@font-face {
-    font-family: "ralewayRegular";
-    src: url("/library/fonts/raleway/regular.ttf");
-}
-
-@font-face {
-    font-family: "ralewayBold";
-    src: url("/library/fonts/raleway/bold.ttf");
-}
-
-@font-face {
-    font-family: "cutive";
-    src: url("/library/fonts/cutive/regular.ttf");
-}
-
-@font-face {
-    font-family: "bigJohn";
-    src: url("/library/fonts/bigJohn/bigJohn.otf");
-}
-
-@font-face {
-    font-family: "slimJoe";
-    src: url("/library/fonts/bigJohn/slimJoe.otf");
-}
-
 /*---[ Start of cleanStickyFooter ]---*/
 html, body {
     min-width: 1024px;
     height: 100%;
 
-    font-family: "ralewayRegular";
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
     font-size: 16px;
 }
 
@@ -107,7 +62,7 @@ div#id_footer {
     line-height: 40px;
     text-align : center;
 
-    font-family: 'openSansLight';
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
     font-size  : 13px;
 }
 
@@ -150,7 +105,7 @@ body {
 #id_body:after {
     display: block;
 
-    content: "";
+    content: '';
 
     height: 0px;
 
@@ -352,7 +307,7 @@ body {
     padding-left:  10px;
     margin-right: -20px;
 
-    font-family: ralewayBold;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 .feed .container .ribbon:after {
@@ -386,13 +341,13 @@ body {
 .linkStyle {
     color: #5186AE
 
-    font-family: "ralewayBold";
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 a.link {
     color: #5186AE;
 
-    font-family: "ralewayBold";
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 a.link:hover {
@@ -408,31 +363,19 @@ a img {
 }
 
 .f_os {
-    font-family: "openSansRegular";
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 .f_os.light {
-    font-family: "openSansLight";
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 .f_os.bold {
-    font-family: "openSansBold";
-}
-
-.f_rw {
-    font-family: "ralewayRegular";
-}
-
-.f_rw.light {
-    font-family: "ralewayLight";
-}
-
-.f_rw.bold {
-    font-family: "ralewayBold";
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 h2.header, h3.header, h4.header, h5.header {
-    font-family: "openSansLight";
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 h5.header {
@@ -479,13 +422,13 @@ h5.header {
 }
 
 span.highlight {
-    font-family: "ralewayBold";
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 span.warning {
     color: #FAA16D;
 
-    font-family: "ralewayBold";
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
     text-decoration: underline;
 }
 
