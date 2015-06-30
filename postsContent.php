@@ -72,16 +72,6 @@
 <div class="ui horizontal divider feedDivider"> 2015 </div>
 
 <div class="feed"
-     date="October 02"
-     title="Paper on Arxiv">
-  High-Order Finite-differences on Multi-threaded Architectures using OCCA (<a href="/pdfs/papers/highOrderFD.pdf" class="link">PDF</a>)
-  </br>
-  David S. Medina, Amik St-Cyr, T. Warburton
-  </br>
-  ArXiv preprint can be found at <a href="http://arxiv.org/abs/1410.1387" class="link">http://arxiv.org/abs/1410.1387</a>
-</div>
-
-<div class="feed"
      date="June 24"
      title="ICOSAHOM '14: Talk">
   OCCA: A Unified Approach to Multi-Threading Languages
