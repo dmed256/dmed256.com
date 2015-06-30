@@ -8,7 +8,7 @@ function windowResize(){
 
   applyMini(window);
 
-  var bodyHeight = window.height().toString();
+  var bodyHeight = (window.height() - 90).toString();
   var body       = $('#id_bodyContainer');
 
   $(body).css('height'    , bodyHeight);
