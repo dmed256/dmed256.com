@@ -7,10 +7,10 @@
     David Medina
 
     <div class="contact info">
-      <a href="mailto:<?php email() ?>"                           tooltip="Email"    class="f_os light tooltip"> <i class="large mail outline link icon"></i> </a>
-      <a href="https://github.com/dmed256"                        tooltip="Github"   class="f_os light tooltip"> <i class="large github square link icon"></i> </a>
-      <a href="https://twitter.com/dmed256?>"                     tooltip="Twitter"  class="f_os light tooltip"> <i class="large twitter outline link icon"></i> </a>
-      <a href="http://www.linkedin.com/pub/david-medina/50/3/17a" tooltip="LinkedIn" class="f_os light tooltip"> <i class="large linkedin square sign link icon"></i> </a>
+      <a href="mailto:<?php email() ?>"            tooltip="Email"    class="f_os light tooltip"> <i class="large mail outline link icon"></i> </a>
+      <a href="https://github.com/dmed256"         tooltip="Github"   class="f_os light tooltip"> <i class="large github square link icon"></i> </a>
+      <a href="https://twitter.com/dmed256?>"      tooltip="Twitter"  class="f_os light tooltip"> <i class="large twitter outline link icon"></i> </a>
+      <a href="http://www.linkedin.com/in/dmed256" tooltip="LinkedIn" class="f_os light tooltip"> <i class="large linkedin square sign link icon"></i> </a>
     </div>
   </h2>
 
@@ -32,10 +32,10 @@
     If anything I do is interesting to you, it would make my day to chat about it!
 
     <div style="width: 200px; margin: auto; padding: 20px 0 20px 0; text-align: center">
-      <a href="mailto:<?php email() ?>"                           tooltip="Email"    class="f_os light tooltip"> <i class="large mail outline link icon"></i> </a>
-      <a href="https://github.com/dmed256"                        tooltip="Github"   class="f_os light tooltip"> <i class="large github square link icon"></i> </a>
-      <a href="https://twitter.com/dmed256?>"                     tooltip="Twitter"  class="f_os light tooltip"> <i class="large twitter outline link icon"></i> </a>
-      <a href="http://www.linkedin.com/pub/david-medina/50/3/17a" tooltip="LinkedIn" class="f_os light tooltip"> <i class="large linkedin square sign link icon"></i> </a>
+      <a href="mailto:<?php email() ?>"            tooltip="Email"    class="f_os light tooltip"> <i class="large mail outline link icon"></i> </a>
+      <a href="https://github.com/dmed256"         tooltip="Github"   class="f_os light tooltip"> <i class="large github square link icon"></i> </a>
+      <a href="https://twitter.com/dmed256?>"      tooltip="Twitter"  class="f_os light tooltip"> <i class="large twitter outline link icon"></i> </a>
+      <a href="http://www.linkedin.com/in/dmed256" tooltip="LinkedIn" class="f_os light tooltip"> <i class="large linkedin square sign link icon"></i> </a>
     </div>
   </div> <!--[ Sidebar ]-->
 
