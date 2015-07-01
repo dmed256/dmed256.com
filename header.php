@@ -4,6 +4,8 @@
     <!-- Site Properities -->
     <title><!--TITLE--></title>
 
+    <link rel="shortcut icon" href="/images/websiteIcon.ico">
+
     <link rel="stylesheet" type="text/css" href="/library/semantic/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="/library/highlight/styles/tomorrow.css">
 
