@@ -16,7 +16,10 @@ function windowResize(){
   $(body).css('max-height', bodyHeight);
 }
 
-function loadMenuTab(){
+function loadMenuTab(tab){
+  if(tab == "webGL")
+    initGL();
+
   checkBodyScroll();
   setupFeedHeaders();
 }
@@ -54,7 +57,7 @@ function applyMini(window){
 }
 
 function setupFeedHeaders(){
-  $(".ui.tab.active div.feed").each(function(index){
+  $(".ui.tab.active div.feed").each(function(){
     if($(this).hasClass('updated'))
       return true;
 
@@ -143,21 +146,27 @@ $(document).ready( function(){
     context: '#id_bodyContainer',
     history: true,
     path   : '/',
-    onTabLoad: function(){ loadMenuTab() }
+    onTabLoad: function(tab){ loadMenuTab(tab) }
   });
 
-  //---[ Highlight ]---
+  //---[ Highlight ]----------
   $('.code.block').each( function(i, block){
     hljs.highlightBlock(block);
   });
 
   $('.tabBodyContainer').scroll(checkBodyScroll);
 
-  // From [davidsimpson.me]
-  $('iframe[src^="//www.youtube.com/embed"]').each(function(){
-    var url = $(this).attr("src");
-    var separator = (url.indexOf('?') > 0) ? '&' : '?';
-    $(this).attr('src', url + separator + 'rel=0&wmode=transparent');
-  });
+  //---[ Youtube ]------------
+  $('iframe[class="youtube"]').each(function(){
+    var iframe = $(this);
 
+    iframe.wrap('<div class="youtubeContainer2"></div>');
+    iframe.wrap('<div class="youtubeContainer" ></div>');
+
+    iframe.attr('allowfullscreen', '');
+    iframe.attr('frameborder'    , '0');
+
+    var src = iframe.attr('src') + '?autohide=1&controls=0&showinfo=0';
+    iframe.attr('src', src);
+  });
 });

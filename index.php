@@ -42,9 +42,10 @@
   <div id="id_bodyContainer" class="container">
     <div id="id_bodyHeader">
       <div class="ui tabular menu">
-        <a class="item active" data-tab="posts"   > Posts     </a>
+        <a class="item active" data-tab="posts"   > Posts    </a>
         <a class="item"        data-tab="upcoming"> Upcoming </a>
         <a class="item"        data-tab="projects"> Projects </a>
+        <!-- <a class="item"        data-tab="webGL">    WebGL    </a> -->
       </div>
     </div>
     <div id="id_bodyTopShadow"></div>
@@ -66,6 +67,13 @@
       <div class="tabBodyContainer2">
         <div class="tabBodyContainer">
           <?php addTabContent('projects') ?>
+        </div>
+      </div>
+    </div>
+    <div class="ui tab" data-tab="webGL">
+      <div class="tabBodyContainer2">
+        <div class="tabBodyContainer">
+          <?php addTabContent('webGL') ?>
         </div>
       </div>
     </div>

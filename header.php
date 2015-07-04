@@ -32,7 +32,8 @@
       <script type="text/javascript" src="/library/highlight/highlight.pack.js"></script>
       <script type="text/javascript"> hljs.initHighlightingOnLoad(); </script>
 
-      <script type="text/javascript" src="/main.js"></script>
+      <script type="text/javascript" src="/js/gl.js"></script>
+      <script type="text/javascript" src="/js/main.js"></script>
   </head>
   <body>
     <div id="id_bodyWrapper">

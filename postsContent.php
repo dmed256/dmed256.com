@@ -34,27 +34,15 @@
 <div class="feed"
      date="March 03"
      title="OCCA Tutorials 02: Unified Virtual Address + Managed Memory + Shared Memory">
-  <div class="youtubeContainer2">
-    <div class="youtubeContainer">
-      <iframe class="youtube"
-              src="https://www.youtube.com/embed/9uiw3hzGCl4?autohide=1&controls=0&showinfo=0"
-              frameborder="0"
-              allowfullscreen></iframe>
-    </div>
-  </div>
+
+  <iframe class="youtube" src="https://www.youtube.com/embed/9uiw3hzGCl4"></iframe>
 </div>
 
 <div class="feed"
      date="February 28"
      title="OCCA Tutorials 01: Installation + Introduction">
-  <div class="youtubeContainer2">
-    <div class="youtubeContainer">
-      <iframe class="youtube"
-              src="https://www.youtube.com/embed/XYf73mqQBLE?autohide=1&controls=0&showinfo=0"
-              frameborder="0"
-              allowfullscreen></iframe>
-    </div>
-  </div>
+
+  <iframe class="youtube" src="https://www.youtube.com/embed/XYf73mqQBLE"></iframe>
 </div>
 
 <div class="feed"
