@@ -236,6 +236,8 @@ body {
   .ui.feed.raised.segment:not(.inverted):not(.attached) .container .ribbon {
     background-color: #E2E2E2;
     border-color: silver; }
+    .ui.feed.raised.segment:not(.inverted):not(.attached) .container .ribbon .header {
+      border-bottom: 1px solid silver; }
   .ui.feed.raised.segment:not(.inverted):not(.attached).blue {
     border-top: 2px solid #A1B6D8 !important; }
     .ui.feed.raised.segment:not(.inverted):not(.attached).blue .corner {
@@ -243,6 +245,8 @@ body {
     .ui.feed.raised.segment:not(.inverted):not(.attached).blue .container .ribbon {
       background-color: #afc1de;
       border-color: #95a4bd; }
+      .ui.feed.raised.segment:not(.inverted):not(.attached).blue .container .ribbon .header {
+        border-bottom: 1px solid #95a4bd; }
   .ui.feed.raised.segment:not(.inverted):not(.attached).green {
     border-top: 2px solid #B1E0B2 !important; }
     .ui.feed.raised.segment:not(.inverted):not(.attached).green .corner {
@@ -250,6 +254,8 @@ body {
     .ui.feed.raised.segment:not(.inverted):not(.attached).green .container .ribbon {
       background-color: #bde5be;
       border-color: #a1c3a2; }
+      .ui.feed.raised.segment:not(.inverted):not(.attached).green .container .ribbon .header {
+        border-bottom: 1px solid #a1c3a2; }
   .ui.feed.raised.segment:not(.inverted):not(.attached).red {
     border-top: 2px solid #F0A19F !important; }
     .ui.feed.raised.segment:not(.inverted):not(.attached).red .corner {
@@ -257,6 +263,8 @@ body {
     .ui.feed.raised.segment:not(.inverted):not(.attached).red .container .ribbon {
       background-color: #f2afad;
       border-color: #ce9593; }
+      .ui.feed.raised.segment:not(.inverted):not(.attached).red .container .ribbon .header {
+        border-bottom: 1px solid #ce9593; }
   .ui.feed.raised.segment:not(.inverted):not(.attached).purple {
     border-top: 2px solid #BB8CB8 !important; }
     .ui.feed.raised.segment:not(.inverted):not(.attached).purple .corner {
@@ -264,6 +272,8 @@ body {
     .ui.feed.raised.segment:not(.inverted):not(.attached).purple .container .ribbon {
       background-color: #c59dc3;
       border-color: #a785a6; }
+      .ui.feed.raised.segment:not(.inverted):not(.attached).purple .container .ribbon .header {
+        border-bottom: 1px solid #a785a6; }
   .ui.feed.raised.segment:not(.inverted):not(.attached).orange {
     border-top: 2px solid #ED9C2D !important; }
     .ui.feed.raised.segment:not(.inverted):not(.attached).orange .corner {
@@ -271,6 +281,8 @@ body {
     .ui.feed.raised.segment:not(.inverted):not(.attached).orange .container .ribbon {
       background-color: #f0ab4d;
       border-color: #cc9141; }
+      .ui.feed.raised.segment:not(.inverted):not(.attached).orange .container .ribbon .header {
+        border-bottom: 1px solid #cc9141; }
   .ui.feed.raised.segment:not(.inverted):not(.attached) .container {
     display: block;
     width: 100%;
