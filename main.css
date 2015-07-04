@@ -176,7 +176,7 @@ body {
   width: 38px;
   height: 10px;
   z-index: 96;
-  background: linear-gradient(-45 deg, transparent 0%, transparent 6000%, white 6100%, white 100%); }
+  background: linear-gradient(-45deg, transparent 0%, transparent 60%, white 61%, white 100%); }
 
 #id_bodyBLShadowCorner {
   position: absolute;
@@ -185,7 +185,7 @@ body {
   width: 38px;
   height: 12px;
   z-index: 96;
-  background: linear-gradient(45 deg, transparent 0%, transparent 6000%, white 6100%, white 100%); }
+  background: linear-gradient(45deg, transparent 0%, transparent 60%, white 61%, white 100%); }
 
 .ui.tabular.menu a.item,
 .ui.tabular.menu a.active.item {
@@ -217,50 +217,77 @@ body {
 
 /*---[ End of Body ]--- */
 /*---[ Feed ]---------- */
-.feed.raised.segment {
+.ui.feed.raised.segment:not(.inverted):not(.attached) {
   width: calc(100% - 20px);
   margin: 0px 0px 20px 20px;
   padding: 10px 16px 10px 16px;
   box-shadow: none;
-  border: 0.1em solid rgba(0, 0, 0, 0.3);
-  border-radius: 10px 10px 10px 0px; }
-
-.feed .container {
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 15px; }
-
-.feed .container .ribbon {
-  float: left;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.6em;
-  border-bottom-right-radius: 0.6em;
-  padding-left: 10px;
-  margin-right: -20px;
-  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif; }
-
-.feed .container .ribbon:after {
-  z-index: -1; }
-
-.feed .container .header {
-  margin-top: 0px; }
-
-.feed .corner {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 20px;
-  height: 20px; }
-
-.feed .gray.corner {
-  background: linear-gradient(-135 deg, transparent 0%, transparent 6000%, rgba(83, 83, 83, 0.5) 6100%, rgba(83, 83, 83, 0.5) 100%); }
-
-.feed .blue.corner {
-  background: linear-gradient(-135 deg, transparent 0%, transparent 6000%, rgba(231, 242, 247, 0.5) 6100%, rgba(231, 242, 247, 0.5) 100%); }
-
-.feed .green.corner {
-  background: linear-gradient(-135 deg, transparent 0%, transparent 6000%, rgba(123, 201, 126, 0.5) 6100%, rgba(123, 201, 126, 0.5) 100%); }
+  border: 0.1em solid rgba(0, 0, 0, 0.3) !important;
+  border-radius: 10px 10px 10px 0px !important;
+  border-top: 2px solid #C1C1C1 !important; }
+  .ui.feed.raised.segment:not(.inverted):not(.attached) .corner {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px; }
+  .ui.feed.raised.segment:not(.inverted):not(.attached) .corner {
+    background: linear-gradient(-135deg, transparent 0%, transparent 70%, #C1C1C1 71%, #C1C1C1 100%); }
+  .ui.feed.raised.segment:not(.inverted):not(.attached) .container .ribbon {
+    background-color: #E2E2E2;
+    border-color: silver; }
+  .ui.feed.raised.segment:not(.inverted):not(.attached).blue {
+    border-top: 2px solid #A1B6D8 !important; }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).blue .corner {
+      background: linear-gradient(-135deg, transparent 0%, transparent 70%, #A1B6D8 71%, #A1B6D8 100%); }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).blue .container .ribbon {
+      background-color: #afc1de;
+      border-color: #95a4bd; }
+  .ui.feed.raised.segment:not(.inverted):not(.attached).green {
+    border-top: 2px solid #B1E0B2 !important; }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).green .corner {
+      background: linear-gradient(-135deg, transparent 0%, transparent 70%, #B1E0B2 71%, #B1E0B2 100%); }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).green .container .ribbon {
+      background-color: #bde5be;
+      border-color: #a1c3a2; }
+  .ui.feed.raised.segment:not(.inverted):not(.attached).red {
+    border-top: 2px solid #F0A19F !important; }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).red .corner {
+      background: linear-gradient(-135deg, transparent 0%, transparent 70%, #F0A19F 71%, #F0A19F 100%); }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).red .container .ribbon {
+      background-color: #f2afad;
+      border-color: #ce9593; }
+  .ui.feed.raised.segment:not(.inverted):not(.attached).purple {
+    border-top: 2px solid #BB8CB8 !important; }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).purple .corner {
+      background: linear-gradient(-135deg, transparent 0%, transparent 70%, #BB8CB8 71%, #BB8CB8 100%); }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).purple .container .ribbon {
+      background-color: #c59dc3;
+      border-color: #a785a6; }
+  .ui.feed.raised.segment:not(.inverted):not(.attached).orange {
+    border-top: 2px solid #ED9C2D !important; }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).orange .corner {
+      background: linear-gradient(-135deg, transparent 0%, transparent 70%, #ED9C2D 71%, #ED9C2D 100%); }
+    .ui.feed.raised.segment:not(.inverted):not(.attached).orange .container .ribbon {
+      background-color: #f0ab4d;
+      border-color: #cc9141; }
+  .ui.feed.raised.segment:not(.inverted):not(.attached) .container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 15px; }
+    .ui.feed.raised.segment:not(.inverted):not(.attached) .container .ribbon {
+      float: left;
+      border-top-left-radius: 0.5em;
+      border-top-right-radius: 0.6em;
+      border-bottom-right-radius: 0.6em;
+      padding-left: 10px;
+      margin-right: -20px;
+      font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif; }
+      .ui.feed.raised.segment:not(.inverted):not(.attached) .container .ribbon:after {
+        z-index: -1; }
+    .ui.feed.raised.segment:not(.inverted):not(.attached) .container .header {
+      margin-top: 0px; }
 
 .feedDivider {
   width: calc(100% - 200px);
@@ -291,6 +318,25 @@ h5.header {
   background-color: #FBFCFE;
   border-color: #6992B5;
   border-radius: 4px; }
+
+div.bullet {
+  vertical-align: middle;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px 3px 3px 3px;
+  margin-right: 8px;
+  margin-bottom: 2.4px; }
+  .blue.feed div.bullet {
+    background-color: #899bb8; }
+  .green.feed div.bullet {
+    background-color: #96be97; }
+  .red.feed div.bullet {
+    background-color: #cc8987; }
+  .purple.feed div.bullet {
+    background-color: #9f779c; }
+  .orange.feed div.bullet {
+    background-color: #c98526; }
 
 .linkStyle {
   color: #5186AE;
@@ -454,3 +500,5 @@ iframe.youtube {
   left: 0;
   width: 100%;
   height: 100%; }
+
+/*# sourceMappingURL=main.css.map */

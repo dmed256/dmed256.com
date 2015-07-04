@@ -58,13 +58,18 @@ function applyMini(window){
 
 function setupFeedHeaders(){
   $(".ui.tab.active div.feed").each(function(){
-    if($(this).hasClass('updated'))
+    var this_ = $(this);
+
+    if(this_.hasClass('updated'))
       return true;
 
-    var date  = $(this).attr('date');
-    var title = $(this).attr('title');
+    var date  = this_.attr('date');
+    var title = this_.attr('title');
 
-    $(this).addClass("ui raised updated segment");
+    this_.removeAttr('date');
+    this_.removeAttr('title');
+
+    this_.addClass("ui raised updated segment");
 
     if(!isValid(date) &&
        !isValid(title)){
@@ -72,10 +77,10 @@ function setupFeedHeaders(){
       return true;
     }
 
-    $(this).prepend('<div class="container">');
-    $(this).append('<div class="corner">');
+    this_.prepend('<div class="container">');
+    this_.append('<div class="corner">');
 
-    var container   = $(this).find('.container');
+    var container   = this_.find('.container');
     var headerWidth = '0';
 
     if(isValid(date)){
