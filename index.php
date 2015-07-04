@@ -49,6 +49,7 @@
       </div>
     </div>
     <div id="id_bodyTopShadow"></div>
+    <div id="id_bodyTLShadowCorner"></div>
     <div class="ui active tab" data-tab="posts">
       <div class="tabBodyContainer2">
         <div class="tabBodyContainer">
@@ -77,6 +78,7 @@
         </div>
       </div>
     </div>
+    <div id="id_bodyBLShadowCorner"></div>
     <div id="id_bodyBottomShadow"></div>
     <!-- <div id="id_bodyFooter"></div> -->
   </div>
