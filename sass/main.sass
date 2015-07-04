@@ -279,17 +279,17 @@ body
 #id_bodyBLShadowCorner
   position: absolute
   bottom: 0px
-  left  : -18px
+  left  : -5px
 
   width : 38px
-  height: 12px
+  height: 10px
 
   z-index: 96
 
   $colorA: rgba(black, 0)
   $colorB: rgba(white, 1)
 
-  @include linearGradient(45, $colorA, $colorB, 60)
+  @include linearGradient(-147, $colorA, $colorB, 60)
 
 .ui.tabular.menu a.item,
 .ui.tabular.menu a.active.item
@@ -337,7 +337,7 @@ body
   padding: 10px 16px 10px 16px
 
   box-shadow: none
-  border: 0.1em solid rgba(0,0,0,0.3) !important
+  border: 1px solid rgba(0,0,0,0.3) !important
   border-radius: 10px 10px 10px 0px !important
 
   .corner

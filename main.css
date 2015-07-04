@@ -181,11 +181,11 @@ body {
 #id_bodyBLShadowCorner {
   position: absolute;
   bottom: 0px;
-  left: -18px;
+  left: -5px;
   width: 38px;
-  height: 12px;
+  height: 10px;
   z-index: 96;
-  background: linear-gradient(45deg, transparent 0%, transparent 60%, white 61%, white 100%); }
+  background: linear-gradient(-147deg, transparent 0%, transparent 60%, white 61%, white 100%); }
 
 .ui.tabular.menu a.item,
 .ui.tabular.menu a.active.item {
@@ -222,7 +222,7 @@ body {
   margin: 0px 0px 20px 20px;
   padding: 10px 16px 10px 16px;
   box-shadow: none;
-  border: 0.1em solid rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
   border-radius: 10px 10px 10px 0px !important;
   border-top: 2px solid #C1C1C1 !important; }
   .ui.feed.raised.segment:not(.inverted):not(.attached) .corner {

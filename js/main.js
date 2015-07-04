@@ -57,7 +57,7 @@ function applyMini(window){
 }
 
 function setupFeedHeaders(){
-  $(".ui.tab.active div.feed").each(function(){
+  $(".ui.active.tab div.feed").each(function(){
     var this_ = $(this);
 
     if(this_.hasClass('updated'))
@@ -101,7 +101,7 @@ function setupFeedHeaders(){
 
 function checkBodyScroll(){
   var activeTab  = $('.active.item', '#id_bodyHeader .menu');
-  var tabContent = $('div[data-tab="' + activeTab.attr('data-tab') + '"');
+  var tabContent = $('div[data-tab="' + activeTab.attr('data-tab') + '"]');
 
   var bodyWrapper = $(tabContent).find('.tabBodyContainer2');
   var body        = $(bodyWrapper).find('.tabBodyContainer');
