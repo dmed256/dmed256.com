@@ -1,0 +1,601 @@
+//---[ Global Variables/Functions ]-----
+$minWidth : 1024px
+$miniWidth: 540px
+
+$footerHeight      : 40px
+$footerContentWidth: 220px
+
+$grayColor: #535353
+
+$font     : Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif
+$fontSize : 16px
+
+@mixin linearGradient($angle, $colorA, $colorB, $split)
+  background: linear-gradient($angle deg, $colorA 0%, $colorA percentage($split), $colorB percentage($split + 1), $colorB 100%)
+
+@mixin feedCorner($color)
+  @include linearGradient(-135, rgba(black, 0), $color, 60)
+//======================================
+
+//---[ Sticky Body/Footer ]-------------
+html, body
+  min-width: $minWidth
+  height   : 100%
+
+  font-family: $font
+  font-size  : $fontSize
+  color      : $grayColor
+
+html
+  overflow: auto !important
+
+body
+  margin : 0px
+  padding: 0px
+
+  background: none !important
+
+html.mini, body.mini
+  min-width: $miniWidth
+
+#id_bodyWrapper
+  width     : 100%
+  min-height: 100% !important
+  height    : auto !important
+  height    : 100%
+  margin    : 0px 0px (-$footerHeight) 0px
+
+#id_footerWrapper
+  height: $footerHeight
+
+#id_bodyWrapper2
+  width  : 100%
+  padding: 0px 0px ($footerHeight + 1px) 0px
+
+
+#id_footerWrapper
+  min-width: $minWidth
+
+
+#id_footerWrapper.mini
+  min-width: 0px
+
+
+#id_footer
+  margin: 0px auto
+
+#id_footer
+  border-top-style: solid
+  border-top-color: rgba(0, 0, 0, 0.1)
+  border-top-width: 1px
+
+  background-color: white
+  color           : rgb(100,100,100)
+
+  height     : $footerHeight
+  line-height: $footerHeight
+  text-align : center
+
+  font-family: $font
+  font-size  : 13px
+
+#id_footerName
+  display   : inline-block
+  text-align: right
+
+  min-width: $footerContentWidth
+
+#id_footerInfo
+  @extend #id_footerName
+  text-align: left
+
+#id_footerName.mini
+  text-align: center
+
+#id_footerInfo.mini
+  display: none
+//======================================
+
+//---[ Body ]---------------------------
+body
+  margin: 0px
+  background-color: white
+
+#id_body
+  height: 100%
+  line-height: 200%
+
+#id_body:after
+  display: block
+
+  content: ''
+
+  height: 0px
+
+  clear: both
+
+#id_body.fixed.body
+  display: block
+
+  min-width: 1024px
+  max-width: calc(100% - 200px)
+
+  margin-left: auto
+  margin-right: auto
+
+  padding: 30px 20px 0px 20px
+
+#id_body.mini.fixed.body
+  min-width: 0px
+  max-width: 100%
+
+
+#id_body .header .avatar,
+#id_body .header .contact.info
+  display: none
+
+#id_body .mini.header img.avatar
+  float: left
+
+  display: inline-block
+
+  height: 34px
+  width : 34px
+
+  border-radius: 3px
+  margin-right : 15px
+
+#id_body .mini.header .contact.info
+  float: right
+
+  display: inline-block
+
+  height     : 40px
+  line-height: 40px
+  font-size  : 18px
+
+.body .sidebar
+  float: left
+
+  width: 250px
+  height: 100%
+
+  font-size  : 14px
+  line-height: 20px
+
+.body .mini.sidebar
+  display: none
+
+#id_bodyContainer
+  position: relative
+  float: left
+
+  margin: 0px 20px 20px 20px
+
+  min-width: 500px
+  width: calc(100% - 290px)
+  height: 780px
+
+#id_bodyContainer.mini
+  position: relative
+
+  margin: 0px 0px 20px 0px
+
+  min-width: 500px
+  width : 100%
+  height: 780px
+
+#id_bodyHeader
+  position: absolute
+  top: 0px
+
+  width: 100%
+  height: 40px
+
+  border-radius: 30px
+
+  z-index : 97
+
+#id_bodyFooter
+  position: absolute
+  bottom: 0px
+
+  width: 100%
+  height: 40px
+
+  border-radius: 30px
+
+  overflow: none
+  z-index : 97
+
+#id_bodyTopShadow, #id_bodyBottomShadow
+  position: absolute
+
+  width: 100%
+  height: 40px
+
+  border-radius: 30px
+
+  overflow: none
+  z-index : 97
+
+  pointer-events: none
+
+#id_bodyTopShadow
+  top: 50px
+  box-shadow: inset 0 8px 8px -8px #F19D5C
+
+#id_bodyBottomShadow
+  bottom: 0px
+  box-shadow: inset 0 -10px 10px -10px #5186AE
+
+#id_bodyTLShadowCorner
+  position: absolute
+  top : 50px
+  left: -5px
+
+  width : 38px
+  height: 10px
+
+  z-index: 96
+
+  $colorA: rgba(black, 0)
+  $colorB: rgba(white, 1)
+
+  @include linearGradient(-45, $colorA, $colorB, 60)
+
+#id_bodyBLShadowCorner
+  position: absolute
+  bottom: 0px
+  left  : -18px
+
+  width : 38px
+  height: 12px
+
+  z-index: 96
+
+  $colorA: rgba(black, 0)
+  $colorB: rgba(white, 1)
+
+  @include linearGradient(45, $colorA, $colorB, 60)
+
+.ui.tabular.menu a.item,
+.ui.tabular.menu a.active.item
+  color: #535353
+
+.tabBodyContainer2
+  position: absolute
+  display: inline-block
+
+  top: 50px
+
+  width : 100%
+  height: calc(100% - 50px)
+
+  overflow: hidden
+
+  padding: 0px 20px 0px 0px
+  z-index : 0
+
+.tabBodyContainer
+  position: absolute
+  display: inline-block
+
+  top: 0px
+
+  padding-top: 20px
+  padding-right: 300px
+
+  width : calc(100% + 300px)
+  height: 100%
+
+  overflow: auto
+
+  z-index: -1
+
+.tabBodyContainer.noScroll
+  width : calc(100% + 285px)
+
+/*---[ End of Body ]---*/
+
+/*---[ Feed ]----------*/
+.feed.raised.segment
+  width: calc(100% - 20px)
+  margin :  0px  0px 20px 20px
+  padding: 10px 16px 10px 16px
+
+  box-shadow: none
+  border: 0.1em solid rgba(0,0,0,0.3)
+  border-radius: 10px 10px 10px 0px
+
+.feed .container
+  display: block
+
+  width : 100%
+  height: 100%
+
+  margin-bottom: 15px
+
+.feed .container .ribbon
+  float: left
+
+  border-top-left-radius    : 0.5em
+  border-top-right-radius   : 0.6em
+  border-bottom-right-radius: 0.6em
+
+  padding-left:  10px
+  margin-right: -20px
+
+  font-family: $font
+
+.feed .container .ribbon:after
+  z-index : -1
+
+.feed .container .header
+  margin-top: 0px
+
+.feed .corner
+  position: absolute
+
+  bottom: 0px
+  left  : 0px
+
+  width : 20px
+  height: 20px
+
+.feed .gray.corner
+  @include feedCorner(rgba(#535353, 0.5))
+
+.feed .blue.corner
+  @include feedCorner(rgba(#E7F2F7, 0.5))
+
+.feed .green.corner
+  @include feedCorner(rgba(#7BC97E, 0.5))
+
+.feedDivider
+  width: calc(100% - 200px)
+  margin: 40px auto 40px auto !important
+
+  color: #5186AE !important
+
+  font-size: 30px !important
+
+.feedDivider::before
+  border-top-width: 3px !important
+  border-top-color: #CBDBE6 !important
+
+.feedDivider::after
+  border-top-width: 3px !important
+  border-top-color: #CBDBE6 !important
+//======================================
+
+//---[ Styles ]-------------------------
+// Headers
+h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header
+  color: #535353
+
+h5.header
+  font-size: 14px !important
+
+  margin-top   : 15px !important
+  margin-bottom: 5px !important
+
+.boxed.header
+  padding: 8px 12px 8px 12px
+
+  border-style: solid
+  border-width: 1px
+
+  background-color: #FBFCFE
+  border-color    : #6992B5
+
+  border-radius : 4px
+
+// Links
+.linkStyle
+  color: #5186AE
+
+  font-family: $font
+
+a.link
+  color: #5186AE
+
+  font-family: $font
+
+a.link:hover
+  text-decoration: underline
+
+a img
+  border: none
+
+// Intenting
+.indent1
+  margin-left: 20px
+
+.indent2
+  margin-left: 40px
+
+.indent3
+  margin-left: 60px
+
+.indent4
+  margin-left: 80px
+
+// Down spacing
+.dSpacing1
+  margin-bottom: 10px !important
+
+.dSpacing2
+  margin-bottom: 20px !important
+
+.dSpacing3
+  margin-bottom: 30px !important
+
+.dSpacing4
+  margin-bottom: 40px !important
+
+// Up spacing
+.uSpacing1
+  margin-top: 10px !important
+
+.uSpacing2
+  margin-top: 20px !important
+
+.uSpacing3
+  margin-top: 30px !important
+
+.uSpacing4
+  margin-top: 40px !important
+
+// Up + Down spacing
+.udSpacing1
+  margin-top   : 10px !important
+  margin-bottom: 10px !important
+
+.udSpacing2
+  margin-top   : 20px !important
+  margin-bottom: 20px !important
+
+.udSpacing3
+  margin-top   : 30px !important
+  margin-bottom: 30px !important
+
+.udSpacing4
+  margin-top   : 40px !important
+  margin-bottom: 40px !important
+
+// Decorations
+.highlight
+  color: #2BB399
+
+span.highlight
+  font-family: $font
+
+span.warning
+  color: #FAA16D
+
+  font-family: $font
+  text-decoration: underline
+
+a.noDecor
+  text-decoration: none
+
+// Tooltips
+a.tooltip
+  text-decoration: none
+
+  color: rgb(50, 50, 50)
+
+a.tooltip .icon
+  margin-left : 4px
+  margin-right: 4px
+  line-height: 17px
+
+a.tooltip
+  display : inline
+  position: relative
+
+  &:hover:after
+    background: rgba(0,0,0,.4)
+    color     : #fff
+
+    border-radius: 5px
+
+    bottom: 20px
+
+    content: attr(tooltip)
+
+    position: absolute
+    padding : 00px 10px
+    left    : 20%
+    z-index : 98
+
+    height: 30px
+    line-height: 30px
+//======================================
+
+//---[ Code ]---------------------------
+pre.code.block, code.code.block
+  margin: auto
+
+  // [1 + 10] + width + [10 + 1]
+  // .^_box-shadow       ^_border
+
+  width: calc(100% - 22px)
+
+  font-size: 14px
+
+  border-style : solid
+  border-width : 0px 0px 0px 10px
+
+  background-color: rgba(0, 0, 0, 0.01)
+  border-color    : transparent
+
+  line-height: 20px
+
+pre.api.code.block, code.api.code.block
+  margin: 0px
+
+  width: calc(100%)
+
+  font-size: 14px
+
+  background-color: transparent
+  border-color    : transparent
+
+  border-width : 0px
+  margin-left  : 0px
+  padding-left : 0px
+
+  line-height: 20px
+
+pre.api.inline.code.block, code.api.inline.code.block
+  display: inline-block
+
+  margin : 0px
+  padding: 0px
+
+  line-height: 20px
+
+pre.api.inline.boxed.code.block, code.api.inline.boxed.code.block
+  padding: 3px 6px 3px 6px
+  background-color: #FAF0DA
+
+
+pre.api.inline.code.block, code.api.inline.code.block
+  display: inline !important
+
+
+h4 code.api.inline.code
+  font-size: 18px
+  font-weight: normal
+//======================================
+
+//---[ Youtube ]------------------------
+.youtubeContainer2
+  width    : 80%
+  max-width: 500px
+
+  margin: 0 auto
+
+  overflow: hidden
+
+.youtubeContainer
+  position: relative
+
+  padding-bottom: 54%
+
+  height: 0
+
+  overflow: hidden
+
+  border: 3px solid #CBDBE6
+
+iframe.youtube
+  position: absolute
+  top : 0
+  left: 0
+
+  width : 100%
+  height: 100%
+//======================================

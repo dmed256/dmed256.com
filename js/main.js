@@ -73,6 +73,7 @@ function setupFeedHeaders(){
     }
 
     $(this).prepend('<div class="container">');
+    $(this).append('<div class="corner">');
 
     var container   = $(this).find('.container');
     var headerWidth = '0';
