@@ -339,7 +339,7 @@ div.bullet {
   border-radius: 3px 3px 3px 3px;
   margin-right: 8px;
   margin-bottom: 2.4px;
-  background-color: #474747; }
+  background-color: #888888; }
   .blue.feed div.bullet {
     background-color: #899bb8; }
   .green.feed div.bullet {
@@ -513,3 +513,5 @@ iframe.youtube {
   left: 0;
   width: 100%;
   height: 100%; }
+
+/*# sourceMappingURL=main.css.map */

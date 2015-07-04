@@ -7,14 +7,14 @@ $footerHeight      : 40px
 $footerContentWidth: 220px
 
 // Colors
-$grayColor   : #535353
+$grayColor   : #888888
 $blueColor   : #A1B6D8
 $greenColor  : #B1E0B2
 $redColor    : #F0A19F
 $purpleColor : #BB8CB8
 $orangeColor : #ED9C2D
 
-$dGrayColor  : mix($grayColor  , black, 85%)
+$dGrayColor  : #535353
 $dBlueColor  : mix($blueColor  , black, 85%)
 $dGreenColor : mix($greenColor , black, 85%)
 $dRedColor   : mix($redColor   , black, 85%)
@@ -56,7 +56,7 @@ html, body
 
   font-family: $font
   font-size  : $fontSize
-  color      : $grayColor
+  color      : $dGrayColor
 
 html
   overflow: auto !important
@@ -447,7 +447,7 @@ div.bullet
   // Padding for ui items (4.8 px)
   margin-bottom: 2.4px
 
-  background-color: $dGrayColor
+  background-color: $grayColor
 
   .blue.feed &
     background-color: $dBlueColor
