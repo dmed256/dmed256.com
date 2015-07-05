@@ -51,7 +51,7 @@
     </div>
     <div id="id_bodyTopShadow"></div>
     <div id="id_bodyTLShadowCorner"></div>
-    <div class="ui active tab" data-tab="blog">
+    <div class="ui tab" data-tab="blog">
       <div class="tabBodyContainer2">
         <div class="tabBodyContainer">
           <?php addTabContent('blog') ?>
