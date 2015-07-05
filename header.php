@@ -32,6 +32,7 @@
       <script type="text/javascript" src="/library/highlight/highlight.pack.js"></script>
       <script type="text/javascript"> hljs.initHighlightingOnLoad(); </script>
 
+      <script type="text/javascript" src="/js/tools.js"></script>
       <script type="text/javascript" src="/js/gl.js"></script>
       <script type="text/javascript" src="/js/main.js"></script>
   </head>

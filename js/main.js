@@ -1,8 +1,3 @@
-function isValid(v){
-  return ((typeof(v) !== typeof(undefined)) &&
-          (v         !== false));
-}
-
 function windowResize(){
   var window = $(this);
 

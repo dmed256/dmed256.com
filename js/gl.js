@@ -1,4 +1,8 @@
-var glEnabled = false;
+var glEnabled = true;
+
+var glHandles  = {};
+var glHandleID = 0;
+var glActiveID = -1;
 
 if(glEnabled){
   window.requestAnimFrame = (function(){
@@ -11,42 +15,48 @@ if(glEnabled){
   })();
 }
 
-//---[ Shaders ]------------------------
-var shader = null;
+function glHandle(){
+  this.canvas  = null;
+  this.id      = -1;
 
-function getGLContext(canvas){
-  var glc = null;
+  this.context = null;
+  this.program = null;
+  this.vbo     = null;
+}
 
+glHandle.prototype.setupContext = function(canvas){
   var contextNames     = ['webgl', 'experimental-webgl', 'webkit-3d', 'moz-webgl'];
   var contextNameCount = contextNames.length;
 
   for(var i = 0; i < contextNameCount; ++i){
     try {
-      glc = canvas[0].getContext(contextNames[i],
-                                 {alpha                 : false,
-                                  depth                 : false,
-                                  antialias             : false});
+      this.context = canvas[0].getContext(contextNames[i],
+                                          {alpha                 : false,
+                                           depth                 : false,
+                                           antialias             : false});
 
-      glc.viewport(0, 0, canvas.attr('width'), canvas.attr('height'));
+      this.context.viewport(0, 0,
+                            canvas.attr('width'),
+                            canvas.attr('height'));
     }
     catch(e){
-      glc = null;
+      this.context = null;
     }
 
-    if(glc)
+    if(this.context)
       break;
   }
-
-  return glc;
 }
 
-function createShader(glc, shaderType, shaderSource){
-  var shader = glc.createShader(shaderType);
-  glc.shaderSource(shader, shaderSource);
-  glc.compileShader(shader);
+glHandle.prototype.createShader = function(shaderType, shaderSource){
+  var context = this.context;
+  var shader  = context.createShader(shaderType);
 
-  if(glc.getShaderParameter(shader, glc.COMPILE_STATUS) != 0){
-    var log = glc.getShaderInfoLog(shader);
+  context.shaderSource(shader, shaderSource);
+  context.compileShader(shader);
+
+  if(context.getShaderParameter(shader, context.COMPILE_STATUS) != 0){
+    var log = context.getShaderInfoLog(shader);
 
     if(2 < log.length)
       console.log("Shader Build Log:\n" + log);
@@ -55,63 +65,113 @@ function createShader(glc, shaderType, shaderSource){
   return shader;
 }
 
-function createVertexShader(glc, shaderSource){
-  return createShader(glc, glc.VERTEX_SHADER, shaderSource);
+glHandle.prototype.createVertexShader = function(shaderSource){
+  return this.createShader(this.context.VERTEX_SHADER,
+                           shaderSource);
 }
 
-function createFragmentShader(glc, shaderSource){
-  return createShader(glc, glc.FRAGMENT_SHADER, shaderSource);
+glHandle.prototype.createFragmentShader = function(shaderSource){
+  return this.createShader(this.context.FRAGMENT_SHADER,
+                           shaderSource);
 }
 
-function setupProgram(glc, vs, fs){
-  var program = glc.createProgram();
+glHandle.prototype.setupProgram = function(vs, fs){
+  this.program = this.context.createProgram();
 
-  glc.attachShader(program, vs);
-  glc.attachShader(program, fs);
+  var context = this.context;
+  var program = this.program;
 
-  glc.deleteShader(vs);
-  glc.deleteShader(fs);
+  context.attachShader(program, vs);
+  context.attachShader(program, fs);
 
-  glc.linkProgram(program);
+  context.deleteShader(vs);
+  context.deleteShader(fs);
 
-  if(glc.getProgramParameter(program, glc.LINK_STATUS) != 0){
-    var log = glc.getProgramInfoLog(program);
+  context.linkProgram(program);
+
+  if(context.getProgramParameter(program, context.LINK_STATUS) != 0){
+    var log = context.getProgramInfoLog(program);
 
     if(2 < log.length)
       console.log("Shader Linking Log:\n" + log);
 
-    glc.deleteProgram(program);
+    context.deleteProgram(program);
   }
 }
 
-function setupScreen(glc){
+glHandle.prototype.setupView = function(){
+  var context = this.context;
+
   var vertices = new Float32Array([-1.0, -1.0, 1.0,
                                    -1.0, -1.0, 1.0,
                                    1.0 , -1.0, 1.0,
                                    1.0,  -1.0, 1.0]);
 
-  var vbo = glc.createBuffer();
+  this.vbo = context.createBuffer();
 
-  glc.bindBuffer(glc.ARRAY_BUFFER, vbo);
-  glc.bufferData(glc.ARRAY_BUFFER, vertices, glc.STATIC_DRAW);
-  glc.bindBuffer(glc.ARRAY_BUFFER, null);
+  context.bindBuffer(context.ARRAY_BUFFER, this.vbo);
+  context.bufferData(context.ARRAY_BUFFER, vertices, context.STATIC_DRAW);
+  context.bindBuffer(context.ARRAY_BUFFER, null);
 }
 
-function setupCanvas(canvas, glc){
+glHandle.prototype.draw = function(){
+}
+
+function startDrawing(){
+  if(glActiveID < 0)
+    return;
+
+  var handle = glHandles[glActiveID];
+  handle.draw();
+
+  requestAnimFrame(function(){ startDrawing() });
+}
+
+function setupCanvas(canvas){
+  var handle = new glHandle();
+
+  // Setup the GL handle ID
+  handle.canvas        = canvas;
+  handle.id            = glHandleID++;
+  glHandles[handle.id] = handle;
+
+  canvas.attr('glHandleID', handle.id);
+
+  // Create GL context
+  handle.setupContext(canvas);
+
+  // Setup canvas elements
   var fsFilename = canvas.attr('shader');
   canvas.removeAttr('shader');
 
   canvas.wrap('<center></center>');
   canvas.css('border', 'none');
 
+  // Setup shaders
   var vsSource = 'attribute vec2 p; void main(){ gl_Position = vec4(p.xy, 0.0, 1.0); }';
   var fsSource = $('.text').load('/shaders/' + fsFilename + '.glsl');
 
-  var vs = createVertexShader(glc, vsSource);
-  var fs = createFragmentShader(glc, fsSource);
+  var vs = handle.createVertexShader(vsSource);
+  var fs = handle.createFragmentShader(fsSource);
 
-  setupProgram(glc, vs, fs);
-  setupScreen(glc);
+  handle.setupProgram(vs, fs);
+  handle.setupView();
+
+  // Add events
+  canvas[0].onmouseover = function(event){
+    var e = eventSource(event);
+
+    if(!isValid(e))
+      return;
+
+    glActiveID = e.getAttribute('glHandleID');
+
+    startDrawing();
+  }
+
+  canvas[0].onmouseout = function(event){
+    glActiveID = -1;
+  }
 }
 
 function setupWebGLFeeds(tab){
@@ -119,9 +179,6 @@ function setupWebGLFeeds(tab){
     return;
 
   tab.find('canvas').each(function(index){
-    var canvas = $(this);
-    var glc    = getGLContext(canvas);
-
-    setupCanvas(canvas, glc);
+    setupCanvas($(this));
   });
 }
