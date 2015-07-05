@@ -190,6 +190,16 @@ body {
 .ui.tabular.menu a.item,
 .ui.tabular.menu a.active.item {
   color: #535353; }
+  .ui.tabular.menu a.item.underConstruction,
+  .ui.tabular.menu a.active.item.underConstruction {
+    pointer-events: none;
+    cursor: default;
+    color: #999999;
+    background-color: #EEEEEE;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom-color: #d4d4d4;
+    border-bottom-width: 1px;
+    border-bottom-style: solid; }
 
 .tabBodyContainer2 {
   position: absolute;
@@ -445,7 +455,7 @@ a.tooltip {
   position: relative; }
   a.tooltip:hover:after {
     background: rgba(0, 0, 0, 0.4);
-    color: #fff;
+    color: white;
     border-radius: 5px;
     bottom: 20px;
     content: attr(tooltip);
@@ -505,7 +515,7 @@ h4 code.api.inline.code {
   padding-bottom: 54%;
   height: 0;
   overflow: hidden;
-  border: 3px solid #CBDBE6; }
+  border: 3px solid #A1B6D8; }
 
 iframe.youtube {
   position: absolute;
@@ -513,5 +523,3 @@ iframe.youtube {
   left: 0;
   width: 100%;
   height: 100%; }
-
-/*# sourceMappingURL=main.css.map */

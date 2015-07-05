@@ -42,18 +42,26 @@
   <div id="id_bodyContainer" class="container">
     <div id="id_bodyHeader">
       <div class="ui tabular menu">
-        <a class="item active" data-tab="posts"   > Posts    </a>
+        <a class="item underConstruction" data-tab="blog"    > Blog     </a>
+        <a class="item active" data-tab="events"  > Events   </a>
         <a class="item"        data-tab="upcoming"> Upcoming </a>
         <a class="item"        data-tab="projects"> Projects </a>
-        <!-- <a class="item"        data-tab="webGL">    WebGL    </a> -->
+        <a class="item underConstruction" data-tab="webGL">    WebGL    </a>
       </div>
     </div>
     <div id="id_bodyTopShadow"></div>
     <div id="id_bodyTLShadowCorner"></div>
-    <div class="ui active tab" data-tab="posts">
+    <div class="ui active tab" data-tab="blog">
       <div class="tabBodyContainer2">
         <div class="tabBodyContainer">
-          <?php addTabContent('posts') ?>
+          <?php addTabContent('blog') ?>
+        </div>
+      </div>
+    </div>
+    <div class="ui active tab" data-tab="events">
+      <div class="tabBodyContainer2">
+        <div class="tabBodyContainer">
+          <?php addTabContent('events') ?>
         </div>
       </div>
     </div>

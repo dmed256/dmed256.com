@@ -61,7 +61,7 @@ function email(){
 }
 
 function addTabContent($tab){
-  include($_SERVER['DOCUMENT_ROOT'] . '/' . $tab . 'Content.php');
+  include($_SERVER['DOCUMENT_ROOT'] . '/' . $tab . '.php');
 }
 
 ?>

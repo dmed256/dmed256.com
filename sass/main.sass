@@ -295,6 +295,19 @@ body
 .ui.tabular.menu a.active.item
   color: #535353
 
+  &.underConstruction
+    pointer-events: none
+    cursor        : default
+
+    color           : #999999
+    background-color: #EEEEEE
+
+    border-radius: 5px 5px 0px 0px
+
+    border-bottom-color: rgb(212, 212, 212)
+    border-bottom-width: 1px
+    border-bottom-style: solid
+
 .tabBodyContainer2
   position: absolute
   display: inline-block
@@ -412,13 +425,13 @@ body
 //---[ Styles ]-------------------------
 // Headers
 h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header
-  color: #535353
+  color: $dGrayColor
 
 h5.header
   font-size: 14px !important
 
   margin-top   : 15px !important
-  margin-bottom: 5px !important
+  margin-bottom: 5px  !important
 
 .boxed.header
   padding: 8px 12px 8px 12px
@@ -570,7 +583,7 @@ a.tooltip
 
   &:hover:after
     background: rgba(0,0,0,.4)
-    color     : #fff
+    color     : white
 
     border-radius: 5px
 
@@ -662,7 +675,7 @@ h4 code.api.inline.code
 
   overflow: hidden
 
-  border: 3px solid #CBDBE6
+  border: 3px solid $blueColor
 
 iframe.youtube
   position: absolute
