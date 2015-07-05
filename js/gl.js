@@ -19,6 +19,8 @@ function glHandle(){
   this.canvas  = null;
   this.id      = -1;
 
+  this.loaded  = false;
+
   this.context = null;
   this.program = null;
   this.vbo     = null;
@@ -75,7 +77,31 @@ glHandle.prototype.createFragmentShader = function(shaderSource){
                            shaderSource);
 }
 
-glHandle.prototype.setupProgram = function(vs, fs){
+glHandle.prototype.setupProgram = function(canvas, fsFileContent){
+  var fsHeader = ('precision mediump float;\n'  +
+
+                  'uniform vec3  resolution;\n' +
+                  'uniform float time;\n'       +
+                  'uniform vec2  mouse;\n');
+
+  var fsFooter = ('\n'                                           +
+                  'void main(){'                                 +
+                  '  vec4 fragColor = vec4(0.0, 0.0, 0.0, 1.0);' +
+                  '  drawFragment(fragColor, gl_FragCoord.xy);'  +
+                  '  fragColor.w = 1.0;'                         +
+                  '  gl_FragColor = fragColor;'                  +
+                  '}');
+
+  var vsSource = ('attribute vec2 p;\n'                   +
+                  'void main(){'                          +
+                  '  gl_Position = vec4(p.xy, 0.0, 1.0);' +
+                  '}');
+
+  var fsSource = (fsHeader + fsFileContent + fsFooter);
+
+  var vs = this.createVertexShader(vsSource);
+  var fs = this.createFragmentShader(fsSource);
+
   this.program = this.context.createProgram();
 
   var context = this.context;
@@ -97,6 +123,8 @@ glHandle.prototype.setupProgram = function(vs, fs){
 
     context.deleteProgram(program);
   }
+
+  this.loaded = true;
 }
 
 glHandle.prototype.setupView = function(){
@@ -105,7 +133,7 @@ glHandle.prototype.setupView = function(){
   var vertices = new Float32Array([-1.0, -1.0, 1.0,
                                    -1.0, -1.0, 1.0,
                                    1.0 , -1.0, 1.0,
-                                   1.0,  -1.0, 1.0]);
+                                   1.0 , -1.0, 1.0]);
 
   this.vbo = context.createBuffer();
 
@@ -139,49 +167,22 @@ function setupCanvas(canvas){
 
   // Create GL context
   handle.setupContext(canvas);
+  handle.setupView();
 
   // Setup canvas elements
-  var fsFilename     = '/shaders/' + canvas.attr('shader') + '.glsl';
-  var fsFileContents = '';
+  var fsFilename = '/shaders/' + canvas.attr('shader') + '.glsl';
+  canvas.removeAttr('shader');
 
   $.ajax(fsFilename,
          {dataType: 'text',
-          async   : false,
           timeout : 1000,
-          success : function(data){ fsFileContents = data; }});
 
-  canvas.removeAttr('shader');
+          success : function(fsFileContent){
+            handle.setupProgram(canvas, fsFileContent);
+          }});
 
   canvas.wrap('<center></center>');
   canvas.css('border', 'none');
-
-  // Setup shaders
-  var fsHeader = ('precision mediump float;\n'  +
-
-                  'uniform vec3  resolution;\n' +
-                  'uniform float time;\n'       +
-                  'uniform vec2  mouse;\n');
-
-  var fsFooter = ('\n'                                           +
-                  'void main(){'                                 +
-                  '  vec4 fragColor = vec4(0.0, 0.0, 0.0, 1.0);' +
-                  '  drawFragment(fragColor, gl_FragCoord.xy);'  +
-                  '  fragColor.w = 1.0;'                         +
-                  '  gl_FragColor = fragColor;'                  +
-                  '}');
-
-  var vsSource = ('attribute vec2 p;\n'                   +
-                  'void main(){'                          +
-                  '  gl_Position = vec4(p.xy, 0.0, 1.0);' +
-                  '}');
-
-  var fsSource = fsHeader + fsFileContents + fsFooter;
-
-  var vs = handle.createVertexShader(vsSource);
-  var fs = handle.createFragmentShader(fsSource);
-
-  handle.setupProgram(vs, fs);
-  handle.setupView();
 
   // Add events
   canvas[0].onmouseover = function(event){
