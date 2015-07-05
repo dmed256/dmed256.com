@@ -190,16 +190,6 @@ body {
 .ui.tabular.menu a.item,
 .ui.tabular.menu a.active.item {
   color: #535353; }
-  .ui.tabular.menu a.item.underConstruction,
-  .ui.tabular.menu a.active.item.underConstruction {
-    pointer-events: none;
-    cursor: default;
-    color: #999999;
-    background-color: #EEEEEE;
-    border-radius: 5px 5px 0px 0px;
-    border-bottom-color: #d4d4d4;
-    border-bottom-width: 1px;
-    border-bottom-style: solid; }
 
 .tabBodyContainer2 {
   position: absolute;
