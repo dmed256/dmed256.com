@@ -9,11 +9,15 @@ function windowResize(){
   $(body).css('height'    , bodyHeight);
   $(body).css('min-height', bodyHeight);
   $(body).css('max-height', bodyHeight);
+
+  checkBodyScroll();
 }
 
 function loadMenuTab(tabName){
   if(!isValid(tabName))
     tabName = $('.tabular.menu .item.active').attr('data-tab');
+
+  checkBodyScroll();
 
   var tab = $('div.tab[data-tab="' + tabName + '"]');
 
@@ -22,7 +26,6 @@ function loadMenuTab(tabName){
   else
     tab.attr('loaded', '');
 
-  checkBodyScroll();
   setupFeedHeaders(tab);
   setupWebGLFeeds(tab);
 }
@@ -140,6 +143,7 @@ function checkBodyScroll(){
 }
 
 $(document).ready( function(){
+  windowResize();
   loadMenuTab();
 
   $(window).on('resize', function(){ windowResize() });

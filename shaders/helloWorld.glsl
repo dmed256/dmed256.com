@@ -1,5 +1,5 @@
-precision mediump float;
+void drawFragment(out vec4 fragColor,
+                  in  vec2 fragPos){
 
-void main(){
-  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+  fragColor = vec4(1.0, 1.0, 1.0, 1.0);
 }

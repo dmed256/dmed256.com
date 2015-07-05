@@ -59,7 +59,7 @@ glHandle.prototype.createShader = function(shaderType, shaderSource){
     var log = context.getShaderInfoLog(shader);
 
     if(2 < log.length)
-      console.log("Shader Build Log:\n" + log);
+      console.log('Shader Build Log:\n' + log);
   }
 
   return shader;
@@ -93,7 +93,7 @@ glHandle.prototype.setupProgram = function(vs, fs){
     var log = context.getProgramInfoLog(program);
 
     if(2 < log.length)
-      console.log("Shader Linking Log:\n" + log);
+      console.log('Shader Linking Log:\n' + log);
 
     context.deleteProgram(program);
   }
@@ -141,15 +141,41 @@ function setupCanvas(canvas){
   handle.setupContext(canvas);
 
   // Setup canvas elements
-  var fsFilename = canvas.attr('shader');
+  var fsFilename     = '/shaders/' + canvas.attr('shader') + '.glsl';
+  var fsFileContents = '';
+
+  $.ajax(fsFilename,
+         {dataType: 'text',
+          async   : false,
+          timeout : 1000,
+          success : function(data){ fsFileContents = data; }});
+
   canvas.removeAttr('shader');
 
   canvas.wrap('<center></center>');
   canvas.css('border', 'none');
 
   // Setup shaders
-  var vsSource = 'attribute vec2 p; void main(){ gl_Position = vec4(p.xy, 0.0, 1.0); }';
-  var fsSource = $('.text').load('/shaders/' + fsFilename + '.glsl');
+  var fsHeader = ('precision mediump float;\n'  +
+
+                  'uniform vec3  resolution;\n' +
+                  'uniform float time;\n'       +
+                  'uniform vec2  mouse;\n');
+
+  var fsFooter = ('\n'                                           +
+                  'void main(){'                                 +
+                  '  vec4 fragColor = vec4(0.0, 0.0, 0.0, 1.0);' +
+                  '  drawFragment(fragColor, gl_FragCoord.xy);'  +
+                  '  fragColor.w = 1.0;'                         +
+                  '  gl_FragColor = fragColor;'                  +
+                  '}');
+
+  var vsSource = ('attribute vec2 p;\n'                   +
+                  'void main(){'                          +
+                  '  gl_Position = vec4(p.xy, 0.0, 1.0);' +
+                  '}');
+
+  var fsSource = fsHeader + fsFileContents + fsFooter;
 
   var vs = handle.createVertexShader(vsSource);
   var fs = handle.createFragmentShader(fsSource);
