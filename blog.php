@@ -1,0 +1,8 @@
+<div class="feed"
+     date="July 4"
+     title="Hello World">
+
+  <canvas shader="helloWorld"
+          width="400"
+          height="300"/>
+</div>

@@ -16,12 +16,20 @@ function windowResize(){
   $(body).css('max-height', bodyHeight);
 }
 
-function loadMenuTab(tab){
-  if(tab == "webGL")
-    initGL();
+function loadMenuTab(tabName){
+  if(!isValid(tabName))
+    tabName = $('.tabular.menu .item.active').attr('data-tab');
+
+  var tab = $('div.tab[data-tab="' + tabName + '"]');
+
+  if(isValid(tab.attr('loaded')))
+    return;
+  else
+    tab.attr('loaded', '');
 
   checkBodyScroll();
-  setupFeedHeaders();
+  setupFeedHeaders(tab);
+  setupWebGLFeeds(tab);
 }
 
 function applyMini(window){
@@ -56,8 +64,8 @@ function applyMini(window){
   }
 }
 
-function setupFeedHeaders(){
-  $(".ui.active.tab div.feed").each(function(){
+function setupFeedHeaders(tab){
+  tab.find('.feed').each(function(){
     var this_ = $(this);
 
     if(this_.hasClass('updated'))
@@ -126,7 +134,7 @@ function checkBodyScroll(){
     else
       bottomShadow.css('display', 'block');
 
-    tabContent.removeClass('noScroll');
+    body.removeClass('noScroll');
   }
   else{
     topShadow.css('display', 'none');
@@ -137,8 +145,7 @@ function checkBodyScroll(){
 }
 
 $(document).ready( function(){
-  windowResize();
-  checkBodyScroll();
+  loadMenuTab();
 
   $(window).on('resize', function(){ windowResize() });
 
@@ -152,7 +159,7 @@ $(document).ready( function(){
     context: '#id_bodyContainer',
     history: true,
     path   : '/',
-    onTabLoad: function(tab){ loadMenuTab(tab) }
+    onTabLoad: function(tabName){ loadMenuTab(tabName) }
   });
 
   //---[ Highlight ]----------
