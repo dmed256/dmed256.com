@@ -12,7 +12,7 @@ all: $(siteDir)/index.html $(siteDir)/main.css $(posts)
 $(siteDir)/main.css: $(siteDir)/sass/main.sass
 	sass --sourcemap=none $(siteDir)/sass/main.sass $(siteDir)/main.css
 
-$(siteDir)/posts/%/post.html: $(siteDir)/jade/posts/%/*.jade $(jadePageDeps)
+$(siteDir)/posts/%/post.html: $(siteDir)/jade/posts/%/post.jade $(siteDir)/jade/posts/%/*.jade $(jadePageDeps)
 	jade $< -o $(dir $@)
 
 $(siteDir)/%.html: $(siteDir)/jade/%.jade $(jadePageDeps)
