@@ -1,3 +1,5 @@
+var firstTabLoaded = false;
+
 function windowResize(){
   var window = $(this);
 
@@ -126,7 +128,7 @@ $(document).ready( function(){
   windowResize();
   loadMenuTab();
 
-  $(window).on('resize', function(){ windowResize() });
+  $(window).on('resize', function(){ windowResize(); });
 
   $('.ui.api.accordion').accordion({
     collapsible : false,
@@ -134,11 +136,21 @@ $(document).ready( function(){
     exclusive   : false
   });
 
-  $('#id_bodyHeader .menu .item').tab({
-    context: '#id_bodyContainer',
-    history: true,
-    path   : '/',
-    onTabLoad: function(tabName){ loadMenuTab(tabName) }
+  $('#id_bodyHeader .main.menu .item').tab({
+    context   : '#id_bodyContainer',
+    history   : true,
+    onTabLoad : function(tabName){ loadMenuTab(tabName); }
+  });
+
+  $('#id_bodyHeader .menu:not(.main) .item').tab({
+    context   : '#id_bodyContainer',
+    history   : true,
+    onTabLoad : function(tabName){
+      if(!firstTabLoaded)
+        firstTabLoaded = true;
+      else
+        window.location.replace('/#/' + tabName);
+    }
   });
 
   //---[ Highlight ]----------

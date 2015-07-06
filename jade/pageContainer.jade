@@ -1,5 +1,15 @@
 include tools.jade
 
+block global
+  - var title = 'David S Medina';
+  - var placingTabBody = false;
+
+mixin tab(name)
+  div.ui.tab(data-tab="#{name}")
+    div.tabBodyContainer2
+      div.tabBodyContainer
+        block
+
 doctype html
 html
   head
@@ -41,7 +51,67 @@ html
   body
     #id_bodyWrapper
       #id_bodyWrapper2
-        block body
+
+        div.fixed.body#id_body
+          h2.ui.dividing.header
+            img.ui.rounded.image.avatar(src="/images/profile/david.jpg")
+            | David Medina
+
+            div.contact.info
+              +socialIcons
+
+          div.sidebar
+            img.ui.rounded.image(src="/images/profile/david.jpg", style="width: 200px; border-radius: 20px; margin: auto")
+
+            h4.ui.dividing.header(style="margin-bottom: 10px") About me
+            | I'm really passionate about #[+hlG('coding')] and like to get out of my comfort zone for learning and producing neat stuff
+            br
+            br
+            | I've been lucky to work with an awesome advisor, <a href="http://tcew.github.io/" class="link">Professor Warburton</a>, and folks from national labs (LLNL, ANL)
+
+            h4.ui.dividing.header(style="margin-bottom: 10px") Projects
+
+            | I'm currently focusing on <a href="http://libocca.org" class="link">OCCA</a>
+
+            h4.ui.dividing.header(style="margin-bottom: 10px") Contact Info
+
+            | If anything I do is interesting to you, it would make my day to chat about it!
+
+            div(style="width: 200px; margin: auto; padding: 20px 0 20px 0; text-align: center")
+              +socialIcons
+
+          div.container#id_bodyContainer
+            div#id_bodyHeader
+              div.ui.tabular.menu(class=(placingTabBody ? '' : 'main'))
+                a.item.active(data-tab="blog"    ) Blog
+                a.item(       data-tab="events"  ) Events
+                a.item(       data-tab="upcoming") Upcoming
+                a.item(       data-tab="projects") Projects
+
+            div#id_bodyTopShadow
+            div#id_bodyTLShadowCorner
+
+            if placingTabBody
+              +tab('blog')
+                block tabBody
+              +tab('events')
+                block tabBody
+              +tab('upcoming')
+                block tabBody
+              +tab('projects')
+                block tabBody
+            else
+              +tab('blog')
+                include blog.jade
+              +tab('events')
+                include events.jade
+              +tab('upcoming')
+                include upcoming.jade
+              +tab('projects')
+                include projects.jade
+
+            div#id_bodyBLShadowCorner
+            div#id_bodyBottomShadow
 
     #id_footerWrapper
       #id_footer
