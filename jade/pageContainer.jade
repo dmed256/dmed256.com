@@ -1,0 +1,67 @@
+mixin highlight(str)
+  span.highlight(style="color: #2BB399")
+    | &nbsp#{str}&nbsp
+
+mixin highlight2(str)
+  span.highlight(style="color: #CF8BC7")
+    | &nbsp#{str}&nbsp
+
+mixin socialIcons
+  a.tooltip(href="mailto:#{email}", tooltip="Email")
+    i.large.mail.outline.link.icon
+  a.tooltip(href="https://github.com/dmed256", tooltip="Github")
+    i.large.github.square.link.icon
+  a.tooltip(href="https://twitter.com/dmed256?>", tooltip="Twitter")
+    i.large.twitter.outline.link.icon
+  a.tooltip(href="http://www.linkedin.com/in/dmed256", tooltip="LinkedIn")
+    i.large.linkedin.square.sign.link.icon
+
+doctype html
+html
+  head
+    title #{title}
+
+    link(rel="shortcut icon", href="/images/websiteIcon.ico")
+
+    link(rel="stylesheet", type="text/css", href="/library/semantic/semantic.min.css")
+    link(rel="stylesheet", type="text/css", href="/library/highlight/styles/tomorrow.css")
+
+    link(type="text/css", rel="stylesheet", href="/main.css")
+
+    script.
+      (function () {
+      var
+      eventSupport = ('querySelector' in document && 'addEventListener' in window)
+      jsonSupport  = (typeof JSON !== 'undefined'),
+      jQuery       = (eventSupport && jsonSupport)
+      ? '/library/js//jquery.min.js'
+      : '/library/js//jquery.legacy.min.js'
+      ;
+      document.write('<script src="' + jQuery + '"><\/script>');
+          }());
+
+    script(type="text/javascript", src="/library/js/jquery.min.js")
+    script(type="text/javascript", src="/library/js/jquery.history.min.js")
+    script(type="text/javascript", src="/library/semantic/semantic.min.js")
+    script(type="text/javascript", src="/library/highlight/highlight.pack.js")
+
+    script.
+      hljs.initHighlightingOnLoad();
+
+    script(type="text/javascript", src="/js/tools.js")
+    script(type="text/javascript", src="/js/gl.js")
+    script(type="text/javascript", src="/js/main.js")
+
+  body
+    #id_bodyWrapper
+      #id_bodyWrapper2
+        block body
+
+    #id_footerWrapper
+      #id_footer
+        #id_footerName
+          a.link(href="/") David S Medina
+        #id_footerInfo
+          | &nbsp&nbsp|&nbsp
+          +highlight('Ping me')
+          +socialIcons
