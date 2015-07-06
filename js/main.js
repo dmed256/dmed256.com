@@ -69,36 +69,14 @@ function setupFeedHeaders(tab){
     if(this_.hasClass('updated'))
       return true;
 
-    var date  = this_.attr('date');
-    var title = this_.attr('title');
-
-    this_.removeAttr('date');
-    this_.removeAttr('title');
-
-    this_.addClass("ui raised updated segment");
-
-    if(!isValid(date) &&
-       !isValid(title)){
-
-      return true;
-    }
-
-    this_.prepend('<div class="container">');
-    this_.append('<div class="corner">');
-
-    var container   = this_.find('.container');
     var headerWidth = '0';
 
-    if(isValid(date)){
-      $(container).append('<div class="ui right ribbon label">' + date + '</div>');
+    var container = this_.find('.container');
+    var ribbon    = $(container).find('.ribbon');
+    var header    = $(container).find('.header');
 
-      var ribbon  = $(container).find('.ribbon');
+    if(isValid(ribbon))
       headerWidth = (ribbon.outerWidth() - 20).toString();
-    }
-
-    $(container).append('<h4 class="ui dividing header">' + title + '</h4>');
-
-    var header = $(container).find('.header');
 
     header.css('width'      , 'calc(100% - ' + headerWidth + 'px)');
     header.css('margin-left', headerWidth + 'px');
@@ -167,18 +145,4 @@ $(document).ready( function(){
   });
 
   $('.tabBodyContainer').scroll(checkBodyScroll);
-
-  //---[ Youtube ]------------
-  $('iframe[class="youtube"]').each(function(){
-    var iframe = $(this);
-
-    iframe.wrap('<div class="youtubeContainer2"></div>');
-    iframe.wrap('<div class="youtubeContainer" ></div>');
-
-    iframe.attr('allowfullscreen', '');
-    iframe.attr('frameborder'    , '0');
-
-    var src = iframe.attr('src') + '?autohide=1&controls=0&showinfo=0';
-    iframe.attr('src', src);
-  });
 });

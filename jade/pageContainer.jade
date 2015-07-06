@@ -1,20 +1,4 @@
-mixin highlight(str)
-  span.highlight(style="color: #2BB399")
-    | &nbsp#{str}&nbsp
-
-mixin highlight2(str)
-  span.highlight(style="color: #CF8BC7")
-    | &nbsp#{str}&nbsp
-
-mixin socialIcons
-  a.tooltip(href="mailto:#{email}", tooltip="Email")
-    i.large.mail.outline.link.icon
-  a.tooltip(href="https://github.com/dmed256", tooltip="Github")
-    i.large.github.square.link.icon
-  a.tooltip(href="https://twitter.com/dmed256?>", tooltip="Twitter")
-    i.large.twitter.outline.link.icon
-  a.tooltip(href="http://www.linkedin.com/in/dmed256", tooltip="LinkedIn")
-    i.large.linkedin.square.sign.link.icon
+include tools.jade
 
 doctype html
 html
