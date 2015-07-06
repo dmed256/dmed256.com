@@ -43,16 +43,16 @@ block body
     div.container#id_bodyContainer
       div#id_bodyHeader
         div.ui.tabular.menu
-          a.item.active(data-tab="blog"    ) Blog
-          a.item(       data-tab="events"  ) Events
+          //- a.item.active(data-tab="blog"    ) Blog
+          a.item.active(       data-tab="events"  ) Events
           a.item(       data-tab="upcoming") Upcoming
           a.item(       data-tab="projects") Projects
 
       div#id_bodyTopShadow
       div#id_bodyTLShadowCorner
 
-      +tab('blog')
-        include blog.jade
+      //- +tab('blog')
+      //-   include blog.jade
       +tab('events')
         include events.jade
       +tab('upcoming')
