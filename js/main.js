@@ -69,6 +69,8 @@ function setupFeedHeaders(tab){
     if(this_.hasClass('updated'))
       return true;
 
+    this_.addClass('updated');
+
     var headerWidth = '0';
 
     var container = this_.find('.container');
