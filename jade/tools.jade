@@ -1,4 +1,5 @@
-- var email = 'dmed256@gmail.com?Subject=Hi'
+- var email         = 'dmed256@gmail.com?Subject=Hi'
+- var disqusEnabled = true;
 
 //---[ General Purpose ]----------------
 mixin nl(px)
@@ -63,3 +64,33 @@ mixin youtube(url)
   .youtubeContainer2
     .youtubeContainer
       iframe.youtube(src='#{url}?autohide=1&controls=0&showinfo=0', allowfullscreen, frameborder='0')
+
+mixin disqus(id)
+  if disqusEnabled
+    #disqus_thread
+    script.
+      var disqus_shortname  = 'dsmedina';
+      var disqus_url        = 'http://dsmedina.com/posts/#{id}';
+
+      //  Need HTTPS certificate =/
+      //- function disqus_config(){
+      //-   this.callbacks.onReady = [function(){
+      //-     var iframe = $('iframe[data-disqus-uid]');
+      //-     var footer = iframe.contents().find('#footer');
+
+      //-     console.log(footer);
+
+      //-     footer.remove();
+      //-   }];
+      //- }
+
+      (function(){
+        var dsq = document.createElement('script');
+
+        dsq.type  = 'text/javascript';
+        dsq.async = true;
+        dsq.src   = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+        (document.getElementsByTagName('head')[0] ||
+         document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
