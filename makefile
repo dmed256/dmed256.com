@@ -14,5 +14,5 @@ all: $(siteDir)/index.html $(siteDir)/main.css $(posts)
 $(siteDir)/main.css: $(siteDir)/sass/main.sass
 	sass --sourcemap=none $(siteDir)/sass/main.sass $(siteDir)/main.css
 
-$(siteDir)/%.html: $(siteDir)/jade/%.jade $(wildcard $(<D)/*.jade) $(jadePageDeps)
+$(siteDir)/%.html: $(siteDir)/jade/%.jade $(jadePageDeps)
 	jade $< -o $(dir $@)
