@@ -14,7 +14,7 @@ $(siteDir)/main.css: $(siteDir)/sass/main.sass
 	sass --sourcemap=none $(siteDir)/sass/main.sass $(siteDir)/main.css
 
 $(siteDir)/%.html: $(siteDir)/jade/%.jade
-	jade $< -o $@
+	jade $< -o $(dir $@)
 
 $(siteDir)/index.html: $(jadeFiles)
 	jade $(siteDir)/jade/index.jade -o $(dir $(siteDir))
