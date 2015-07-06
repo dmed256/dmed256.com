@@ -6,24 +6,31 @@ mixin nl(px)
   br(style="line-height: #{px}px")
 
 //---[ Highlight ]----------------------
-mixin hl(str)
-  +hlGreen(str)
+mixin link(text, url)
+  a.link(href='#{url}') #{text}
 
-mixin hl2(str)
-  +hlPurple(str)
+// Red
+mixin hlR(str)
+  span.highlight(style="color: #B95B4E")
+    | #{str}
 
-mixin hl3(str)
-  +hlOrange(str)
-
-mixin hlGreen(str)
+// Green
+mixin hlG(str)
   span.highlight(style="color: #2BB399")
     | #{str}
 
-mixin hlPurple(str)
+// Blue
+mixin hlB(str)
+  span.highlight(style="color: #617EB2")
+    | #{str}
+
+// Purple
+mixin hlP(str)
   span.highlight(style="color: #CF8BC7")
     | #{str}
 
-mixin hlOrange(str)
+// Orange
+mixin hlO(str)
   span.highlight(style="color: #ED9C2D")
     | #{str}
 

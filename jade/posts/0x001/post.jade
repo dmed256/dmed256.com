@@ -6,7 +6,7 @@ mixin tab(name)
       div.tabBodyContainer
         block
 
-extends ./pageContainer.jade
+extends ../../pageContainer.jade
 
 block body
   div.fixed.body#id_body
@@ -49,13 +49,13 @@ block body
       div#id_bodyTLShadowCorner
 
       +tab('blog')
-        include blog.jade
+        | a
       +tab('events')
-        include events.jade
+        | a
       +tab('upcoming')
-        include upcoming.jade
+        | a
       +tab('projects')
-        include projects.jade
+        | a
 
       div#id_bodyBLShadowCorner
       div#id_bodyBottomShadow

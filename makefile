@@ -1,11 +1,20 @@
-dir = /Users/dsm5/gitRepos/site/
+siteDir = /Users/dsm5/gitRepos/site
 
-jadeFiles = $(wildcard $(dir)/jade/*.jade)
+jadeIndex     = $(siteDir)/jade/index.jade
+jadeIndexDeps = $(wildcard $(siteDir)/jade/*.jade)
+jadePosts     = $(wildcard $(siteDir)/jade/posts/*/*.jade)
+jadeFiles     = $(jadeIndexDeps) $(jadePosts)
 
-all: $(dir)/index.html $(dir)/main.css $(jadeFiles)
+posts = $(subst $(siteDir)/jade/,$(siteDir)/,$(jadePosts:.jade=.html))
 
-$(dir)/main.css: $(dir)/sass/main.sass
-	sass --sourcemap=none $(dir)/sass/main.sass $(dir)/main.css
+all: $(siteDir)/index.html $(siteDir)/main.css $(posts) $(jadeFiles)
+	@echo  $(jadeFiles)
 
-$(dir)/index.html: $(jadeFiles)
-	jade $(dir)/jade/index.jade -o $(dir)
+$(siteDir)/main.css: $(siteDir)/sass/main.sass
+	sass --sourcemap=none $(siteDir)/sass/main.sass $(siteDir)/main.css
+
+$(siteDir)/%.html: $(siteDir)/jade/%.jade
+	jade $< -o $@
+
+$(siteDir)/index.html: $(jadeFiles)
+	jade $(siteDir)/jade/index.jade -o $(dir $(siteDir))

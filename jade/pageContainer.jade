@@ -5,6 +5,8 @@ html
   head
     title #{title}
 
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+
     link(rel="shortcut icon", href="/images/websiteIcon.ico")
 
     link(rel="stylesheet", type="text/css", href="/library/semantic/semantic.min.css")
@@ -46,5 +48,5 @@ html
         #id_footerName
           a.link(href="/") David S Medina
         #id_footerInfo
-          | &nbsp&nbsp|&nbsp #[+hl('Ping me')]
+          | &nbsp&nbsp|&nbsp #[+hlG('Ping me')]
           +socialIcons
