@@ -1,4 +1,4 @@
-include tools.jade
+include tools
 
 block global
   - var title = 'David S Medina';
@@ -93,22 +93,22 @@ html
 
             if placingTabBody
               +tab('blog')
-                block tabBody
+                +tabBody()
               +tab('events')
-                block tabBody
+                +tabBody()
               +tab('upcoming')
-                block tabBody
+                +tabBody()
               +tab('projects')
-                block tabBody
+                +tabBody()
             else
               +tab('blog')
-                include blog.jade
+                include blog
               +tab('events')
-                include events.jade
+                include events
               +tab('upcoming')
-                include upcoming.jade
+                include upcoming
               +tab('projects')
-                include projects.jade
+                include projects
 
             div#id_bodyBLShadowCorner
             div#id_bodyBottomShadow
