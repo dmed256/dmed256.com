@@ -1,13 +1,38 @@
 - var email = 'dmed256@gmail.com?Subject=Hi'
 
-mixin highlight(str)
+//---[ Highlight ]----------------------
+mixin hl(str)
+  +hlGreen(str)
+
+mixin hl2(str)
+  +hlPurple(str)
+
+mixin hl3(str)
+  +hlOrange(str)
+
+mixin hlGreen(str)
   span.highlight(style="color: #2BB399")
     | #{str}
 
-mixin highlight2(str)
+mixin hlPurple(str)
   span.highlight(style="color: #CF8BC7")
     | #{str}
 
+mixin hlOrange(str)
+  span.highlight(style="color: #ED9C2D")
+    | #{str}
+
+
+//---[ Code ]---------------------------
+mixin code(str)
+  code.cpp.api.inline.code.block(style="color: rgb(81, 134, 174)")
+    | #{str}
+
+mixin codeHL(str)
+  code.cpp.api.inline.code.block.boxed(style="color: rgb(81, 134, 174)")
+    | #{str}
+
+//---[ Auto-generation ]----------------
 mixin socialIcons
   a.tooltip(href="mailto:#{email}", tooltip="Email")
     i.large.mail.outline.link.icon
