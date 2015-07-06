@@ -8,11 +8,12 @@ jadeFiles    = $(jadePageDeps) $(jadePostDeps)
 posts = $(subst $(siteDir)/jade/,$(siteDir)/,$(jadePosts:.jade=.html))
 
 all: $(siteDir)/index.html $(siteDir)/main.css $(posts)
-	@echo $(posts) $(jadeFiles)
-	@echo $(jadePostDeps)
 
 $(siteDir)/main.css: $(siteDir)/sass/main.sass
 	sass --sourcemap=none $(siteDir)/sass/main.sass $(siteDir)/main.css
+
+$(siteDir)/posts/%/post.html: $(siteDir)/jade/posts/%/*.jade $(jadePageDeps)
+	jade $< -o $(dir $@)
 
 $(siteDir)/%.html: $(siteDir)/jade/%.jade $(jadePageDeps)
 	jade $< -o $(dir $@)
