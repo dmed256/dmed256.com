@@ -70,7 +70,7 @@ mixin feed(info)
 mixin youtube(url)
   .youtubeContainer2
     .youtubeContainer
-      iframe.youtube(src='#{url}?autohide=1&controls=0&showinfo=0', allowfullscreen, frameborder='0')
+      iframe.youtube(src='#{url}?autohide=1&controls=1&showinfo=0', allowfullscreen, frameborder='0')
 
 mixin disqus(id)
   if disqusEnabled

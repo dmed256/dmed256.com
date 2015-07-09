@@ -37,9 +37,7 @@ html.mini, body.mini {
   min-width: 0px; }
 
 #id_footer {
-  margin: 0px auto; }
-
-#id_footer {
+  margin: 0px auto;
   border-top-style: solid;
   border-top-color: rgba(0, 0, 0, 0.1);
   border-top-width: 1px;
