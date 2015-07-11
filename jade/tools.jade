@@ -9,6 +9,9 @@ mixin nl(px)
 mixin link(text, url)
   a.link(href='#{url}') #{text}
 
+mixin OCCA()
+  a.link(href='http://libocca.org/') OCCA
+
 // Red
 mixin hlR(str)
   span.highlight(style="color: #B95B4E")
@@ -72,27 +75,44 @@ mixin youtube(url)
     .youtubeContainer
       iframe.youtube(src='#{url}?autohide=1&controls=1&showinfo=0', allowfullscreen, frameborder='0')
 
+mixin comments(id)
+  div
+
+mixin googleP(id)
+  br
+  br
+  script(src="https://apis.google.com/js/plusone.js")
+  #comments
+  script.
+    gapi.comments.render('comments', {
+                         href : window.location,
+                         width: '100',
+                         first_party_property: 'BLOGGER',
+                         view_type: 'FILTERED_POSTMOD'});
+
 mixin disqus(id)
   if disqusEnabled
+    br
+    br
     #disqus_thread
     script.
       var disqus_shortname  = 'dsmedina';
       var disqus_url        = 'http://dsmedina.com/posts/#{id}';
 
       //  Need HTTPS certificate =/
-      //- function disqus_config(){
-      //-   this.callbacks.onReady = [function(){
-      //-     var iframe = $('iframe[data-disqus-uid]');
-      //-     var footer = iframe.contents().find('#footer');
+      function disqus_config(){
+        this.callbacks.onReady = [function(){
+          var iframe = $('iframe[data-disqus-uid]');
+          var footer = iframe.contents().find('#footer');
 
-      //-     console.log(footer);
+          console.log(footer);
 
-      //-     footer.remove();
-      //-   }];
-      //- }
+          footer.remove();
+        }];
+      }
 
       (function(){
-        var dsq = document.createElement('script');
+        var dsq  = document.createElement('script');
 
         dsq.type  = 'text/javascript';
         dsq.async = true;

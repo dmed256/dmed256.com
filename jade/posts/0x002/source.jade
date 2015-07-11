@@ -1,0 +1,21 @@
+mixin tabFeed()
+  +feed({color: 'orange', date: 'July 10', title: '0x002: Python Modules in C'})
+    block
+
+mixin miniTabBody_()
+  |  After making the C-API for #[+OCCA()], it became easier to create #[+OCCA()] front-ends in different programming languages.
+  |  I wanted to let users try out #[+OCCA()] using their preferred programming language and not be constrained to C++ just because I like it ƪ(‾ε‾“)ʃ.
+  |  The Python people (in my opinion) seemed to have done an awesome job allowing C shared libraries to be used as modules.
+  |  Although I Googled around for doing this, it was a bit spread all over and I thought it might be useful to simplify the processes of making C-based Python modules
+
+mixin miniTabBody()
+  +tabFeed()
+    +miniTabBody_()
+    br
+    +link('Read More . . .', '/posts/0x002/post')
+
+mixin tabBody
+  +tabFeed()
+    +miniTabBody_()
+
+    +comments('0x002')

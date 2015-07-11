@@ -15,5 +15,5 @@ $(siteDir)/main.css: $(siteDir)/sass/main.sass
 $(siteDir)/posts/%/post.html: $(siteDir)/jade/posts/%/post.jade $(siteDir)/jade/posts/%/*.jade $(jadePageDeps)
 	jade $< -o $(dir $@)
 
-$(siteDir)/%.html: $(siteDir)/jade/%.jade $(jadePageDeps)
+$(siteDir)/%.html: $(siteDir)/jade/%.jade $(jadeFiles)
 	jade $< -o $(dir $@)

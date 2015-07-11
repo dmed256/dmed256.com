@@ -8,7 +8,13 @@ mixin tab(name)
   div.ui.tab(data-tab="#{name}")
     div.tabBodyContainer2
       div.tabBodyContainer
-        block
+        if block
+          block
+
+mixin placeTab(tag, tabTag)
+  +tab(tabTag)
+    if tag == tabTag
+      +tabBody()
 
 doctype html
 html
@@ -71,7 +77,7 @@ html
 
             h4.ui.dividing.header(style="margin-bottom: 10px") Projects
 
-            | I'm currently focusing on <a href="http://libocca.org" class="link">OCCA</a>
+            | I'm currently focusing on #[+OCCA()]
 
             h4.ui.dividing.header(style="margin-bottom: 10px") Contact Info
 
@@ -92,14 +98,10 @@ html
             div#id_bodyTLShadowCorner
 
             if placingTabBody
-              +tab('blog')
-                +tabBody()
-              +tab('events')
-                +tabBody()
-              +tab('upcoming')
-                +tabBody()
-              +tab('projects')
-                +tabBody()
+              +placeTab(placingTabBody, 'blog')
+              +placeTab(placingTabBody, 'events')
+              +placeTab(placingTabBody, 'upcoming')
+              +placeTab(placingTabBody, 'projects')
             else
               +tab('blog')
                 include blog
