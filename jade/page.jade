@@ -64,7 +64,11 @@ html
         div.fixed.body#id_body
           h2.ui.dividing.header
             img.ui.rounded.image.avatar(src="/images/profile/david.jpg?v=1")
-            | David Medina
+            | David Medina &nbsp; | &nbsp;
+
+            div(style="position: relative; display: inline-block; height: 30px; width: 220px; font-size: 20px;")
+              div(style="position: absolute; top: 2px;")
+                | #[+hlG('Vacation')] &nbsp; #[+hlG('(•̀ᴗ•́)و ̑')]
 
             div.contact.info
               +socialIcons

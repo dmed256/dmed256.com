@@ -12,29 +12,35 @@ mixin link(text, url)
 mixin OCCA()
   a.link(href='http://libocca.org/') OCCA
 
+- var redHL    = '#B95B4E';
+- var greenHL  = '#2BB399';
+- var blueHL   = '#617EB2';
+- var purpleHL = '#CF8BC7';
+- var orangeHL = '#ED9C2D';
+
 // Red
 mixin hlR(str)
-  span.highlight(style="color: #B95B4E")
+  span.highlight(style="color: #{redHL}")
     | #{str}
 
 // Green
 mixin hlG(str)
-  span.highlight(style="color: #2BB399")
+  span.highlight(style="color: #{greenHL}")
     | #{str}
 
 // Blue
 mixin hlB(str)
-  span.highlight(style="color: #617EB2")
+  span.highlight(style="color: #{blueHL}")
     | #{str}
 
 // Purple
 mixin hlP(str)
-  span.highlight(style="color: #CF8BC7")
+  span.highlight(style="color: #{purpleHL}")
     | #{str}
 
 // Orange
 mixin hlO(str)
-  span.highlight(style="color: #ED9C2D")
+  span.highlight(style="color: #{orangeHL}")
     | #{str}
 
 //---[ Code ]---------------------------
