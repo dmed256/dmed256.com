@@ -42,35 +42,12 @@ function loadMenuTab(tabName){
 }
 
 function applyMini(window){
-  var tags = ['html',
+  var html_ = $('html');
 
-              'body',
-              '#id_body.fixed.body',
-              '#id_bodyContainer',
-
-              '#id_body .header',
-
-              '.body .sidebar',
-
-              '#id_bodyHeader',
-              '#id_bodyFooter',
-
-              '#id_footerWrapper',
-              '#id_footerName',
-              '#id_footerInfo'];
-
-  var tagCount = tags.length;
-
-  if(window.width() < 1024){
-    for(var i = 0; i < tagCount; ++i){
-      $(tags[i]).addClass('mini');
-    }
-  }
-  else {
-    for(var i = 0; i < tagCount; ++i){
-      $(tags[i]).removeClass('mini');
-    }
-  }
+  if(window.width() < 1024)
+    html_.addClass('mini');
+  else
+    html_.removeClass('mini');
 }
 
 function setupFeedHeaders(tab){

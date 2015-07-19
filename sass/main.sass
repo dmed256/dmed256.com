@@ -61,14 +61,17 @@ html, body
 html
   overflow: auto !important
 
+  &.mini
+    min-width: $miniWidth
+
 body
   margin : 0px
   padding: 0px
 
   background: none !important
 
-html.mini, body.mini
-  min-width: $miniWidth
+  html.mini &
+    min-width: $miniWidth
 
 #id_bodyWrapper
   width     : 100%
@@ -88,10 +91,8 @@ html.mini, body.mini
 #id_footerWrapper
   min-width: $minWidth
 
-
-#id_footerWrapper.mini
-  min-width: 0px
-
+  html.mini &
+    min-width: 0px
 
 #id_footer
   margin: 0px auto
@@ -116,15 +117,16 @@ html.mini, body.mini
 
   min-width: $footerContentWidth
 
+  html.mini &
+    text-align: center
+
+
 #id_footerInfo
   @extend #id_footerName
   text-align: left
 
-#id_footerName.mini
-  text-align: center
-
-#id_footerInfo.mini
-  display: none
+  html.mini &
+    display: none
 //======================================
 
 //---[ Body ]---------------------------
@@ -156,33 +158,35 @@ body
 
   padding: 30px 20px 0px 20px
 
-#id_body.mini.fixed.body
-  min-width: 0px
-  max-width: 100%
+  html.mini &
+    min-width: 0px
+    max-width: 100%
 
-#id_body .header .avatar,
+#id_body .header img.avatar
+  display: none
+
+  html.mini &
+    float: left
+
+    display: inline-block
+
+    height: 34px
+    width : 34px
+
+    border-radius: 3px
+    margin-right : 15px
+
 #id_body .header .contact.info
   display: none
 
-#id_body .mini.header img.avatar
-  float: left
+  html.mini &
+    float: right
 
-  display: inline-block
+    display: inline-block
 
-  height: 34px
-  width : 34px
-
-  border-radius: 3px
-  margin-right : 15px
-
-#id_body .mini.header .contact.info
-  float: right
-
-  display: inline-block
-
-  height     : 40px
-  line-height: 40px
-  font-size  : 18px
+    height     : 40px
+    line-height: 40px
+    font-size  : 18px
 
 .body .sidebar
   float: left
@@ -193,8 +197,8 @@ body
   font-size  : 14px
   line-height: 20px
 
-.body .mini.sidebar
-  display: none
+  html.mini &
+    display: none
 
 #id_bodyContainer
   position: relative
@@ -203,17 +207,13 @@ body
   margin: 0px 20px 20px 20px
 
   min-width: 500px
-  width: calc(100% - 290px)
-  height: 780px
+  width    : calc(100% - 290px)
+  height   : 780px
 
-#id_bodyContainer.mini
-  position: relative
+  html.mini &
+    margin: 0px 0px 20px 0px
 
-  margin: 0px 0px 20px 0px
-
-  min-width: 500px
-  width : 100%
-  height: 780px
+    width: 100%
 
 #id_bodyHeader
   position: absolute
