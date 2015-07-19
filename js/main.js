@@ -1,8 +1,15 @@
 var firstTabLoaded = false;
+var endOfBlog      = $('#id_endOfBlog');
 
-function windowResize(){
-  var window = $(this);
+function appendToEndOfBlog(content){
+  if(!isValid(endOfBlog))
+    return;
 
+  endOfBlog.replaceWith(content + ' <div id="id_endOfBlog"></div>');
+  endOfBlog = $('#id_endOfBlog');
+}
+
+function windowResize(window){
   applyMini(window);
 
   var bodyHeight = (window.height() - 90).toString();
@@ -13,6 +20,8 @@ function windowResize(){
   $(body).css('max-height', bodyHeight);
 
   checkBodyScroll();
+
+  // appendToEndOfBlog('<p> Hi </p>');
 }
 
 function loadMenuTab(tabName){
@@ -125,10 +134,12 @@ function checkBodyScroll(){
 }
 
 $(document).ready( function(){
-  windowResize();
+  var window_ = $(window);
+
+  windowResize(window_);
   loadMenuTab();
 
-  $(window).on('resize', function(){ windowResize(); });
+  window_.on('resize', function(){ windowResize($(this)); });
 
   $('.ui.api.accordion').accordion({
     collapsible : false,
