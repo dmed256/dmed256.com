@@ -23,12 +23,12 @@ html
 
     meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
 
-    link(rel="shortcut icon", href="/images/websiteIcon.ico")
+    link(rel="shortcut icon", href="/images/websiteIcon.ico?v=1")
 
     link(rel="stylesheet", type="text/css", href="/library/semantic/semantic.min.css")
     link(rel="stylesheet", type="text/css", href="/library/highlight/styles/tomorrow.css")
 
-    link(type="text/css", rel="stylesheet", href="/main.css")
+    link(type="text/css", rel="stylesheet", href="/main.css?v=1")
 
     script.
       (function () {
@@ -50,9 +50,9 @@ html
     script.
       hljs.initHighlightingOnLoad();
 
-    script(type="text/javascript", src="/js/tools.js")
-    script(type="text/javascript", src="/js/gl.js")
-    script(type="text/javascript", src="/js/main.js")
+    script(type="text/javascript", src="/js/tools.js?v=1")
+    script(type="text/javascript", src="/js/gl.js?v=1")
+    script(type="text/javascript", src="/js/main.js?v=1")
 
     script.
       applyMini($(window));
@@ -63,14 +63,14 @@ html
 
         div.fixed.body#id_body
           h2.ui.dividing.header
-            img.ui.rounded.image.avatar(src="/images/profile/david.jpg")
+            img.ui.rounded.image.avatar(src="/images/profile/david.jpg?v=1")
             | David Medina
 
             div.contact.info
               +socialIcons
 
           div.sidebar
-            img.ui.rounded.image(src="/images/profile/david.jpg", style="width: 200px; border-radius: 20px; margin: auto")
+            img.ui.rounded.image(src="/images/profile/david.jpg?v=1", style="width: 200px; border-radius: 20px; margin: auto")
 
             h4.ui.dividing.header(style="margin-bottom: 10px") About me
             | I'm really passionate about #[+hlG('coding')] and like to get out of my comfort zone for learning and producing neat stuff
