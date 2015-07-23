@@ -125,15 +125,15 @@ $(document).ready( function(){
   });
 
   $('#id_bodyHeader .main.menu .item').tab({
-    context   : '#id_bodyContainer',
-    history   : true,
-    onTabLoad : function(tabName){ loadMenuTab(tabName); }
+    context : '#id_bodyContainer',
+    history : true,
+    onLoad  : function(tabName){ loadMenuTab(tabName); }
   });
 
   $('#id_bodyHeader .menu:not(.main) .item').tab({
-    context   : '#id_bodyContainer',
-    history   : true,
-    onTabLoad : function(tabName){
+    context : '#id_bodyContainer',
+    history : true,
+    onLoad  : function(tabName){
       if(!firstTabLoaded)
         firstTabLoaded = true;
       else

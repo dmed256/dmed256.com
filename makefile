@@ -5,7 +5,7 @@ jPostSources = $(wildcard $(siteDir)/jade/posts/*/source.jade)
 jPosts       = $(subst /source.jade,/post.jade,$(jPostSources))
 posts        = $(subst $(siteDir)/jade/,$(siteDir)/,$(jPosts:.jade=.html))
 
-all: $(siteDir)/index.html $(siteDir)/main.css $(posts)
+all: $(siteDir)/index.html $(siteDir)/404.html $(siteDir)/main.css $(posts)
 
 $(siteDir)/main.css: $(siteDir)/sass/main.sass
 	sass --sourcemap=none $(siteDir)/sass/main.sass $(siteDir)/main.css

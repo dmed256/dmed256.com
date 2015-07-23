@@ -11,3 +11,5 @@ RewriteRule ^(.+?)/?$ /$1.html [L]
 # To externally redirect /dir/foo.html to /dir/foo
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
 RewriteRule ^ %1 [R,L,NC]
+
+ErrorDocument 404 /404.html

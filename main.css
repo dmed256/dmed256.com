@@ -8,14 +8,14 @@ html, body {
 html {
   overflow: auto !important; }
   html.mini {
-    min-width: 700px; }
+    min-width: 740px; }
 
 body {
   margin: 0px;
   padding: 0px;
   background: none !important; }
   html.mini body {
-    min-width: 700px; }
+    min-width: 740px; }
 
 #id_bodyWrapper {
   width: 100%;
