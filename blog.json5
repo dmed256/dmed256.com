@@ -1,0 +1,30 @@
+[
+  {
+    filename: '2018/intro-to-jss',
+    publishDate: '2018-10-10',
+    readingTime: '10 min',
+    tags: [
+      'web',
+      'react',
+      'material ui',
+    ],
+  },
+  {
+    filename: '2018/intro-to-bash',
+    publishDate: '2018-10-01',
+    readingTime: '25 min',
+    tags: [
+      'bash',
+      'development',
+    ],
+  },
+  {
+    filename: '2018/customizing-emacs',
+    publishDate: '2018-09-27',
+    readingTime: '20 min',
+    tags: [
+      'emacs',
+      'development',
+    ],
+  },
+]
