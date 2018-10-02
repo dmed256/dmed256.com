@@ -6,11 +6,7 @@
 From high performance computing applications running on thousands of hybrid architecture nodes,
 to building web apps with great user experiences.
 
-::: html html: '<div class="mini-br"></div>' :::
-
 I'm lucky to be in an interesting combination working in the finance industry at [Two Sigma](https://www.twosigma.com/) and being a contractor with an [exascale initiative](http://ceed.exascaleproject.org).
-
-::: html html: '<div class="mini-br"></div>' :::
 
 The influx of projects seen from both domains along with personal sideprojects require me to work with a high variety of technologies, frameworks, libraries, and languages.
 
