@@ -3,7 +3,6 @@
     filename: '/2018/intro-to-jss',
     title: 'Intro to JSS',
     publishDate: null, // '2018-10-10',
-    readingTime: '10 min',
     tags: [
       'web',
       'react',
@@ -14,7 +13,6 @@
     filename: '/2018/intro-to-bash',
     title: 'Intro to Bash',
     publishDate: null, // '2018-10-01',
-    readingTime: '25 min',
     tags: [
       'bash',
       'development',
@@ -23,8 +21,7 @@
   {
     filename: '/2018/customizing-emacs',
     title: 'Customizing Emacs',
-    publishDate: null, // '2018-09-27',
-    readingTime: '20 min',
+    publishDate: null, // '2018-10-04',
     tags: [
       'emacs',
       'development',
