@@ -15,9 +15,20 @@ The influx of projects seen from both domains along with personal sideprojects r
 :::: resume-section title: 'Work Experience'
 
 ::::: resume-subsection {
+  title: 'Senior Software Engineer',
+  start: 'April 2019',
+  end: 'Present',
+  location: 'Harvest Exchange Corp',
+}
+
+???
+
+:::::
+
+::::: resume-subsection {
   title: 'Software Engineer',
   start: 'August 2015',
-  end: 'Present',
+  end: 'April 2019',
   location: 'Two Sigma',
 }
 
