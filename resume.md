@@ -26,17 +26,6 @@ The influx of projects seen from both domains along with personal sideprojects r
 :::::
 
 ::::: resume-subsection {
-  title: 'Software Engineer',
-  start: 'August 2015',
-  end: 'April 2019',
-  location: 'Two Sigma',
-}
-
-???
-
-:::::
-
-::::: resume-subsection {
   title: 'Contractor',
   start: 'December 2016',
   end: 'Present',
@@ -46,6 +35,17 @@ The influx of projects seen from both domains along with personal sideprojects r
 - Core developer of [OCCA](https://libocca.org)
 - Implemented an OCCA-backed solution in [MFEM](http://mfem.org), providing a **GPU** solution
 - Developed **GPU**-enabled methods for high-order finite element implementations
+
+:::::
+
+::::: resume-subsection {
+  title: 'Software Engineer',
+  start: 'August 2015',
+  end: 'April 2019',
+  location: 'Two Sigma',
+}
+
+???
 
 :::::
 
