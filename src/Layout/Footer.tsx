@@ -11,7 +11,7 @@ import {
   LinkedinIcon,
   TwitterIcon,
 } from '../icons';
-import constants from './constants';
+import constants from '../common/constants';
 
 
 const useStyles = makeStyles({

@@ -23,6 +23,9 @@ const theme = createMuiTheme({
       main: '#f9a753',
     },
   },
+  typography: {
+    fontFamily: 'Source Sans Pro, Helvetica Neue, Arial, sans-serif',
+  },
   overrides: {
     MuiTooltip: {
       popper: {
@@ -31,6 +34,17 @@ const theme = createMuiTheme({
       tooltip: {
         padding: '0.5em 1em',
         fontSize: 13,
+      },
+    },
+    MuiTypography: {
+      h4: {
+        fontWeight: 600,
+        marginBottom: 50,
+      },
+      body1: {
+        lineHeight: 1.6,
+        wordSpacing: '.05em',
+        margin: '1em 0',
       },
     },
   },
@@ -53,7 +67,7 @@ const Theme = ({
 }: Props) => (
   <React.Fragment>
     <StylesProvider jss={jss}>
-      <ThemeProvider theme={theme}>>
+      <ThemeProvider theme={theme}>
         <GlobalCSS />
         {children}
       </ThemeProvider>

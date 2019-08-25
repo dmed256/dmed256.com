@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 import HeaderLink from './HeaderLink';
-import constants from './constants';
+import constants from '../common/constants';
 
 
 const useStyles = makeStyles((theme: Theme) => ({

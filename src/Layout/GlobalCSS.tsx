@@ -3,7 +3,7 @@ import {
   Theme,
 } from '@material-ui/core/styles';
 
-import constants from './constants';
+import constants from '../common/constants';
 
 
 const GlobalCSS = withStyles((theme: Theme) => ({
@@ -12,6 +12,7 @@ const GlobalCSS = withStyles((theme: Theme) => ({
       width: '100vw',
       height: '100vh',
       margin: 0,
+      color: '#34495e',
       fontFamily: 'Source Sans Pro, Helvetica Neue, Arial, sans-serif',
       backgroundColor: theme.palette.grey[100],
       [constants.media.mobile]: {
