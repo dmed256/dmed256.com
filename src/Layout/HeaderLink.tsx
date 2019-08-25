@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
+import constants from './constants';
+
 
 const useStyles = makeStyles({
   root: {
@@ -24,7 +26,7 @@ const useStyles = makeStyles({
         boxShadow: '0 5px 20px 0 rgba(0, 0, 0, 0.15) !important',
       },
     },
-    '@media(max-width: 700px)': {
+    [constants.media.mobile]: {
       padding: '1em',
     },
   },

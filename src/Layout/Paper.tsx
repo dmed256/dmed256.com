@@ -1,24 +1,26 @@
 import React from 'react';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
+import constants from './constants';
+
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     position: 'relative',
-    maxWidth: 1100,
-    width: '93%',
-    padding: '75px 0',
-    margin: '-75px auto 100px',
+    width: constants.width,
+    maxWidth: constants.maxWidth,
+    padding: `${constants.headerGap}px 0`,
+    margin: `-${constants.headerGap}px auto ${constants.headerHeight}px`,
     backgroundColor: theme.palette.background.paper,
     boxShadow: '0 7px 15px 0 rgba(1, 1, 1, 0.25)',
-    '@media(max-width: 700px)': {
+    [constants.media.mobile]: {
       width: '100%',
       margin: 0,
       padding: '2em 0',
       boxShadow: 'none',
       overflow: 'auto',
     },
-    '@media print': {
+    [constants.media.print]: {
       position: 'absolute',
       left: 0,
       top: 0,
@@ -30,10 +32,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   content: {
     padding: '0 5em',
-    '@media(max-width: 700px)': {
+    [constants.media.mobile]: {
       padding: '0 2em',
     },
-    '@media print': {
+    [constants.media.print]: {
       padding: 0,
     },
   },

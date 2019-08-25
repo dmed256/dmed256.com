@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 import HeaderLink from './HeaderLink';
+import constants from './constants';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -10,22 +11,22 @@ const useStyles = makeStyles((theme: Theme) => ({
     left: 0,
     top: 0,
     width: '100%',
-    height: 175,
+    height: constants.headerHeight + constants.headerGap,
     zIndex: 1,
     backgroundColor: theme.palette.primary.main,
-    '@media(max-width: 700px)': {
-      height: 65,
+    [constants.media.mobile]: {
+      height: constants.mobile.headerHeight,
     },
-    '@media print': {
+    [constants.media.print]: {
       display: 'none',
     },
   },
   header: {
     display: 'flex',
-    height: 100,
+    height: constants.headerHeight,
     alignItems: 'center',
-    maxWidth: 1100,
-    width: '93%',
+    width: constants.width,
+    maxWidth: constants.maxWidth,
     margin: 'auto',
     letterSpacing: 2,
     '& > a, & > div': {
@@ -34,8 +35,8 @@ const useStyles = makeStyles((theme: Theme) => ({
       textDecoration: 'none !important',
       fontWeight: '300 !important' as '300',
     },
-    '@media(max-width: 700px)': {
-      height: 65,
+    [constants.media.mobile]: {
+      height: constants.mobile.headerHeight,
     },
   },
   name: {

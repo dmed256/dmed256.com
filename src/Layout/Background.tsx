@@ -1,15 +1,17 @@
 import React from 'react';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
+import constants from './constants';
+
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     flex: 1,
-    marginTop: 175,
+    marginTop: constants.headerHeight + constants.headerGap,
     backgroundColor: theme.palette.grey[100],
     zIndex: 2,
-    '@media(max-width: 700px)': {
-      marginTop: 65,
+    [constants.media.mobile]: {
+      marginTop: constants.mobile.headerHeight,
       backgroundColor: theme.palette.background.paper,
     },
   },

@@ -11,6 +11,8 @@ import {
 import { create as jssCreate } from 'jss';
 import jssExtendPlugin from 'jss-plugin-extend';
 
+import constants from './constants';
+
 
 // Material UI Theme
 const theme = createMuiTheme({
@@ -33,7 +35,7 @@ const GlobalCSS = withStyles({
       margin: 0,
       fontFamily: 'Source Sans Pro, Helvetica Neue, Arial, sans-serif',
       backgroundColor: theme.palette.grey[100],
-      '@media(max-width: 700px)': {
+      [constants.media.mobile]: {
         fontSize: 12,
         backgroundColor: theme.palette.background.paper,
       },
