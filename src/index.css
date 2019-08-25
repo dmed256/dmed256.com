@@ -215,14 +215,6 @@ code .token.number {
 
 /*---[ Print ]------------------------*/
 @media print {
-    html {
-        background-color: white;
-    }
-
-    html, body {
-        margin: 0;
-    }
-
     pre, blockquote {
         break-inside: avoid;
     }

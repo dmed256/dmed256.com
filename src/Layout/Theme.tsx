@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   createMuiTheme,
-  withStyles,
 } from '@material-ui/core/styles';
 import {
   jssPreset,
@@ -11,7 +10,7 @@ import {
 import { create as jssCreate } from 'jss';
 import jssExtendPlugin from 'jss-plugin-extend';
 
-import constants from './constants';
+import GlobalCSS from './GlobalCSS';
 
 
 // Material UI Theme
@@ -25,30 +24,6 @@ const theme = createMuiTheme({
     },
   },
 });
-
-// CSS Applied to global DOM nodes
-const GlobalCSS = withStyles({
-  '@global': {
-    'html, body, #root': {
-      width: '100vw',
-      height: '100vh',
-      margin: 0,
-      fontFamily: 'Source Sans Pro, Helvetica Neue, Arial, sans-serif',
-      backgroundColor: theme.palette.grey[100],
-      [constants.media.mobile]: {
-        fontSize: 12,
-        backgroundColor: theme.palette.background.paper,
-      },
-    },
-    '#root': {
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    ':focus': {
-      outline: 'none',
-    },
-  },
-})(() => null);
 
 // JSS Creation
 const jss = jssCreate({
