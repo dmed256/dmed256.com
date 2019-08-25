@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.grey[600],
     transition: 'color 500ms !important',
     transitionDelay: '100ms !important',
-    '&:hover': {
+    '&:hover, .glow:hover > &': {
       color: `var(${GLOW_COLOR_VAR}, ${theme.palette.primary.main})`,
       transition: 'color 300ms',
       transitionDelay: '0ms !important',

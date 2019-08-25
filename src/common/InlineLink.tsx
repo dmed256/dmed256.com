@@ -17,7 +17,12 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontWeight: 600,
       textDecoration: 'none',
     },
+    "&$normal": {
+      color: 'inherit',
+      fontWeight: 300,
+    },
     '&:hover': {
+      color: theme.palette.primary.main,
       textDecoration: 'underline',
       textDecorationColor: `${theme.palette.secondary.main}88`,
     },
@@ -27,11 +32,17 @@ const useStyles = makeStyles((theme: Theme) => ({
       textDecoration: 'none !important',
     },
   },
+  normal: {},
 }));
 
-type Props = Omit<ExternalLinkProps, 'classes'> & Partial<ExternalLinkStyles>;
+type Props = Omit<ExternalLinkProps, 'classes'> & Partial<ExternalLinkStyles> & {
+  variant?: 'normal' | 'bold',
+}
 
-const InlineLink = (props: Props) => {
+const InlineLink = ({
+  variant,
+  ...props
+}: Props) => {
   const classes = useStyles();
   const propClasses: any = (props.classes || {});
 
@@ -41,7 +52,9 @@ const InlineLink = (props: Props) => {
         ...props,
         classes: {
           ...propClasses,
-          root: classnames(propClasses.root, classes.root),
+          root: classnames(propClasses.root,
+                           classes.root,
+                           variant === 'normal' && classes.normal),
         },
       }}
     />

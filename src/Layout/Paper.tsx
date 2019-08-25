@@ -49,7 +49,6 @@ const Paper = ({
   children,
 }: Props) => {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <div className={classes.content}>

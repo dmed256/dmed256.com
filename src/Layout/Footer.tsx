@@ -41,19 +41,19 @@ const Footer = () => {
         <ExternalLink href={social.github.link}>
           <GlowySvgIcon
             Icon={GithubIcon}
-            glowColor="#1b1f23"
+            glowColor={social.github.color}
           />
         </ExternalLink>
         <ExternalLink href={social.linkedin.link}>
           <GlowySvgIcon
             Icon={LinkedinIcon}
-            glowColor="#2478b5"
+            glowColor={social.linkedin.color}
           />
         </ExternalLink>
         <ExternalLink href={social.twitter.link}>
           <GlowySvgIcon
             Icon={TwitterIcon}
-            glowColor="#34a1f2"
+            glowColor={social.twitter.color}
           />
         </ExternalLink>
       </div>
