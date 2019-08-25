@@ -1,0 +1,248 @@
+:root {
+    --theme-primary-color: #2991b9;
+    --theme-secondary-color: #f9a753;
+    --theme-grey: #34495e;
+    --theme-disable: #dadada;
+    --theme-bg: #e7ecf0;
+    --theme-em: #7f8c8d;
+    --theme-strong: #19a98a;
+}
+
+/*---[ Core Types ]-------------------*/
+a, a:visited {
+    cursor: pointer;
+    color: var(--theme-primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #F7D096;
+}
+
+hr {
+    height: 1px;
+    width: 98%;
+    margin: 18px 1%;
+    background-color: var(--theme-disable);
+    border: none;
+}
+
+blockquote {
+    margin: 0 10px;
+    padding-left: 10px;
+    border-left: 1px solid var(--theme-disable);
+    font-weight: 300;
+}
+
+em {
+    color: var(--theme-em);
+}
+
+strong {
+    color: var(--theme-strong);
+    font-weight: 400;
+}
+
+em > strong {
+    text-decoration: underline;
+}
+
+li > p {
+    margin: 0;
+}
+
+p {
+    line-height: 1.6em;
+    word-spacing: .05em;
+    margin: 1em 0;
+}
+
+p > code {
+    display: inline;
+    margin: 0 0.1em;
+    padding: 0;
+    color: var(--theme-secondary-color);
+    background-color: transparent !important;
+    font-size: 0.9em !important;
+}
+/*====================================*/
+
+
+/*---[ Headers ]----------------------*/
+h1, h2, h3, h4, h5, h6,
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a,
+h1 > a:visited, h2 > a:visited, h3 > a:visited, h4 > a:visited, h5 > a:visited, h6 > a:visited {
+    color: #2c3e50;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+h1 > a:hover:after,
+h2 > a:hover:after,
+h3 > a:hover:after,
+h4 > a:hover:after,
+h5 > a:hover:after,
+h6 > a:hover:after {
+    content: '#';
+    color: var(--theme-primary-color);
+    margin-left: 0.4em;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 45px 0 16px;
+    font-size: 32px;
+}
+
+h1:first-child {
+    margin-top: 0;
+}
+
+h2 {
+    margin: 45px 0 13px;
+    font-size: 28px;
+}
+
+h3 {
+    margin: 40px 0 9.5px;
+    font-size: 24px;
+}
+
+h4 {
+    margin: 20px 0 20px;
+    font-size: 20px;
+}
+
+h5, h6 {
+    margin: 20px 0 20px;
+    font-size: 12px;
+}
+/*====================================*/
+
+
+/*---[ Code ]-------------------------*/
+code, pre {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+pre {
+    background-color: #f8f8f8;
+    line-height: 1.5em;
+    overflow: auto;
+    position: relative;
+    word-wrap: normal;
+    margin: 0;
+    margin-top: 1em;
+}
+
+pre:after {
+    content: attr(data-lang);
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    color: #73797d;
+    font-size: 0.85em !important;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+code {
+    background-color: transparent;
+    color: #525252;
+    display: block;
+    font-size: 0.9em;
+    line-height: inherit;
+    padding: 1.3em;
+    max-width: inherit;
+    overflow: inherit;
+    white-space: inherit;
+}
+
+code .token.string,
+code .token.function {
+    color: var(--theme-primary-color);
+}
+
+code .token.keyword {
+    color: var(--theme-secondary-color);
+}
+
+code .token.string {
+    color: #29b934;
+}
+
+code .token.number {
+    color: #ce5b5b;
+}
+/*====================================*/
+
+
+/*---[ Mobile ]-----------------------*/
+@media(max-width: 700px) {
+    h1 {
+        margin: 30px 0 16px;
+        font-size: 26px;
+    }
+
+    h1:first-child {
+        margin-top: 0;
+    }
+
+    h2 {
+        margin: 25px 0 13px;
+        font-size: 22px;
+    }
+
+    h3 {
+        margin: 20px 0 9.5px;
+        font-size: 18px;
+    }
+
+    h4 {
+        margin: 16px 0 16px;
+        font-size: 16px;
+    }
+
+    h5, h6 {
+        margin: 16px 0 16px;
+        font-size: 12px;
+    }
+}
+/*====================================*/
+
+
+/*---[ Print ]------------------------*/
+@media print {
+    html {
+        background-color: white;
+    }
+
+    html, body {
+        margin: 0;
+    }
+
+    pre, blockquote {
+        break-inside: avoid;
+    }
+
+    /* Convert background-color to border for printing */
+    pre {
+        border: 1px solid #cbd2da;
+    }
+
+    a, em, strong {
+        color: inherit;
+    }
+
+    a {
+        font-weight: inherit;
+        text-decoration: none !important;
+    }
+
+    em > strong {
+        font-weight: 600;
+    }
+}
+/*====================================*/

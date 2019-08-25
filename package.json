@@ -1,0 +1,44 @@
+{
+  "name": "dmed256",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "PORT=${PORT-3000} react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.3.2",
+    "@material-ui/icons": "^4.2.1",
+    "clipboard": "^2.0.4",
+    "jss-plugin-extend": "^10.0.0-alpha.7",
+    "markdown-it": "^9.1.0",
+    "prismjs": "^1.17.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1"
+  },
+  "devDependencies": {
+    "@types/clipboard": "^2.0.1",
+    "@types/markdown-it": "^0.0.8",
+    "@types/node": "12.7.2",
+    "@types/prismjs": "^1.16.0",
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.8.5",
+    "prettier": "^1.18.2",
+    "typescript": "3.5.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
