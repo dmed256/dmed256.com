@@ -20,7 +20,7 @@ const theme = createMuiTheme({
       main: '#2991b9',
     },
     secondary: {
-      main: '#f5cd3e',
+      main: '#f9a753',
     },
   },
   overrides: {
@@ -52,9 +52,9 @@ const Theme = ({
   children,
 }: Props) => (
   <React.Fragment>
-    <GlobalCSS />
     <StylesProvider jss={jss}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>>
+        <GlobalCSS />
         {children}
       </ThemeProvider>
     </StylesProvider>

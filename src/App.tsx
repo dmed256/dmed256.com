@@ -1,23 +1,13 @@
 import React from 'react';
 
 import Layout from './Layout';
+import Router from './routing/Router';
 
 
 const App: React.FC = () => {
   return (
     <Layout>
-      <div style={{ height: 150, width: 10 }} />
-      hi
-      <div style={{ height: 150, width: 10 }} />
-      hi
-      <div style={{ height: 150, width: 10 }} />
-      hi
-      <div style={{ height: 150, width: 10 }} />
-      hi
-      <div style={{ height: 150, width: 10 }} />
-      hi
-      <div style={{ height: 150, width: 10 }} />
-      hi
+      <Router />
     </Layout>
   );
 }

@@ -30,6 +30,10 @@ const GlobalCSS = withStyles((theme: Theme) => ({
     ':focus': {
       outline: 'none',
     },
+    ':root': {
+      '--theme-primary-color': theme.palette.primary.main,
+      '--theme-secondary-color': theme.palette.secondary.main,
+    },
   },
 }))(() => null);
 

@@ -31,9 +31,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   content: {
-    padding: '0 5em',
+    padding: `0 ${constants.headerGap}px`,
     [constants.media.mobile]: {
-      padding: '0 2em',
+      padding: `0 20px`,
     },
     [constants.media.print]: {
       padding: 0,

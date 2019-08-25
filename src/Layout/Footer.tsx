@@ -11,18 +11,19 @@ import {
   LinkedinIcon,
   TwitterIcon,
 } from '../icons';
+import constants from './constants';
 
 
 const useStyles = makeStyles({
   divider: {
-    marginTop: 50,
+    marginTop: constants.headerGap,
   },
   icons: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '50px 0',
+    padding: '40px 0',
     '& > *:not(:first-child)': {
       marginLeft: '2em',
     },

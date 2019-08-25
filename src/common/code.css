@@ -1,0 +1,67 @@
+code, pre {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+pre {
+    background-color: #f8f8f8;
+    line-height: 1.5em;
+    overflow: auto;
+    position: relative;
+    word-wrap: normal;
+    margin: 0;
+    margin-top: 1em;
+}
+
+pre:after {
+    content: attr(data-lang);
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    color: #73797d;
+    font-size: 0.85em !important;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+code {
+    background-color: transparent;
+    color: #525252;
+    display: block;
+    font-size: 0.9em;
+    line-height: inherit;
+    padding: 1.3em;
+    max-width: inherit;
+    overflow: inherit;
+    white-space: inherit;
+}
+
+code .token.string,
+code .token.function {
+    color: var(--theme-primary-color);
+}
+
+code .token.keyword {
+    color: var(--theme-secondary-color);
+}
+
+code .token.string {
+    color: #29b934;
+}
+
+code .token.number {
+    color: #ce5b5b;
+}
+
+
+/*---[ Print ]------------------------*/
+@media print {
+    pre, blockquote {
+        break-inside: avoid;
+    }
+
+    /* Convert background-color to border for printing */
+    pre {
+        border: 1px solid #cbd2da;
+    }
+}
+/*====================================*/
