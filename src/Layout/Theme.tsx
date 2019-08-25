@@ -23,6 +23,17 @@ const theme = createMuiTheme({
       main: '#f5cd3e',
     },
   },
+  overrides: {
+    MuiTooltip: {
+      popper: {
+        marginTop: '-0.5em',
+      },
+      tooltip: {
+        padding: '0.5em 1em',
+        fontSize: 13,
+      },
+    },
+  },
 });
 
 // JSS Creation

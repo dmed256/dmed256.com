@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: 'relative',
     width: constants.width,
     maxWidth: constants.maxWidth,
-    padding: `${constants.headerGap}px 0`,
+    padding: `${constants.headerGap}px 0 0 0`,
     margin: `-${constants.headerGap}px auto ${constants.headerHeight}px`,
     backgroundColor: theme.palette.background.paper,
     boxShadow: '0 7px 15px 0 rgba(1, 1, 1, 0.25)',
