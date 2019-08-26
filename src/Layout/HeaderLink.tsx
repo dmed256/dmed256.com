@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
 import constants from '../common/constants';
@@ -43,12 +44,12 @@ const HeaderLink = ({
 }: Props) => {
   const classes = useStyles();
   return (
-    <a
+    <Link
       className={classes.root}
-      href={href}
+      to={href}
     >
       {label}
-    </a>
+    </Link>
   );
 };
 
