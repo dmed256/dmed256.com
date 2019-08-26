@@ -39,9 +39,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   start: {
     marginTop: SECTION_PADDING_MIDDLE,
-    '&$hasEnd': {
-      marginTop: 0,
-    },
     [constants.media.mobile]: {
       marginTop: SECTION_PADDING_MIDDLE / 2,
     },
@@ -103,14 +100,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   titleContainer: {
     margin: `${SECTION_PADDING_MIDDLE}px 0`,
-    '&$hasLocation': {
-      margin: 0,
-    },
     [constants.media.mobile]: {
       marginTop: SECTION_PADDING_MIDDLE / 2,
-      '&$hasLocation': {
-        marginTop: 0,
-      },
     },
   },
   title: {
@@ -129,8 +120,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   description: {
     fontWeight: 300,
   },
-  hasLocation: {},
-  hasEnd: {},
   present: {},
 }));
 
@@ -155,8 +144,6 @@ const ResumeSubsection = ({
 }: Props) => {
   const classes = useStyles();
 
-  const hasEnd = Boolean(end);
-  const hasLocation = Boolean(location);
   const isPresent = (end === 'Present');
   const isDateless = (!date && !start && !end);
 
@@ -173,8 +160,7 @@ const ResumeSubsection = ({
     <div className={classes.root}>
       <div className={classnames(classes.date,
                                  isDateless && classes.dateless)}>
-        <div className={classnames(classes.start,
-                                   hasEnd && classes.hasEnd)}>
+        <div className={classes.start}>
           {date || start}
         </div>
         <div className={classnames(classes.end,
@@ -185,8 +171,7 @@ const ResumeSubsection = ({
                                    isPresent && classes.present)} />
       </div>
       <div className={classes.content}>
-        <div className={classnames(classes.titleContainer,
-                                   hasLocation && classes.hasLocation)}>
+        <div className={classes.titleContainer}>
           <div className={classes.title}>
             {titleContent}
           </div>
