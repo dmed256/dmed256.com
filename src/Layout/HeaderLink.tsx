@@ -8,7 +8,7 @@ import constants from '../common/constants';
 const useStyles = makeStyles({
   root: {
     padding: '0.5em 1.0em',
-    transition: 'background-color 0.2s',
+    transition: 'background-color 300ms, box-shadow 100ms',
     '&:hover': {
       backgroundColor: 'rgba(255, 255, 255, 0.18)',
       boxShadow: '0 5px 20px 0 rgba(0, 0, 0, 0.15)',
