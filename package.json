@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "PORT=${PORT-3000} react-scripts start",
-    "build": "react-scripts build && cp build/index.html build/404.html",
+    "build": "react-scripts build",
     "deploy": "gh-pages --dist build --branch master"
   },
   "dependencies": {
