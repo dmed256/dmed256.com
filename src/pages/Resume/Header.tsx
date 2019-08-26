@@ -13,60 +13,6 @@ import InlineLink from '../../common/InlineLink';
 import social from '../../common/social';
 
 
-// Either link or email
-const getLabelLink = (label: string) => {
-  if (label.search(/https?:/) === 0) {
-    return label;
-  }
-  return `mailto:${label}`;
-}
-
-interface Props {
-  classes: any,
-}
-
-const Header = ({ classes }: Props) => {
-  const icons = [
-    { Icon: MailOutlineIcon, label: social.getEmail() },
-    { Icon: GithubIcon, label: social.github.link, color: social.github.color },
-    { Icon: TwitterIcon, label: social.twitter.link, color: social.twitter.color },
-    { Icon: LinkedinIcon, label: social.linkedin.link, color: social.linkedin.color },
-  ];
-
-  return (
-    <div className={classes.root}>
-      <div className={classes.profile}>
-        <div className="name">
-          David Medina
-        </div>
-        <div className="title">
-          Software Engineer
-        </div>
-      </div>
-      <div className={classes.info}>
-        {
-          icons.map(({ Icon, label, color }) => (
-            <div
-              key={label}
-              className={classnames(classes.infoItem, 'glow')}
-            >
-              <GlowySvgIcon
-                Icon={Icon}
-                glowColor={color}
-              />
-              <InlineLink
-                href={getLabelLink(label as string)}
-                variant="normal"
-              >
-                {label}
-              </InlineLink>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  );
-};
 
 const styles = {
   root: {
@@ -122,15 +68,9 @@ const styles = {
     '& > svg': {
       marginRight: 14,
       fontSize: 18,
-      color: 'var(--theme-grey, #34495e)',
     },
-    '& > .link': {
-      color: 'var(--theme-grey, #34495e)',
-      fontWeight: 300,
+    '& > a': {
       fontSize: 14,
-      '&:hover': {
-        color: 'var(--theme-primary-color, #2980b9)',
-      },
     },
     '@media (max-width: 700px)': {
       '& .svg': {
@@ -152,5 +92,60 @@ const styles = {
     },
   },
 }
+
+// Either link or email
+const getLabelLink = (label: string) => {
+  if (label.search(/https?:/) === 0) {
+    return label;
+  }
+  return `mailto:${label}`;
+}
+
+interface Props {
+  classes: any,
+}
+
+const Header = ({ classes }: Props) => {
+  const socialInfo = [
+    { Icon: MailOutlineIcon, label: social.getEmail() },
+    { Icon: GithubIcon, label: social.github.link, color: social.github.color },
+    { Icon: TwitterIcon, label: social.twitter.link, color: social.twitter.color },
+    { Icon: LinkedinIcon, label: social.linkedin.link, color: social.linkedin.color },
+  ];
+
+  return (
+    <div className={classes.root}>
+      <div className={classes.profile}>
+        <div className="name">
+          David Medina
+        </div>
+        <div className="title">
+          Software Engineer
+        </div>
+      </div>
+      <div className={classes.info}>
+        {
+          socialInfo.map(({ Icon, label, color }) => (
+            <div
+              key={label}
+              className={classnames(classes.infoItem, 'glow')}
+            >
+              <GlowySvgIcon
+                Icon={Icon}
+                glowColor={color}
+              />
+              <InlineLink
+                href={getLabelLink(label)}
+                variant="normal"
+              >
+                {label}
+              </InlineLink>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  );
+};
 
 export default withStyles(styles)(Header);

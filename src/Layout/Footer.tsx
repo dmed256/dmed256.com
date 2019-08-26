@@ -15,6 +15,11 @@ import constants from '../common/constants';
 
 
 const useStyles = makeStyles({
+  root: {
+    [constants.media.print]: {
+      display: 'none',
+    },
+  },
   divider: {
     marginTop: constants.headerGap,
   },
@@ -34,7 +39,7 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <div className={classes.root}>
       <Divider className={classes.divider} />
       <div className={classes.icons}>
         <EmailIconWithClipboard />
@@ -57,7 +62,7 @@ const Footer = () => {
           />
         </ExternalLink>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
