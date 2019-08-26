@@ -1,10 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-import {
-  Bold,
-  InlineLink,
-} from '../../common';
+import { Bold, InlineLink } from '../../common';
 import ResumeSection from './ResumeSection';
 
 

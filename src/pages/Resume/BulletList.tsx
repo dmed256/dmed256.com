@@ -8,6 +8,7 @@ import constants from '../../common/constants';
 const useStyles = makeStyles({
   root: {
     paddingLeft: 18,
+    margin: '0.5em 0',
     [constants.media.print]: {
       margin: 0,
     },

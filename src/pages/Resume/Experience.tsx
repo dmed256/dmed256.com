@@ -1,9 +1,7 @@
 import React from 'react';
 
-import {
-  Bold,
-  InlineLink,
-} from '../../common';
+import { Bold, InlineLink } from '../../common';
+import { OCCA } from './links';
 import BulletList from './BulletList';
 import ResumeSection from './ResumeSection';
 import ResumeSubsection from './ResumeSubsection';
@@ -19,13 +17,13 @@ const Experience = () => (
     >
       <BulletList>
         <React.Fragment>
-          Led the <Bold>Infrastructure team</Bold> and laid out best practices for software development, including formatting and linting of <Bold>Python</Bold> and <Bold>Javascript</Bold>
+          Led the Infrastructure team and laid out best practices for software development, including formatting and linting of <Bold>Python</Bold> and <Bold>Javascript</Bold>
         </React.Fragment>
         <React.Fragment>
           Migrated deployment from three static servers to <Bold>AWS</Bold>, using <Bold>Docker</Bold>, <Bold>Pulumi</Bold>, and <Bold>Hashicorp tools</Bold>
         </React.Fragment>
         <React.Fragment>
-          Improved testing process by switching to <Bold>xdist-pytest</Bold> for faster and simpler Travis CI and local testing
+          Improved testing process by switching to xdist-pytest for faster and simpler Travis CI and local testing
         </React.Fragment>
       </BulletList>
     </ResumeSubsection>
@@ -38,7 +36,7 @@ const Experience = () => (
     >
       <BulletList>
         <React.Fragment>
-          Maintainer of <InlineLink href="https://libocca.org">OCCA</InlineLink>{', '}
+          Maintainer of <OCCA />{', '}
           an open source library enabling JIT compilation for multiple architectures:&nbsp;
           <Bold>C++</Bold>{', '}
           <Bold>OpenMP</Bold>{', '}
@@ -51,10 +49,10 @@ const Experience = () => (
           Consultant on high performance computing for numerical simulation codes
         </React.Fragment>
         <React.Fragment>
-          Implemented an <InlineLink href="https://libocca.org">OCCA</InlineLink>-backed solution in <InlineLink href="http://mfem.org">MFEM</InlineLink>, providing a <Bold>GPU</Bold> solution
+          Implemented an <OCCA />-backed solution in <InlineLink href="http://mfem.org">MFEM</InlineLink>, providing a <Bold>GPU</Bold> solution
         </React.Fragment>
         <React.Fragment>
-          Developed algorithms targeting <Bold>GPUs</Bold> and <Bold>CPUs</Bold> in parallel for high-order finite element methods
+          Developed algorithms targeting <Bold>CPUs</Bold> and <Bold>GPUs</Bold> in parallel for high-order finite element methods
         </React.Fragment>
       </BulletList>
     </ResumeSubsection>
@@ -70,10 +68,10 @@ const Experience = () => (
           Led internal <Bold>Javascript</Bold> environment modernization, including package publishing and the use of <Bold>React</Bold> and <Bold>Typescript</Bold>
         </React.Fragment>
         <React.Fragment>
-          Led development of an interactive webapp for searching and viewing foundational data, used by over <Bold>10% of the company</Bold>
+          Led development of an interactive webapp for searching and viewing foundational data, used by over 10% of the company
         </React.Fragment>
         <React.Fragment>
-          Developed a real-time dashboard for creating, viewing, and editing services in Waiter, used by over <Bold>20% of engineers</Bold>
+          Developed a real-time dashboard for creating, viewing, and editing services in Waiter, used by over 20% of engineers
         </React.Fragment>
         <React.Fragment>
           Used <Bold>Spark</Bold> internals to create an efficient <Bold>Python</Bold> wrapper to the Open Sourced Two Sigma Flint library

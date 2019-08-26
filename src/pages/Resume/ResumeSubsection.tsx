@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
+import InlineLink from '../../common/InlineLink';
 import constants from '../../common/constants';
 
 
@@ -23,10 +24,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   date: {
     position: 'relative',
     width: 100,
+    marginBottom: -SECTION_PADDING,
     marginRight: 14,
     paddingRight: 14,
-    marginTop: -SECTION_PADDING,
-    paddingTop: SECTION_PADDING,
     borderRight: `1px solid ${theme.palette.grey[400]}`,
     fontSize: 14,
     fontWeight: 300,
@@ -36,6 +36,13 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: 11,
     },
   },
+  start: {
+    marginTop: 1 + (SECTION_PADDING / 2),
+    '&$hasEnd': {
+      marginTop: 0,
+    },
+  },
+  hasEnd: {},
   end: {
     '&$present': {
       color: theme.palette.primary.main,
@@ -58,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: 7,
     height: 7,
     right: -5,
-    top: SECTION_PADDING + 8,
+    top: SECTION_PADDING,
     borderRadius: 100,
     border: `1px solid ${theme.palette.grey[400]}`,
     backgroundColor: 'white',
@@ -90,6 +97,9 @@ const useStyles = makeStyles((theme: Theme) => ({
       },
     },
   },
+  titleContainer: {
+    margin: '1em 0',
+  },
   title: {
     fontWeight: 600,
   },
@@ -104,7 +114,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   description: {
-    margin: '0.5em 0',
     fontWeight: 300,
   },
 }));
@@ -130,19 +139,16 @@ const ResumeSubsection = ({
 }: Props) => {
   const classes = useStyles();
 
+  const hasEnd = Boolean(end);
   const isPresent = (end === 'Present');
   const isDateless = (!date && !start && !end);
 
   let titleContent: any = title;
   if (link) {
     titleContent = (
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <InlineLink href={link}>
         {title}
-      </a>
+      </InlineLink>
     );
   }
 
@@ -150,7 +156,10 @@ const ResumeSubsection = ({
     <div className={classes.root}>
       <div className={classnames(classes.date,
                                  isDateless && classes.dateless)}>
-        <div>{date || start}</div>
+        <div className={classnames(classes.start,
+                                   hasEnd && classes.hasEnd)}>
+          {date || start}
+        </div>
         <div className={classnames(classes.end,
                                    isPresent && classes.present)}>
           {end}
@@ -159,11 +168,13 @@ const ResumeSubsection = ({
                                    isPresent && classes.present)} />
       </div>
       <div className={classes.content}>
-        <div className={classes.title}>
-          {titleContent}
-        </div>
-        <div className={classes.location}>
-          {location}
+        <div className={classes.titleContainer}>
+          <div className={classes.title}>
+            {titleContent}
+          </div>
+          <div className={classes.location}>
+            {location}
+          </div>
         </div>
         <div className={classes.description}>
           {children}

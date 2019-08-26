@@ -2,13 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import About from './About';
-/*
 import Education  from './Education';
-*/
 import Experience  from './Experience';
 import Header from './Header';
-/*
 import Projects  from './Projects';
+/*
 import Publications  from './Publications';
 */
 
@@ -27,9 +25,9 @@ const Resume = () => {
       <Header />
       <About/>
       <Experience />
-      {/*
       <Education />
       <Projects />
+      {/*
       <Publications />
       */}
     </div>
