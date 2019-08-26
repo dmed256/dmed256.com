@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
     height: constants.headerHeight + constants.headerGap,
     zIndex: 1,
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.light,
     [constants.media.mobile]: {
       height: constants.mobile.headerHeight,
     },
