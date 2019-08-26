@@ -6,9 +6,7 @@ import Education  from './Education';
 import Experience  from './Experience';
 import Header from './Header';
 import Projects  from './Projects';
-/*
 import Publications  from './Publications';
-*/
 
 
 const useStyles = makeStyles({
@@ -27,9 +25,7 @@ const Resume = () => {
       <Experience />
       <Education />
       <Projects />
-      {/*
       <Publications />
-      */}
     </div>
   );
 }

@@ -7,6 +7,7 @@ import constants from '../../common/constants';
 
 
 const SECTION_PADDING = 20;
+const SECTION_PADDING_MIDDLE = 2 + (SECTION_PADDING / 2);
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -37,12 +38,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   start: {
-    marginTop: 1 + (SECTION_PADDING / 2),
+    marginTop: SECTION_PADDING_MIDDLE,
     '&$hasEnd': {
       marginTop: 0,
     },
   },
-  hasEnd: {},
   end: {
     '&$present': {
       color: theme.palette.primary.main,
@@ -84,7 +84,6 @@ const useStyles = makeStyles((theme: Theme) => ({
       },
     },
   },
-  present: {},
   content: {
     flex: 1,
     '& p': {
@@ -98,7 +97,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   titleContainer: {
-    margin: '1em 0',
+    margin: `${SECTION_PADDING_MIDDLE}px 0`,
+    '&$hasLocation': {
+      margin: 0,
+    },
   },
   title: {
     fontWeight: 600,
@@ -116,6 +118,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   description: {
     fontWeight: 300,
   },
+  hasLocation: {},
+  hasEnd: {},
+  present: {},
 }));
 
 interface Props {
@@ -140,6 +145,7 @@ const ResumeSubsection = ({
   const classes = useStyles();
 
   const hasEnd = Boolean(end);
+  const hasLocation = Boolean(location);
   const isPresent = (end === 'Present');
   const isDateless = (!date && !start && !end);
 
@@ -168,7 +174,8 @@ const ResumeSubsection = ({
                                    isPresent && classes.present)} />
       </div>
       <div className={classes.content}>
-        <div className={classes.titleContainer}>
+        <div className={classnames(classes.titleContainer,
+                                   hasLocation && classes.hasLocation)}>
           <div className={classes.title}>
             {titleContent}
           </div>

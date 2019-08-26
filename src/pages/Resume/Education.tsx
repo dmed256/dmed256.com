@@ -1,10 +1,5 @@
 import React from 'react';
 
-import {
-  Bold,
-  InlineLink,
-} from '../../common';
-import BulletList from './BulletList';
 import ResumeSection from './ResumeSection';
 import ResumeSubsection from './ResumeSubsection';
 
