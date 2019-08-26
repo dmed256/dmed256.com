@@ -1,4 +1,4 @@
-import { extendLanguage } from './prism';
+import { extendLanguage } from './common/prism';
 
 const init = () => {
   initPrism();
