@@ -8,8 +8,10 @@ import ResumeSection from './ResumeSection';
 const About = () => (
   <ResumeSection title="About">
     <Typography variant="body1">
-      <Bold>I really enjoy programming</Bold>.
+      <Bold>I really enjoy programming!</Bold>
+    </Typography>
 
+    <Typography variant="body1">
       From high performance computing applications running on thousands of hybrid architecture nodes,
       to building web apps with great user experiences.
     </Typography>
@@ -23,7 +25,7 @@ const About = () => (
         <InlineLink href="https://www.twosigma.com">
           Two Sigma
         </InlineLink>
-      ), and a contractor for an &nbsp;
+      ), and a contractor for an&nbsp;
       <InlineLink href="http://ceed.exascaleproject.org">
         exascale initiative
       </InlineLink> at a national lab (

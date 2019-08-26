@@ -22,9 +22,9 @@ const Resume = () => {
     <div className={classes.root}>
       <Header />
       <About/>
+      <Projects />
       <Experience />
       <Education />
-      <Projects />
       <Publications />
     </div>
   );
