@@ -10,15 +10,13 @@ const Education = () => (
       title="Ph.D. in Computational and Applied Mathematics"
       date="May 2015"
       location="Rice University"
-    >
-    </ResumeSubsection>
+    />
 
     <ResumeSubsection
       title="Masters in Computational and Applied Mathematics"
       date="April 2014"
       location="Rice University"
-    >
-    </ResumeSubsection>
+    />
 
     <ResumeSubsection
       title="Bachelor of Science in Mathematics"

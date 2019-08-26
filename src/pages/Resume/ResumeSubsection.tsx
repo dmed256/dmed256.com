@@ -141,7 +141,7 @@ interface Props {
   start?: string,
   end?: string,
   location?: string,
-  children: React.ReactNode,
+  children?: React.ReactNode,
 }
 
 const ResumeSubsection = ({
@@ -194,9 +194,11 @@ const ResumeSubsection = ({
             {location}
           </div>
         </div>
-        <div className={classes.description}>
-          {children}
-        </div>
+        {children && (
+          <div className={classes.description}>
+            {children}
+          </div>
+        )}
       </div>
     </div>
   );
