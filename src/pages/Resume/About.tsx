@@ -17,22 +17,22 @@ const About = () => (
     </Typography>
 
     <Typography variant="body1">
-      I'm lucky to have worked in various environments, including a startup (
+      I'm lucky to have worked in various environments, including a startup&nbsp;
       <InlineLink href="https://www.hvst.com">
-        Harvest
+        @Harvest
       </InlineLink>
-      ), finance industry (
-        <InlineLink href="https://www.twosigma.com">
-          Two Sigma
-        </InlineLink>
-      ), and a contractor for an&nbsp;
+      {','} finance industry&nbsp;
+      <InlineLink href="https://www.twosigma.com">
+        @TwoSigma
+      </InlineLink>
+      {','} and an HPC contractor for&nbsp;
       <InlineLink href="http://ceed.exascaleproject.org">
-        exascale initiative
-      </InlineLink> at a national lab (
-      <InlineLink href="https://www.llnl.gov">
-        LLNL
+        @CEED
       </InlineLink>
-      )
+      {','} an exascale initiative at a government national laboratory&nbsp;
+      <InlineLink href="https://www.llnl.gov">
+        @LLNL
+      </InlineLink>
     </Typography>
 
     <Typography variant="body1">
