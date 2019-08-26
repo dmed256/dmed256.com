@@ -10,16 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: 'relative',
     marginTop: 50,
     // Fake border to keep the bold line in the same page
-    borderTop: '1px solid white',
-    '&:before': {
-      content: '""',
-      position: 'absolute',
-      left: 0,
-      top: -1,
-      width: 50,
-      // Use border to show up when printing
-      borderTop: '3px solid #34495e',
-    },
+    borderTop: `1px solid ${theme.palette.background.paper}`,
     [constants.media.mobile]: {
       marginTop: 30,
     },
@@ -31,20 +22,20 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     borderTop: '1px solid #c2c8ce',
     paddingTop: 20,
-    '@media (max-width: 700px)': {
+    [constants.media.mobile]: {
       flexDirection: 'column',
     },
     [constants.media.print]: {
       flexDirection: 'row !important' as 'row',
     },
   },
-  title: {
+  titleContainer: {
     width: 160,
     fontSize: 20,
     fontWeight: 600,
     textTransform: 'uppercase',
     lineHeight: '1.1em',
-    '@media (max-width: 700px)': {
+    [constants.media.mobile]: {
       width: '100%',
       fontSize: 16,
       marginBottom: 20,
@@ -54,6 +45,12 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: '15px !important' as '15px',
       marginBottom: '0 !important' as '0',
     },
+  },
+  title: {
+    display: 'inline-block',
+    borderTop: '3px solid #34495e',
+    paddingTop: 20,
+    marginTop: -22,
   },
   content: {
     flex: 1,
@@ -105,8 +102,10 @@ const ResumeSection = ({
   return (
     <div className={classes.root}>
       <div className={classes.innerRoot}>
-        <div className={classes.title}>
-          {title}
+        <div className={classes.titleContainer}>
+          <span className={classes.title}>
+            {title}
+          </span>
         </div>
         <div className={classes.content}>
           {children}

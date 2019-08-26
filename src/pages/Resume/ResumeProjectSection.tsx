@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 import constants from '../../common/constants';
@@ -13,22 +12,22 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&:first-child': {
       marginTop: 0,
     },
-    [constants.media.print]: {
+    '@media print': {
       fontSize: 12,
       marginTop: '0.7em',
     },
   },
   date: {
-    position: 'relative',
+    position: 'relative' as 'relative',
     width: 100,
     marginRight: 14,
     paddingRight: 14,
     marginTop: -24,
     paddingTop: 24,
-    borderRight: `1px solid ${theme.palette.grey[400]}`,
+    borderRight: '1px solid #c3c8ce',
     fontSize: 14,
     fontWeight: 300,
-    textAlign: 'right',
+    textAlign: 'right' as 'right',
     '&.dateless': {
       width: 0,
       '& $dot': {
@@ -41,17 +40,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   dot: {
-    position: 'absolute',
+    position: 'absolute' as 'absolute',
     width: 7,
     height: 7,
     right: -5,
     top: 31,
     borderRadius: 100,
-    border: `1px solid ${theme.palette.grey[400]}`,
+    border: '1px solid #c3c8ce',
     backgroundColor: 'white',
     '&.present': {
-      borderColor: theme.palette.primary.main,
-      backgroundColor: theme.palette.primary.main,
+      borderColor: 'var(--theme-primary-color, #2980b9)',
+      backgroundColor: 'var(--theme-primary-color, #2980b9)',
     },
     // The dot needs to be changed in phone + print
     [constants.media.mobile]: {
@@ -59,8 +58,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     [constants.media.print]: {
       '&.present': {
-        borderColor: `${theme.palette.grey[400]} !important`,
-        backgroundColor: `${theme.palette.background.paper} !important`,
+        borderColor: '#c3c8ce !important',
+        backgroundColor: 'white !important',
       },
     },
   },
@@ -73,7 +72,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginTop: '-0.2em',
       fontSize: 14,
       fontWeight: 300,
-      fontStyle: 'italic',
+      fontStyle: 'italic' as 'italic',
     },
     '& .description': {
       fontWeight: 300,
@@ -97,26 +96,25 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 interface Props {
+  tokens: types.Token[],
   title: string,
   link?: string,
   date?: string,
   start?: string,
   end?: string,
   location?: string,
-  children: React.ReactNode,
 }
 
-const ResumeSubsection = ({
+const SubSection = ({
+  classes,
+  tokens,
   title,
   link,
   date,
   start,
   end,
   location,
-  children,
 }: Props) => {
-  const classes = useStyles();
-
   let titleContent: any = title;
   if (link) {
     titleContent = (
@@ -129,7 +127,6 @@ const ResumeSubsection = ({
       </a>
     );
   }
-
   return (
     <div className={classes.root}>
       <div className={classnames(classes.date,
@@ -148,7 +145,7 @@ const ResumeSubsection = ({
           {location}
         </div>
         <div className="description">
-          {children}
+          <Tokens tokens={tokens} />
         </div>
       </div>
     </div>

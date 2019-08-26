@@ -3,13 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import About from './About';
 /*
-import Education  from './Education ';
-import Experience  from './Experience ';
+import Education  from './Education';
 */
+import Experience  from './Experience';
 import Header from './Header';
 /*
-import Projects  from './Projects ';
-import Publications  from './Publications ';
+import Projects  from './Projects';
+import Publications  from './Publications';
 */
 
 
@@ -26,8 +26,8 @@ const Resume = () => {
     <div className={classes.root}>
       <Header />
       <About/>
-      {/*
       <Experience />
+      {/*
       <Education />
       <Projects />
       <Publications />
