@@ -14,9 +14,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     [constants.media.mobile]: {
       marginTop: 30,
     },
-    [constants.media.print]: {
-      marginTop: '15px !important' as '15px',
-    },
   },
   innerRoot: {
     display: 'flex',
