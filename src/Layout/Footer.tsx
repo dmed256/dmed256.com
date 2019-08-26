@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     '& > *:not(:first-child)': {
       marginLeft: '2em',
     },
+    [constants.media.mobile]: {
+      padding: '20px 0 0',
+    },
   },
 }));
 

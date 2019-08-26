@@ -27,9 +27,11 @@ const useStyles = makeStyles((theme: Theme) => ({
       textDecorationColor: `${theme.palette.secondary.main}88`,
     },
     [constants.media.print]: {
-      color: 'inherit',
-      fontWeight: 'inherit',
-      textDecoration: 'none !important',
+      '&, &:visited': {
+        color: 'inherit',
+        fontWeight: 'inherit',
+        textDecoration: 'none !important',
+      },
     },
   },
   normal: {},

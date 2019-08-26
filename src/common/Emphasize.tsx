@@ -1,7 +1,8 @@
 import { styled } from '@material-ui/core/styles';
 
+
 const Emphasize = styled('span')({
-  fontStyle: 'italic'
+  fontStyle: 'italic',
 });
 
 export default Emphasize;

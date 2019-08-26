@@ -51,6 +51,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderTop: '3px solid #34495e',
     paddingTop: 20,
     marginTop: -22,
+    [constants.media.mobile]: {
+      borderTop: 0,
+    },
   },
   content: {
     flex: 1,

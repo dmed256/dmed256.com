@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&:first-child': {
       marginTop: 0,
     },
-    [constants.media.print]: {
+    [constants.media.mobile]: {
       fontSize: 12,
       marginTop: '0.7em',
     },
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 14,
     fontWeight: 300,
     textAlign: 'right',
-    [constants.media.print]: {
+    [constants.media.mobile]: {
       width: 80,
       fontSize: 11,
     },
@@ -42,13 +42,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&$hasEnd': {
       marginTop: 0,
     },
+    [constants.media.mobile]: {
+      marginTop: SECTION_PADDING_MIDDLE / 2,
+    },
   },
   end: {
     '&$present': {
       color: theme.palette.primary.main,
       fontWeight: 400,
     },
-    [constants.media.print]: {
+    [constants.media.mobile]: {
       '&$present': {
         color: 'inherit',
       },
@@ -73,9 +76,11 @@ const useStyles = makeStyles((theme: Theme) => ({
       borderColor: theme.palette.primary.main,
       backgroundColor: theme.palette.primary.main,
     },
-    // The dot needs to be changed in phone + print
     [constants.media.mobile]: {
-      top: '28px !important',
+      width: 5,
+      height: 5,
+      right: -4,
+      top: `${SECTION_PADDING_MIDDLE}px !important`,
     },
     [constants.media.print]: {
       '&$present': {
@@ -90,7 +95,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       margin: '0.5em 0',
       fontWeight: 300,
     },
-    [constants.media.print]: {
+    [constants.media.mobile]: {
       '& p': {
         margin: 0,
       },
@@ -101,6 +106,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&$hasLocation': {
       margin: 0,
     },
+    [constants.media.mobile]: {
+      marginTop: SECTION_PADDING_MIDDLE / 2,
+      '&$hasLocation': {
+        marginTop: 0,
+      },
+    },
   },
   title: {
     fontWeight: 600,
@@ -110,8 +121,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 14,
     fontWeight: 300,
     fontStyle: 'italic',
-    [constants.media.print]: {
-      fontSize: 12,
+    [constants.media.mobile]: {
+      fontSize: 11,
       marginBottom: '0.2em',
     },
   },
