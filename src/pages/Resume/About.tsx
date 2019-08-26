@@ -18,14 +18,22 @@ const About = () => (
     </Typography>
 
     <Typography variant="body1">
-      I'm lucky to be in an interesting combination working in the finance industry at&nbsp;
-      <InlineLink href="https://www.twosigma.com">
-        Two Sigma
+      I'm lucky to have worked in various environments, including a startup (
+      <InlineLink href="https://www.hvst.com">
+        Harvest
       </InlineLink>
-    &nbsp;and being a contractor with an&nbsp;
-  <InlineLink href="http://ceed.exascaleproject.org">
-    exascale initiative
-  </InlineLink>
+      ), finance industry (
+        <InlineLink href="https://www.twosigma.com">
+          Two Sigma
+        </InlineLink>
+      ), and a contractor for an &nbsp;
+      <InlineLink href="http://ceed.exascaleproject.org">
+        exascale initiative
+      </InlineLink> at a national lab (
+      <InlineLink href="https://www.llnl.gov">
+        LLNL
+      </InlineLink>
+      )
     </Typography>
 
     <Typography variant="body1">

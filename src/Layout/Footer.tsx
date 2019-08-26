@@ -1,6 +1,6 @@
 import React from 'react';
 import Divider from '@material-ui/core/Divider';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 
 import ExternalLink from '../common/ExternalLink';
 import GlowySvgIcon from '../common/GlowySvgIcon';
@@ -14,7 +14,7 @@ import {
 import constants from '../common/constants';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   root: {
     [constants.media.print]: {
       display: 'none',
@@ -29,11 +29,14 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     padding: '40px 0',
+    '& > *': {
+      color: theme.palette.grey[600],
+    },
     '& > *:not(:first-child)': {
       marginLeft: '2em',
     },
   },
-});
+}));
 
 const Footer = () => {
   const classes = useStyles();

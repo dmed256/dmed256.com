@@ -7,7 +7,7 @@ const GLOW_COLOR_VAR = '--glow-color';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    color: theme.palette.grey[600],
+    color: 'inherit',
     transition: 'color 500ms !important',
     transitionDelay: '100ms !important',
     '&:hover, .glow:hover > &': {

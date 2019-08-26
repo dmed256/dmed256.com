@@ -10,8 +10,8 @@ import {
 } from '../../icons';
 import GlowySvgIcon from '../../common/GlowySvgIcon';
 import InlineLink from '../../common/InlineLink';
+import constants from '../../common/constants';
 import social from '../../common/social';
-
 
 
 const styles = {
@@ -34,7 +34,7 @@ const styles = {
       letterSpacing: 2,
       textTransform: 'uppercase' as 'uppercase',
     },
-    '@media (max-width: 700px)': {
+    [constants.media.mobile]: {
       textAlign: 'center' as 'center',
       '& .name': {
         fontSize: 20,
@@ -44,7 +44,7 @@ const styles = {
         fontSize: 14,
       },
     },
-    '@media print': {
+    [constants.media.print]: {
       textAlign: 'left !important' as any,
       '& .name': {
         fontSize: '30px !important',
@@ -72,21 +72,21 @@ const styles = {
     '& > a': {
       fontSize: 14,
     },
-    '@media (max-width: 700px)': {
+    [constants.media.mobile]: {
       '& .svg': {
         fontSize: 16,
         marginRight: 12,
       },
-      '& .link': {
+      '& > a': {
         fontSize: 12,
       },
     },
-    '@media print': {
+    [constants.media.print]: {
       '& .svg': {
         fontSize: '12px !important',
         marginRight: 12,
       },
-      '& .link': {
+      '& > a': {
         fontSize: 12,
       },
     },
