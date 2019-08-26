@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "PORT=${PORT-3000} react-scripts start",
-    "build": "react-scripts build && cp build/index.html build/404.html"
+    "build": "react-scripts build && cp build/index.html build/404.html",
+    "deploy": "gh-pages --dist build --branch master"
   },
   "dependencies": {
     "@material-ui/core": "^4.3.2",
@@ -32,6 +33,7 @@
     "@types/react-dom": "16.8.5",
     "@types/react-router": "^5.0.3",
     "@types/react-router-dom": "^4.3.5",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
     "typescript": "3.5.3"
   },
