@@ -23,18 +23,19 @@
     <meta name="twitter:description" content="Personal blog of David Medina">
     <!-- <meta name="google-site-verification" content="<info>"> -->
     <script type="text/javascript">
+     var loc = window.location;
      var locParts = {}
-     if (window.location.pathname) {
-       locParts.pathname = window.location.pathname;
+     if (loc.pathname) {
+       locParts.pathname = loc.pathname;
      }
-     if (window.location.search) {
-       locParts.search = window.location.search;
+     if (loc.search) {
+       locParts.search = loc.search;
      }
-     if (window.location.hash) {
-       locParts.hash = window.location.hash;
+     if (loc.hash) {
+       locParts.hash = loc.hash;
      }
      var encodedHash = encodeURIComponent(JSON.stringify(locParts));
-     window.location.replace('/#' + encodedHash);
+     loc.replace(loc.protocol + '//' + loc.hostname + '/#' + encodedHash);
     </script>
   </head>
   <body>
