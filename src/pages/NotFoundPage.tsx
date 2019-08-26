@@ -11,10 +11,10 @@ const NotFoundPage = () => (
     />
     <Code
       source={`
-  Traceback (most recent call last):
-    File "${window.location.pathname}", line 1, in <module>
-      raise NotImplementedError('File not found')
-  NotImplementedError: File not found
+Traceback (most recent call last):
+  File "${window.location.pathname}", line 1, in <module>
+    raise NotImplementedError('File not found')
+NotImplementedError: File not found
       `.trim()}
       lang="python"
     />
