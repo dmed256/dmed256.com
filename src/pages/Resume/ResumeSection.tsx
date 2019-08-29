@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingTop: 20,
     [constants.media.mobile]: {
       flexDirection: 'column',
+      paddingTop: 28,
     },
     [constants.media.print]: {
       flexDirection: 'row !important' as 'row',
@@ -49,6 +50,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderTop: '3px solid #34495e',
     paddingTop: 20,
     marginTop: -22,
+    [constants.media.mobile]: {
+      borderTop: 'none',
+    },
   },
   content: {
     flex: 1,
