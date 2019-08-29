@@ -22,6 +22,7 @@ const GlobalCSS = withStyles((theme: Theme) => ({
       [constants.media.print]: {
         margin: 0,
         backgroundColor: 'white',
+        overflowY: 'hidden',
       },
     },
     '#root': {
