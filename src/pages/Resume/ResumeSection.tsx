@@ -76,14 +76,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         top: '4px !important' as '4px',
       },
     },
-    [constants.media.print]: {
-      '& > p': {
-        fontSize: 10,
-        '&:not(:first-child)': {
-          marginTop: 5,
-        },
-      },
-    },
   },
 }));
 
