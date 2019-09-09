@@ -1,7 +1,7 @@
 import React from 'react';
-import moment from 'moment';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
+import * as types from '../../types';
 import Tag from '../../common/Tag';
 
 
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   divider: {
     position: 'relative',
     width: 1,
-    margin: `-${SUMMARY_GAP}px 20px`,
+    margin: `-${SUMMARY_GAP}px 35px -${SUMMARY_GAP}px 15px`,
     backgroundColor: theme.palette.grey[300],
   },
   dividerDot: {
@@ -75,43 +75,35 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 interface Props {
-  title: string,
-  date: string,
-  minutesToRead: number,
-  summary: string,
-  tags: string[],
+  post: types.PostSummary,
 };
 
 const PostSummary = ({
-  title,
-  date,
-  minutesToRead,
-  summary,
-  tags,
+  post,
 }: Props) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <div className={classes.date}>
-        {moment(date).format('MMM DD')}
+        {post.date.format('MMM DD')}
       </div>
       <div className={classes.divider}>
         <div className={classes.dividerDot} />
       </div>
       <div className={classes.content}>
         <div className={classes.title}>
-          {title}
+          {post.title}
         </div>
         <div className={classes.timeToRead}>
-          {`${minutesToRead} min read`}
+          {`${post.minutesToRead} min read`}
         </div>
         <div className={classes.tags}>
-          {tags.map((tag) => (
+          {post.tags.map((tag) => (
             <Tag key={tag} label={tag} />
           ))}
         </div>
         <div>
-          {summary}
+          {post.summary}
         </div>
       </div>
     </div>

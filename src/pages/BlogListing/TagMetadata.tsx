@@ -11,8 +11,6 @@ import { metadata } from '../../posts';
 const DEFAULT_TAGS_DISPLAYED = 5;
 
 const useStyles = makeStyles({
-  root: {
-  },
   header: {
     marginBottom: 15,
   },
@@ -35,7 +33,7 @@ const useStyles = makeStyles({
     flexDirection: 'row',
     alignItems: 'center',
     cursor: 'pointer',
-    marginTop: '0.5em',
+    marginTop: '1em',
     textTransform: 'uppercase',
     opacity: 0.7,
   },
@@ -67,7 +65,6 @@ const TagMetadata = () => {
 
   const canToggleTags = (sortedTags.length > DEFAULT_TAGS_DISPLAYED);
   let toggleMessage: React.ReactNode = null;
-  let isHidingTags = false;
   if (canToggleTags) {
     if (!showingAll) {
       sortedTags = sortedTags.slice(0, 5);
@@ -88,7 +85,7 @@ const TagMetadata = () => {
   }
 
   return (
-    <div className={classes.root}>
+    <div>
       <Typography
         className={classes.header}
         variant="h5"
@@ -113,7 +110,7 @@ const TagMetadata = () => {
       {toggleMessage && (
         <Typography
           className={classes.toggleMessage}
-          variant="body1"
+          variant="body2"
           onClick={() => {
             setShowingAll(!showingAll);
           }}

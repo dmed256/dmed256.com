@@ -11,9 +11,8 @@ const dateMetadata: types.DateMetadata = {
 
 // Compute date metadata
 posts.forEach(({ date }) => {
-  const mDate = moment(date);
-  const year = mDate.year();
-  const month = mDate.month();
+  const year = date.year();
+  const month = date.month();
 
   if (!(year in dateMetadata)) {
     dateMetadata[year] = {
