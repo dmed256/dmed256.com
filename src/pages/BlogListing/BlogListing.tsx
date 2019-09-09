@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     flexDirection: 'row',
   },
   header: {
-    marginBottom: 30,
+    marginBottom: 50,
   },
   postListing: {
     flex: 1,

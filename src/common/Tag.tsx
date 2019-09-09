@@ -36,8 +36,8 @@ interface Props extends RouteComponentProps<any> {
 }
 
 const Tag = ({
-  label,
   location,
+  label,
 }: Props) => {
   const classes = useStyles();
   const search = queryString.parse(location.search);
