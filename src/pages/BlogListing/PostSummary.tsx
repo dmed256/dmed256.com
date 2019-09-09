@@ -1,5 +1,5 @@
 import React from 'react';
-import moment, { Moment } from 'moment';
+import moment from 'moment';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 import Tag from '../../common/Tag';
@@ -76,8 +76,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface Props {
   title: string,
-  filename: string,
-  date: Moment,
+  date: string,
   minutesToRead: number,
   summary: string,
   tags: string[],
@@ -85,7 +84,6 @@ interface Props {
 
 const PostSummary = ({
   title,
-  filename,
   date,
   minutesToRead,
   summary,
@@ -95,7 +93,7 @@ const PostSummary = ({
   return (
     <div className={classes.root}>
       <div className={classes.date}>
-        {date.format('MMM DD')}
+        {moment(date).format('MMM DD')}
       </div>
       <div className={classes.divider}>
         <div className={classes.dividerDot} />

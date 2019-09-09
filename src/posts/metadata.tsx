@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 import * as types from '../types';
 import posts from './posts';
 
@@ -9,17 +11,21 @@ const dateMetadata: types.DateMetadata = {
 
 // Compute date metadata
 posts.forEach(({ date }) => {
-  const year = date.year();
-  const month = date.month();
+  const mDate = moment(date);
+  const year = mDate.year();
+  const month = mDate.month();
+
   if (!(year in dateMetadata)) {
     dateMetadata[year] = {
       count: 0,
     };
   }
+
   const yearMetadata = dateMetadata[year] as types.YearMetadata;
   if (!(month in yearMetadata)) {
     yearMetadata[month] = 0;
   }
+
   dateMetadata.count++;
   yearMetadata.count++;
   yearMetadata[month]++;

@@ -50,7 +50,6 @@ const BlogListing = () => {
               <PostSummary
                 key={post.title}
                 title={post.title}
-                filename={post.filename}
                 date={post.date}
                 minutesToRead={post.minutesToRead}
                 summary={post.summary}
