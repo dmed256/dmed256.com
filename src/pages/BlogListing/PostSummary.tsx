@@ -68,8 +68,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: 'row',
     fontSize: '0.7em',
     marginBottom: 25,
-    '& > div': {
-      margin: '0 0.2em',
+    '& > *': {
+      margin: '0 0.3em',
     },
   },
 }));

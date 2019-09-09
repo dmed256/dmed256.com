@@ -29,6 +29,10 @@ const GlobalCSS = withStyles((theme: Theme) => ({
       display: 'flex',
       flexDirection: 'column',
     },
+    a: {
+      color: 'inherit',
+      textDecoration: 'inherit',
+    },
     ':focus': {
       outline: 'none',
     },
