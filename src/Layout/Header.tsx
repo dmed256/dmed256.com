@@ -3,6 +3,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 
 import HeaderLink from './HeaderLink';
 import constants from '../common/constants';
+import Translate from '../common/Translate';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -61,15 +62,30 @@ const Header = () => {
         </div>
         <div className={classes.spacing} />
         <HeaderLink
-          label="Blog"
+          label={(
+            <Translate
+              en="Blog"
+              ch="网志"
+            />
+          )}
           href="/"
         />
         <HeaderLink
-          label="About"
+          label={(
+            <Translate
+              en="About"
+              ch="关于我"
+            />
+          )}
           href="/about"
         />
         <HeaderLink
-          label="Resume"
+          label={(
+            <Translate
+              en="Resume"
+              ch="简历"
+            />
+          )}
           href="/resume"
         />
       </div>

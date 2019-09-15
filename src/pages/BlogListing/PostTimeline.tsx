@@ -1,17 +1,9 @@
 import React from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
 
 import * as types from '../../types';
 import { posts as allPosts } from '../../posts';
-import PostSummary from './PostSummary';
+import AnnualPostTimeline from './AnnualPostTimeline';
 
-
-const useStyles = makeStyles((theme: Theme) => ({
-  year: {
-    margin: '30px 0',
-    fontSize: 30,
-  },
-}));
 
 interface PostsByYear {
   year: number,
@@ -19,14 +11,12 @@ interface PostsByYear {
 }
 
 const PostTimeline = () => {
-  const classes = useStyles();
-
   // Aggregate posts by year
   const postsByYear: PostsByYear[] = [];
   let currentYear = 0;
   allPosts.forEach((post) => {
     const year = post.date.year();
-    if (year != currentYear) {
+    if (year !== currentYear) {
       currentYear = year;
       postsByYear.push({
         year,
@@ -39,17 +29,11 @@ const PostTimeline = () => {
   return (
     <div>
       {postsByYear.map(({ year, posts }) => (
-        <div key={year}>
-          {posts.map((post) => (
-            <PostSummary
-              key={post.title}
-              post={post}
-            />
-          ))}
-          <div className={classes.year}>
-            {year}
-          </div>
-        </div>
+        <AnnualPostTimeline
+          key={year}
+          year={year}
+          posts={posts}
+        />
       ))}
     </div>
   );

@@ -1,5 +1,3 @@
-import moment from 'moment';
-
 import * as types from '../types';
 import posts from './posts';
 

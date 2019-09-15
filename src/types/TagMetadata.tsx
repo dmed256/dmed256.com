@@ -1,3 +1,3 @@
-export default interface TagMetadata {
+export interface TagMetadata {
   [tag: string]: number,
 }

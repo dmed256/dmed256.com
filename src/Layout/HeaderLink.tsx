@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 interface Props extends RouteComponentProps<any> {
-  label: string,
+  label: React.ReactNode,
   href: string,
 }
 

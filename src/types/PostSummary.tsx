@@ -2,7 +2,7 @@ import React from 'react';
 import { Moment } from 'moment';
 
 
-export default interface PostSummary {
+export interface PostSummary {
   title: string,
   date: Moment,
   minutesToRead: number,

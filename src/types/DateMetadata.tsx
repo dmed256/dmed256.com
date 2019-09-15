@@ -1,7 +1,7 @@
-import YearMetadata from './YearMetadata';
+import { YearMetadata } from './YearMetadata';
 
 
-export default interface DateMetadata {
+export interface DateMetadata {
   [year: number]: YearMetadata,
   count: number,
 }
