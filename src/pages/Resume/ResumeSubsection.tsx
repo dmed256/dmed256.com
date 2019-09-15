@@ -12,23 +12,26 @@ const SECTION_PADDING_MIDDLE = 2 + (SECTION_PADDING / 2);
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: 'flex',
-    marginTop: SECTION_PADDING,
     lineHeight: '1.5em',
     '&:first-child': {
-      marginTop: 0,
+      '& $divider': {
+        marginTop: SECTION_PADDING,
+        [constants.media.mobile]: {
+          marginTop: SECTION_PADDING_MIDDLE,
+        },
+      },
+      '& $dividerDot': {
+        top: -1,
+      },
     },
     [constants.media.mobile]: {
       fontSize: 12,
-      marginTop: '0.7em',
     },
   },
   date: {
     position: 'relative',
     width: 100,
     marginBottom: -SECTION_PADDING,
-    marginRight: 14,
-    paddingRight: 14,
-    borderRight: `1px solid ${theme.palette.grey[400]}`,
     fontSize: 14,
     fontWeight: 300,
     textAlign: 'right',
@@ -60,12 +63,18 @@ const useStyles = makeStyles((theme: Theme) => ({
       borderRadius: 0,
     },
   },
-  dot: {
+  divider: {
+    position: 'relative',
+    width: 1,
+    margin: `-${SECTION_PADDING}px 20px`,
+    backgroundColor: theme.palette.grey[300],
+  },
+  dividerDot: {
     position: 'absolute',
-    width: 7,
-    height: 7,
-    right: -5,
-    top: SECTION_PADDING,
+    width: 9,
+    height: 9,
+    top: 40,
+    left: -5,
     borderRadius: 100,
     border: `1px solid ${theme.palette.grey[400]}`,
     backgroundColor: 'white',
@@ -76,8 +85,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     [constants.media.mobile]: {
       width: 5,
       height: 5,
-      right: -4,
-      top: `${SECTION_PADDING_MIDDLE}px !important`,
+      left: -3,
+      top: 31,
     },
     [constants.media.print]: {
       '&$present': {
@@ -167,7 +176,9 @@ const ResumeSubsection = ({
                                    isPresent && classes.present)}>
           {end}
         </div>
-        <div className={classnames(classes.dot,
+      </div>
+      <div className={classes.divider}>
+        <div className={classnames(classes.dividerDot,
                                    isPresent && classes.present)} />
       </div>
       <div className={classes.content}>
