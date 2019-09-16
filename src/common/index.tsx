@@ -6,6 +6,5 @@ export { default as ExternalLink } from './ExternalLink';
 export { default as InlineCode } from './InlineCode';
 export { default as InlineLink } from './InlineLink';
 export { default as GlowySvgIcon } from './GlowySvgIcon';
-export { default as Translate } from './Translate';
 export { default as social } from './social';
 export { default as translateString } from './translateString';

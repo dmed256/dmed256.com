@@ -4,7 +4,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 import HeaderLink from './HeaderLink';
 import LanguageButton from './LanguageButton';
 import constants from '../common/constants';
-import Translate from '../common/Translate';
+import * as Lang from '../common/Lang';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -81,28 +81,28 @@ const Header = () => {
         <div className={classes.spacing} />
         <HeaderLink
           label={(
-            <Translate
-              en="Blog"
-              zh="网志"
-            />
+            <Lang.Translate>
+              <Lang.English>Blog</Lang.English>
+              <Lang.Chinese>网志</Lang.Chinese>
+            </Lang.Translate>
           )}
           href="/"
         />
         <HeaderLink
           label={(
-            <Translate
-              en="About"
-              zh="关于我"
-            />
+            <Lang.Translate>
+              <Lang.English>About</Lang.English>
+              <Lang.Chinese>关于我</Lang.Chinese>
+            </Lang.Translate>
           )}
           href="/about"
         />
         <HeaderLink
           label={(
-            <Translate
-              en="Resume"
-              zh="简历"
-            />
+            <Lang.Translate>
+              <Lang.English>Resume</Lang.English>
+              <Lang.Chinese>简历</Lang.Chinese>
+            </Lang.Translate>
           )}
           href="/resume"
         />
