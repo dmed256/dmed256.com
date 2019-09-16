@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 import HeaderLink from './HeaderLink';
+import LanguageButton from './LanguageButton';
 import constants from '../common/constants';
 import Translate from '../common/Translate';
 
@@ -14,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
     height: constants.headerHeight + constants.headerGap,
     zIndex: 1,
+    color: 'rgba(255, 255, 255, 0.8)',
     backgroundColor: theme.palette.primary.light,
     [constants.media.mobile]: {
       height: constants.mobile.headerHeight,
@@ -45,11 +47,25 @@ const useStyles = makeStyles((theme: Theme) => ({
     [constants.media.mobile]: {
       fontSize: '1.3em',
       width: '4.5em',
-      marginLeft: '0.5em',
     },
   },
   spacing: {
     flex: 1,
+  },
+  divider: {
+    margin: '0 1em',
+    width: 1,
+    height: '1.3em',
+    backgroundColor: 'white',
+    opacity: 0.4,
+    [constants.media.mobile]: {
+      display: 'none',
+    },
+  },
+  iconButton: {
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.08)',
+    },
   },
 }));
 
@@ -89,6 +105,10 @@ const Header = () => {
             />
           )}
           href="/resume"
+        />
+        <div className={classes.divider} />
+        <LanguageButton
+          classes={{ root: classes.iconButton }}
         />
       </div>
     </div>

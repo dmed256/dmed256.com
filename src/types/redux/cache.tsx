@@ -1,18 +1,18 @@
-import { Language } from '../Language';
+import { LanguageCode } from '../Language';
 import { PostView } from '../PostView';
 
 
-export const SET_LANGUAGE = 'SET_LANGUAGE';
+export const SET_LANGUAGE_CODE = 'SET_LANGUAGE_CODE';
 export const SET_POST_VIEW = 'SET_POST_VIEW';
 
 export interface State {
-  language: Language,
+  languageCode: LanguageCode,
   postView: PostView,
 }
 
-export interface SetLanguageAction {
-  type: typeof SET_LANGUAGE,
-  language: Language,
+export interface SetLanguageCodeAction {
+  type: typeof SET_LANGUAGE_CODE,
+  languageCode: LanguageCode,
 }
 
 export interface SetPostViewAction {
@@ -21,6 +21,6 @@ export interface SetPostViewAction {
 }
 
 export type Action = (
-  SetLanguageAction
+  SetLanguageCodeAction
   | SetPostViewAction
 )

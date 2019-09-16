@@ -11,13 +11,13 @@ const STORE_CACHE_KEY = 'redux-cache-state';
 
 
 //---[ Actions ]------------------------
-const setLanguage = (language: types.Language) => {
+const setLanguageCode = (languageCode: types.LanguageCode) => {
   const state = getStoreState();
 
-  if (language !== state.cache.language) {
+  if (languageCode !== state.cache.languageCode) {
     dispatchAction({
-      type: types.redux.cache.SET_LANGUAGE,
-      language,
+      type: types.redux.cache.SET_LANGUAGE_CODE,
+      languageCode,
     });
   };
 };
@@ -37,7 +37,7 @@ const setPostView = (postView: types.PostView) => {
 //---[ Reducer ]------------------------
 const initState: types.redux.cache.State = {
   // Defaults
-  language: 'en',
+  languageCode: 'en',
   postView: 'detailed',
 
   // Cached overrides
@@ -49,10 +49,10 @@ const reducer = (
   action: types.redux.cache.Action,
 ): types.redux.cache.State => {
   switch (action.type) {
-  case types.redux.cache.SET_LANGUAGE:
+  case types.redux.cache.SET_LANGUAGE_CODE:
     return {
       ...state,
-      language: action.language,
+      languageCode: action.languageCode,
     };
   case types.redux.cache.SET_POST_VIEW:
     return {
@@ -82,6 +82,6 @@ export default cachedReducer;
 
 export {
   initState,
-  setLanguage,
+  setLanguageCode,
   setPostView,
 }

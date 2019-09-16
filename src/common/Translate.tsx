@@ -4,19 +4,19 @@ import { connect } from 'react-redux'
 import * as types from '../types';
 
 
-type BaseProps = Record<types.Language, React.ReactNode>
+type BaseProps = Record<types.LanguageCode, React.ReactNode>
 
 interface Props extends BaseProps {
-  language: types.Language,
+  languageCode: types.LanguageCode,
 }
 
 const Translate = ({
-  language,
+  languageCode,
   ...nodeByLanguage
 }: Props) => (
-  nodeByLanguage[language]
+  nodeByLanguage[languageCode]
 );
 
 export default connect((state: types.redux.State) => ({
-  language: state.cache.language,
+  languageCode: state.cache.languageCode,
 }))(Translate as React.FC<BaseProps>);
