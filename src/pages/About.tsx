@@ -25,11 +25,18 @@ const useStyles = makeStyles({
     }
   },
   image: {
-    width: 150,
+    minWidth: 150,
+    maxWidth: 150,
+    minHeight: 150,
+    maxHeight: 150,
+    backgroundColor: '#e4e4e4',
     borderRadius: 150,
     marginRight: 40,
     [constants.media.mobile]: {
-      width: 130,
+      minWidth: 130,
+      maxWidth: 130,
+      minHeight: 130,
+      maxHeight: 130,
       marginRight: 0,
       marginBottom: 20,
     }
