@@ -42,8 +42,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   name: {
     fontSize: '1.6em',
-    '@media(max-width: 425px)': {
+    [constants.media.mobile]: {
       fontSize: '1.3em',
+      width: '4.5em',
     },
   },
   spacing: {
