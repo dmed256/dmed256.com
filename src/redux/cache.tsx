@@ -22,11 +22,23 @@ const setLanguage = (language: types.Language) => {
   };
 };
 
+const setPostView = (postView: types.PostView) => {
+  const state = getStoreState();
+
+  if (postView !== state.cache.postView) {
+    dispatchAction({
+      type: types.redux.cache.SET_POST_VIEW,
+      postView,
+    });
+  };
+};
+
 
 //---[ Reducer ]------------------------
 const initState: types.redux.cache.State = {
   // Defaults
-  language: 0,
+  language: 'en',
+  postView: 'detailed',
 
   // Cached overrides
   ...(localStorage.get(STORE_CACHE_KEY) || {}),
@@ -36,12 +48,16 @@ const reducer = (
   state = initState,
   action: types.redux.cache.Action,
 ): types.redux.cache.State => {
-
   switch (action.type) {
   case types.redux.cache.SET_LANGUAGE:
     return {
       ...state,
       language: action.language,
+    };
+  case types.redux.cache.SET_POST_VIEW:
+    return {
+      ...state,
+      postView: action.postView,
     };
   default:
     return state;
@@ -67,4 +83,5 @@ export default cachedReducer;
 export {
   initState,
   setLanguage,
+  setPostView,
 }

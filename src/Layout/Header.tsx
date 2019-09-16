@@ -65,7 +65,7 @@ const Header = () => {
           label={(
             <Translate
               en="Blog"
-              ch="网志"
+              zh="网志"
             />
           )}
           href="/"
@@ -74,7 +74,7 @@ const Header = () => {
           label={(
             <Translate
               en="About"
-              ch="关于我"
+              zh="关于我"
             />
           )}
           href="/about"
@@ -83,7 +83,7 @@ const Header = () => {
           label={(
             <Translate
               en="Resume"
-              ch="简历"
+              zh="简历"
             />
           )}
           href="/resume"
