@@ -30,9 +30,11 @@ const highlight = (text: string, lang?: string) => {
     return text;
   }
   return (
-    <div dangerouslySetInnerHTML={{
-      __html: Prism.highlight(text, grammar, lang as any),
-    }} />
+    <div
+      dangerouslySetInnerHTML={{
+        __html: Prism.highlight(text, grammar, lang as any),
+      }}
+    />
   );
 };
 

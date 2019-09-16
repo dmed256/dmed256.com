@@ -9,8 +9,11 @@ interface Props {
   lang?: string,
 };
 
-const Code = ({ source, lang }: Props) => (
-  <pre data-lang={lang || ''}>
+const Code = ({
+  source,
+  lang,
+}: Props) => (
+  <pre key={source} data-lang={lang || ''}>
     <code className={lang ? `lang-${lang}` : undefined}>
       {highlight(source, lang)}
     </code>
