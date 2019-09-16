@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   divider: {
     marginTop: constants.headerGap,
+    [constants.media.mobile]: {
+      marginTop: constants.mobile.headerGap,
+    },
   },
   icons: {
     display: 'flex',

@@ -9,6 +9,7 @@ const constants = {
   },
   mobile: {
     headerHeight: 65,
+    headerGap: 35,
   },
 };
 
