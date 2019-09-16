@@ -19,15 +19,12 @@ const languageComponents: LanguageComponents = {
 
 interface Props {
   languageCode: types.LanguageCode,
-  Component?: React.ElementType<any>,
-  children: React.ReactNode,
+  children: React.ReactNode
 }
 
 const BaseTranslate = ({
   languageCode,
-  Component,
   children,
-  ...props
 }: Props) => {
   const currentComponent = languageComponents[languageCode];
   const childrenArray = React.Children.toArray(children);
@@ -44,15 +41,7 @@ const BaseTranslate = ({
     ));
   }
 
-  if (!Component) {
-    return renderedChild;
-  }
-
-  return (
-    <Component {...props}>
-      {renderedChild}
-    </Component>
-  );
+  return renderedChild;
 };
 
 export const Translate = (

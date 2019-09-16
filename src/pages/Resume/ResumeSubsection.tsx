@@ -59,9 +59,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   dateless: {
     width: 0,
-    '& $dot': {
-      borderRadius: 0,
-    },
   },
   divider: {
     position: 'relative',
