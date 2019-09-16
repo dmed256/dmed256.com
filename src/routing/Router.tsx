@@ -9,7 +9,6 @@ import Resume from '../pages/Resume';
 
 const Router = () => (
   <Switch>
-    <Route path="/" exact component={BlogListing} />
     <Route path="/about" exact component={About} />
     <Route path="/resume" exact component={Resume} />
     <Route component={NotFoundPage} />
