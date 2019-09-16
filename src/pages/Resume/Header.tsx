@@ -10,6 +10,7 @@ import {
 } from '../../icons';
 import GlowySvgIcon from '../../common/GlowySvgIcon';
 import InlineLink from '../../common/InlineLink';
+import * as Lang from '../../common/Lang';
 import constants from '../../common/constants';
 import social from '../../common/social';
 
@@ -120,7 +121,14 @@ const Header = ({ classes }: Props) => {
           David Medina
         </div>
         <div className="title">
-          Software Engineer
+          <Lang.Translate>
+            <Lang.English>
+              Software Engineer
+            </Lang.English>
+            <Lang.Chinese>
+              Software Engineer
+            </Lang.Chinese>
+          </Lang.Translate>
         </div>
       </div>
       <div className={classes.info}>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Bold, InlineLink } from '../../common';
+import * as Lang from '../../common/Lang';
 import { OCCA } from './links';
 import BulletList from './BulletList';
 import ResumeSection from './ResumeSection';
@@ -16,15 +17,30 @@ const Experience = () => (
       location="Harvest Exchange Corp"
     >
       <BulletList>
-        <React.Fragment>
-          Led the Infrastructure team and laid out best practices for software development, including formatting and linting of <Bold>Python</Bold> and <Bold>Javascript</Bold>
-        </React.Fragment>
-        <React.Fragment>
-          Migrated deployment from three static servers to <Bold>AWS</Bold>, using <Bold>Docker</Bold>, <Bold>Pulumi</Bold>, and <Bold>Hashicorp tools</Bold>
-        </React.Fragment>
-        <React.Fragment>
-          Improved testing process by switching to xdist-pytest for faster and simpler Travis CI and local testing
-        </React.Fragment>
+        <Lang.Translate>
+          <Lang.English>
+            Led the Infrastructure team and laid out best practices for software development, including formatting and linting of <Bold>Python</Bold> and <Bold>Javascript</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Led the Infrastructure team and laid out best practices for software development, including formatting and linting of <Bold>Python</Bold> and <Bold>Javascript</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Migrated deployment from three static servers to <Bold>AWS</Bold>, using <Bold>Docker</Bold>, <Bold>Pulumi</Bold>, and <Bold>Hashicorp tools</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Migrated deployment from three static servers to <Bold>AWS</Bold>, using <Bold>Docker</Bold>, <Bold>Pulumi</Bold>, and <Bold>Hashicorp tools</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Improved testing process by switching to xdist-pytest for faster and simpler Travis CI and local testing
+          </Lang.English>
+          <Lang.Chinese>
+            Improved testing process by switching to xdist-pytest for faster and simpler Travis CI and local testing
+          </Lang.Chinese>
+        </Lang.Translate>
       </BulletList>
     </ResumeSubsection>
 
@@ -35,25 +51,52 @@ const Experience = () => (
       location="Lawrence Livermore National Laboratory"
     >
       <BulletList>
-        <React.Fragment>
-          Maintainer of <OCCA />{', '}
-          an open source library enabling JIT compilation for multiple architectures:&nbsp;
-          <Bold>C++</Bold>{', '}
-          <Bold>OpenMP</Bold>{', '}
-          <Bold>CUDA</Bold>{', '}
-          <Bold>HIP</Bold>{', '}
-          <Bold>OpenCL</Bold>{', '}
-          <Bold>Metal</Bold>
-        </React.Fragment>
-        <React.Fragment>
-          Consultant on high performance computing for numerical simulation codes
-        </React.Fragment>
-        <React.Fragment>
-          Implemented an <OCCA />-backed solution in <InlineLink href="http://mfem.org">MFEM</InlineLink>, providing a <Bold>GPU</Bold> solution
-        </React.Fragment>
-        <React.Fragment>
-          Developed algorithms targeting <Bold>CPUs</Bold> and <Bold>GPUs</Bold> in parallel for high-order finite element methods
-        </React.Fragment>
+        <Lang.Translate>
+          <Lang.English>
+            Maintainer of <OCCA />{', '}
+            an open source library enabling JIT compilation for multiple architectures:&nbsp;
+            <Bold>C++</Bold>{', '}
+            <Bold>OpenMP</Bold>{', '}
+            <Bold>CUDA</Bold>{', '}
+            <Bold>HIP</Bold>{', '}
+            <Bold>OpenCL</Bold>{', '}
+            <Bold>Metal</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Maintainer of <OCCA />{', '}
+            an open source library enabling JIT compilation for multiple architectures:&nbsp;
+            <Bold>C++</Bold>{', '}
+            <Bold>OpenMP</Bold>{', '}
+            <Bold>CUDA</Bold>{', '}
+            <Bold>HIP</Bold>{', '}
+            <Bold>OpenCL</Bold>{', '}
+            <Bold>Metal</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Consultant on high performance computing for numerical simulation codes
+          </Lang.English>
+          <Lang.Chinese>
+            Consultant on high performance computing for numerical simulation codes
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Implemented an <OCCA />-backed solution in <InlineLink href="http://mfem.org">MFEM</InlineLink>, providing a <Bold>GPU</Bold> solution
+          </Lang.English>
+          <Lang.Chinese>
+            Implemented an <OCCA />-backed solution in <InlineLink href="http://mfem.org">MFEM</InlineLink>, providing a <Bold>GPU</Bold> solution
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Developed algorithms targeting <Bold>CPUs</Bold> and <Bold>GPUs</Bold> in parallel for high-order finite element methods
+          </Lang.English>
+          <Lang.Chinese>
+            Developed algorithms targeting <Bold>CPUs</Bold> and <Bold>GPUs</Bold> in parallel for high-order finite element methods
+          </Lang.Chinese>
+        </Lang.Translate>
       </BulletList>
     </ResumeSubsection>
 
@@ -64,24 +107,54 @@ const Experience = () => (
       location="Two Sigma"
     >
       <BulletList>
-        <React.Fragment>
-          Led internal <Bold>Javascript</Bold> environment modernization, including package publishing and the use of <Bold>React</Bold> and <Bold>Typescript</Bold>
-        </React.Fragment>
-        <React.Fragment>
-          Led development of an interactive webapp for searching and viewing foundational data, used by over 10% of the company
-        </React.Fragment>
-        <React.Fragment>
-          Developed a real-time dashboard for creating, viewing, and editing services in Waiter, used by over 20% of engineers
-        </React.Fragment>
-        <React.Fragment>
-          Used <Bold>Spark</Bold> internals to create an efficient <Bold>Python</Bold> wrapper to the Open Sourced Two Sigma Flint library
-        </React.Fragment>
-        <React.Fragment>
-          Developed and maintained big data pipelines using <Bold>Pyspark</Bold>
-        </React.Fragment>
-        <React.Fragment>
-          Onboarded external applications using <Bold>Docker</Bold> and <Bold>Kubernetes</Bold>
-        </React.Fragment>
+        <Lang.Translate>
+          <Lang.English>
+            Led internal <Bold>Javascript</Bold> environment modernization, including package publishing and the use of <Bold>React</Bold> and <Bold>Typescript</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Led internal <Bold>Javascript</Bold> environment modernization, including package publishing and the use of <Bold>React</Bold> and <Bold>Typescript</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Led development of an interactive webapp for searching and viewing foundational data, used by over 10% of the company
+          </Lang.English>
+          <Lang.Chinese>
+            Led development of an interactive webapp for searching and viewing foundational data, used by over 10% of the company
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Developed a real-time dashboard for creating, viewing, and editing services in Waiter, used by over 20% of engineers
+          </Lang.English>
+          <Lang.Chinese>
+            Developed a real-time dashboard for creating, viewing, and editing services in Waiter, used by over 20% of engineers
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Used <Bold>Spark</Bold> internals to create an efficient <Bold>Python</Bold> wrapper to the Open Sourced Two Sigma Flint library
+          </Lang.English>
+          <Lang.Chinese>
+            Used <Bold>Spark</Bold> internals to create an efficient <Bold>Python</Bold> wrapper to the Open Sourced Two Sigma Flint library
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Developed and maintained big data pipelines using <Bold>Pyspark</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Developed and maintained big data pipelines using <Bold>Pyspark</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Onboarded external applications using <Bold>Docker</Bold> and <Bold>Kubernetes</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Onboarded external applications using <Bold>Docker</Bold> and <Bold>Kubernetes</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
       </BulletList>
     </ResumeSubsection>
 
@@ -92,12 +165,22 @@ const Experience = () => (
       location="Shell"
     >
       <BulletList>
-        <React.Fragment>
-          Optimized existing finite difference codes for parallel <Bold>CPUs</Bold> and <Bold>GPUs</Bold>
-        </React.Fragment>
-        <React.Fragment>
-          Implemented numerical methods for parallel architectures through <Bold>OpenMP</Bold>, <Bold>OpenCL</Bold>, and <Bold>CUDA</Bold>
-        </React.Fragment>
+        <Lang.Translate>
+          <Lang.English>
+            Optimized existing finite difference codes for parallel <Bold>CPUs</Bold> and <Bold>GPUs</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Optimized existing finite difference codes for parallel <Bold>CPUs</Bold> and <Bold>GPUs</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Implemented numerical methods for parallel architectures through <Bold>OpenMP</Bold>, <Bold>OpenCL</Bold>, and <Bold>CUDA</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Implemented numerical methods for parallel architectures through <Bold>OpenMP</Bold>, <Bold>OpenCL</Bold>, and <Bold>CUDA</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
       </BulletList>
     </ResumeSubsection>
 
@@ -107,12 +190,22 @@ const Experience = () => (
       location="Shell"
     >
       <BulletList>
-        <React.Fragment>
-          Optimized existing finite difference codes for parallel <Bold>CPUs</Bold> and <Bold>GPUs</Bold>
-        </React.Fragment>
-        <React.Fragment>
-          Investigated hybrid kernels that would achieve portable performance across varying architectures.
-        </React.Fragment>
+        <Lang.Translate>
+          <Lang.English>
+            Optimized existing finite difference codes for parallel <Bold>CPUs</Bold> and <Bold>GPUs</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Optimized existing finite difference codes for parallel <Bold>CPUs</Bold> and <Bold>GPUs</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Investigated hybrid kernels that would achieve portable performance across varying architectures.
+          </Lang.English>
+          <Lang.Chinese>
+            Investigated hybrid kernels that would achieve portable performance across varying architectures.
+          </Lang.Chinese>
+        </Lang.Translate>
       </BulletList>
     </ResumeSubsection>
 
@@ -122,12 +215,22 @@ const Experience = () => (
       location="Shell"
     >
       <BulletList>
-        <React.Fragment>
-          Worked on Discontinuous Galerkin implementations for wave equations
-        </React.Fragment>
-        <React.Fragment>
-          Begin work on a portability layer to enable <Bold>OpenMP</Bold>, <Bold>OpenCL</Bold>, and <Bold>CUDA</Bold>.
-        </React.Fragment>
+        <Lang.Translate>
+          <Lang.English>
+            Worked on Discontinuous Galerkin implementations for wave equations
+          </Lang.English>
+          <Lang.Chinese>
+            Worked on Discontinuous Galerkin implementations for wave equations
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Begin work on a portability layer to enable <Bold>OpenMP</Bold>, <Bold>OpenCL</Bold>, and <Bold>CUDA</Bold>.
+          </Lang.English>
+          <Lang.Chinese>
+            Begin work on a portability layer to enable <Bold>OpenMP</Bold>, <Bold>OpenCL</Bold>, and <Bold>CUDA</Bold>.
+          </Lang.Chinese>
+        </Lang.Translate>
       </BulletList>
     </ResumeSubsection>
   </ResumeSection>
