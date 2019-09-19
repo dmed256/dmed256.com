@@ -30,13 +30,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   date: {
     position: 'relative',
-    width: 100,
+    width: '8em',
     marginBottom: -SECTION_PADDING,
     fontSize: 14,
     fontWeight: 300,
     textAlign: 'right',
     [constants.media.mobile]: {
-      width: 80,
+      width: '7.5em',
       fontSize: 11,
     },
   },

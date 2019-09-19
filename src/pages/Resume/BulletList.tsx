@@ -1,11 +1,15 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  createStyles,
+  withStyles,
+  WithStyles,
+} from '@material-ui/core/styles';
 
 import constants from '../../common/constants';
 
 
-const useStyles = makeStyles({
+const styles = createStyles({
   root: {
     paddingLeft: 18,
     margin: '0.5em 0',
@@ -13,29 +17,28 @@ const useStyles = makeStyles({
       margin: 0,
     },
   },
+  listItem: {},
 });
 
-interface Props {
+interface Props extends WithStyles<typeof styles> {
   children: React.ReactNode,
 }
 
 const BulletList = ({
+  classes,
   children,
-}: Props) => {
-  const classes = useStyles();
-  return (
-    <ul className={classes.root}>
+}: Props) => (
+  <ul className={classes.root}>
     {
       React.Children.map(children, (child, index) => (
         <li key={index}>
-          <Typography variant="body1">
+          <Typography variant="body1" className={classes.listItem}>
             {child}
           </Typography>
         </li>
       ))
     }
   </ul>
-  );
-};
+);
 
-export default BulletList;
+export default withStyles(styles)(BulletList);

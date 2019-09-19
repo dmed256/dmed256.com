@@ -1,110 +1,161 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { Bold, InlineLink } from '../../common';
 import * as Lang from '../../common/Lang';
+import BulletList from './BulletList';
 import ResumeSection from './ResumeSection';
 
 
-const About = () => (
-  <ResumeSection title="About">
-    <Typography variant="body1">
-      <Bold>
+const useStyles = makeStyles({
+  bulletList: {
+    margin: '0.8em 1em !important',
+  },
+  bulletListItem: {
+    margin: '0.5em 0',
+    letterSpacing: 0,
+  },
+});
+
+const About = () => {
+  const classes = useStyles();
+  return (
+    <ResumeSection title="About">
+      <Typography variant="body1">
+        <Bold>
+          <Lang.Translate>
+            <Lang.English>
+              I really enjoy programming!
+            </Lang.English>
+            <Lang.Chinese>
+              I really enjoy programming!
+            </Lang.Chinese>
+          </Lang.Translate>
+        </Bold>
+      </Typography>
+
+      <Typography variant="body1">
         <Lang.Translate>
           <Lang.English>
-            I really enjoy programming!
+            From high performance computing applications running on thousands of hybrid architecture nodes,
+            to building web apps with great user experiences.
           </Lang.English>
           <Lang.Chinese>
-            I really enjoy programming!
+            From high performance computing applications running on thousands of hybrid architecture nodes,
+            to building web apps with great user experiences.
           </Lang.Chinese>
         </Lang.Translate>
-      </Bold>
-    </Typography>
+      </Typography>
 
-    <Typography variant="body1">
-      <Lang.Translate>
-        <Lang.English>
-          From high performance computing applications running on thousands of hybrid architecture nodes,
-          to building web apps with great user experiences.
-        </Lang.English>
-        <Lang.Chinese>
-          From high performance computing applications running on thousands of hybrid architecture nodes,
-          to building web apps with great user experiences.
-        </Lang.Chinese>
-      </Lang.Translate>
-    </Typography>
+      <Typography variant="body1">
+        <Lang.Translate>
+          <Lang.English>
+            I'm lucky to be working or have worked in various exciting environments, including:
+          </Lang.English>
+          <Lang.Chinese>
+            I'm lucky to be working or have worked in various exciting environments, including:
+          </Lang.Chinese>
+        </Lang.Translate>
+      </Typography>
 
-    <Typography variant="body1">
-      <Lang.Translate>
-        <Lang.English>
-          I'm lucky to have worked in various environments, including a startup
-        </Lang.English>
-        <Lang.Chinese>
-          I'm lucky to have worked in various environments, including a startup
-        </Lang.Chinese>
-      </Lang.Translate>
+      <BulletList
+        classes={{
+          root: classes.bulletList,
+          listItem: classes.bulletListItem,
+        }}
+      >
+        {/* Brex */}
+        <React.Fragment>
+          <Lang.Translate>
+            <Lang.English>
+              A unicorn startup for corporate cards
+            </Lang.English>
+            <Lang.Chinese>
+              A unicorn startup for corporate cards
+            </Lang.Chinese>
+          </Lang.Translate>
+          {' '}
+          <InlineLink href="https://www.brex.com">
+            @Brex
+          </InlineLink>
+        </React.Fragment>
+        {/* Two Sigma */}
+        <React.Fragment>
+          <Lang.Translate>
+            <Lang.English>
+              A quantitative hedge fund
+            </Lang.English>
+            <Lang.Chinese>
+              A quantitative hedge fund
+            </Lang.Chinese>
+          </Lang.Translate>
+          {' '}
+          <InlineLink href="https://www.twosigma.com">
+            @TwoSigma
+          </InlineLink>
+        </React.Fragment>
+        {/* CEED */}
+        <React.Fragment>
+          <Lang.Translate>
+            <Lang.English>
+              An exascale initiative for high-order numerical methods
+            </Lang.English>
+            <Lang.Chinese>
+              An exascale initiative for high-order numerical methods
+            </Lang.Chinese>
+          </Lang.Translate>
+          {' '}
+          <InlineLink href="http://ceed.exascaleproject.org">
+            @CEED
+          </InlineLink>
+        </React.Fragment>
+        {/* LLNL */}
+        <React.Fragment>
+          <Lang.Translate>
+            <Lang.English>
+              A government national laboratory
+            </Lang.English>
+            <Lang.Chinese>
+              A government national laboratory
+            </Lang.Chinese>
+          </Lang.Translate>
+          {' '}
+          <InlineLink href="https://www.llnl.gov">
+            @LLNL
+          </InlineLink>
+        </React.Fragment>
+        {/* Harvest */}
+        <React.Fragment>
+          <Lang.Translate>
+            <Lang.English>
+              A fintech networking startup
+            </Lang.English>
+            <Lang.Chinese>
+              A fintech networking startup
+            </Lang.Chinese>
+          </Lang.Translate>
+          {' '}
+          <InlineLink href="https://www.hvst.com">
+            @Harvest
+          </InlineLink>
+        </React.Fragment>
+      </BulletList>
 
-      &nbsp;
-      <InlineLink href="https://www.hvst.com">
-        @Harvest
-      </InlineLink>
-
-      <Lang.Translate>
-        <Lang.English>
-          {','} finance industry
-        </Lang.English>
-        <Lang.Chinese>
-          {','} finance industry
-        </Lang.Chinese>
-      </Lang.Translate>
-
-      &nbsp;
-      <InlineLink href="https://www.twosigma.com">
-        @TwoSigma
-      </InlineLink>
-
-      <Lang.Translate>
-        <Lang.English>
-          {','} and an HPC contractor for
-        </Lang.English>
-        <Lang.Chinese>
-          {','} and an HPC contractor for
-        </Lang.Chinese>
-      </Lang.Translate>
-
-      &nbsp;
-      <InlineLink href="http://ceed.exascaleproject.org">
-        @CEED
-      </InlineLink>
-
-      <Lang.Translate>
-        <Lang.English>
-          {','} an exascale initiative at a government national laboratory
-        </Lang.English>
-        <Lang.Chinese>
-          {','} an exascale initiative at a government national laboratory
-        </Lang.Chinese>
-      </Lang.Translate>
-
-      &nbsp;
-      <InlineLink href="https://www.llnl.gov">
-        @LLNL
-      </InlineLink>
-    </Typography>
-
-    <Typography variant="body1">
-      <Lang.Translate>
-        <Lang.English>
-          The influx of projects seen from both domains along with personal side-projects
-          require me to work with a high variety of technologies, frameworks, libraries, and languages.
-        </Lang.English>
-        <Lang.Chinese>
-          The influx of projects seen from both domains along with personal side-projects
-          require me to work with a high variety of technologies, frameworks, libraries, and languages.
-        </Lang.Chinese>
-      </Lang.Translate>
-    </Typography>
-  </ResumeSection>
-);
+      <Typography variant="body1">
+        <Lang.Translate>
+          <Lang.English>
+            The influx of projects seen from these multiple domains, along with personal side-projects,
+            require me to work with a high variety of technologies, frameworks, libraries, and languages.
+          </Lang.English>
+          <Lang.Chinese>
+            The influx of projects seen from these multiple domains, along with personal side-projects,
+            require me to work with a high variety of technologies, frameworks, libraries, and languages.
+          </Lang.Chinese>
+        </Lang.Translate>
+      </Typography>
+    </ResumeSection>
+  );
+};
 
 export default About;

@@ -110,8 +110,8 @@ const Header = ({ classes }: Props) => {
   const socialInfo = [
     { Icon: MailOutlineIcon, label: social.getEmail() },
     { Icon: GithubIcon, label: social.github.link, color: social.github.color },
-    { Icon: TwitterIcon, label: social.twitter.link, color: social.twitter.color },
     { Icon: LinkedinIcon, label: social.linkedin.link, color: social.linkedin.color },
+    { Icon: TwitterIcon, label: social.twitter.link, color: social.twitter.color },
   ];
 
   return (

@@ -12,35 +12,11 @@ const Experience = () => (
   <ResumeSection title="Experience">
     <ResumeSubsection
       title="Senior Software Engineer"
-      start="April 2019"
-      end="Present"
-      location="Harvest Exchange Corp"
+      start="October 2019"
+      location="Brex"
     >
       <BulletList>
-        <Lang.Translate>
-          <Lang.English>
-            Led the Infrastructure team and laid out best practices for software development, including formatting and linting of <Bold>Python</Bold> and <Bold>Javascript</Bold>
-          </Lang.English>
-          <Lang.Chinese>
-            Led the Infrastructure team and laid out best practices for software development, including formatting and linting of <Bold>Python</Bold> and <Bold>Javascript</Bold>
-          </Lang.Chinese>
-        </Lang.Translate>
-        <Lang.Translate>
-          <Lang.English>
-            Migrated deployment from three static servers to <Bold>AWS</Bold>, using <Bold>Docker</Bold>, <Bold>Pulumi</Bold>, and <Bold>Hashicorp tools</Bold>
-          </Lang.English>
-          <Lang.Chinese>
-            Migrated deployment from three static servers to <Bold>AWS</Bold>, using <Bold>Docker</Bold>, <Bold>Pulumi</Bold>, and <Bold>Hashicorp tools</Bold>
-          </Lang.Chinese>
-        </Lang.Translate>
-        <Lang.Translate>
-          <Lang.English>
-            Improved testing process by switching to xdist-pytest for faster and simpler Travis CI and local testing
-          </Lang.English>
-          <Lang.Chinese>
-            Improved testing process by switching to xdist-pytest for faster and simpler Travis CI and local testing
-          </Lang.Chinese>
-        </Lang.Translate>
+        ???
       </BulletList>
     </ResumeSubsection>
 
@@ -95,6 +71,40 @@ const Experience = () => (
           </Lang.English>
           <Lang.Chinese>
             Developed algorithms targeting <Bold>CPUs</Bold> and <Bold>GPUs</Bold> in parallel for high-order finite element methods
+          </Lang.Chinese>
+        </Lang.Translate>
+      </BulletList>
+    </ResumeSubsection>
+
+    <ResumeSubsection
+      title="Senior Software Engineer"
+      start="April 2019"
+      end="September 2019"
+      location="Harvest Exchange Corp"
+    >
+      <BulletList>
+        <Lang.Translate>
+          <Lang.English>
+            Led the Infrastructure team and laid out best practices for software development, including formatting and linting of <Bold>Python</Bold> and <Bold>Javascript</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Led the Infrastructure team and laid out best practices for software development, including formatting and linting of <Bold>Python</Bold> and <Bold>Javascript</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Migrated deployment from three static servers to <Bold>AWS</Bold>, using <Bold>Docker</Bold>, <Bold>Pulumi</Bold>, and <Bold>Hashicorp tools</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Migrated deployment from three static servers to <Bold>AWS</Bold>, using <Bold>Docker</Bold>, <Bold>Pulumi</Bold>, and <Bold>Hashicorp tools</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Improved testing process by switching to xdist-pytest for faster and simpler Travis CI and local testing
+          </Lang.English>
+          <Lang.Chinese>
+            Improved testing process by switching to xdist-pytest for faster and simpler Travis CI and local testing
           </Lang.Chinese>
         </Lang.Translate>
       </BulletList>
