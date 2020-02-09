@@ -44,7 +44,7 @@ const useStyles = makeStyles({
 const About = () => {
   const classes = useStyles();
   return (
-    <React.Fragment>
+    <>
       <Typography
         className={classes.title}
         variant="h4"
@@ -65,7 +65,7 @@ const About = () => {
           </Typography>
 
           <Typography variant="body1">
-            I'm currently transitioning to work at <InlineLink href="https://brex.com">Brex</InlineLink> as a Software Engineer, where I'll be making and building cool stuff.
+            I currently work at <InlineLink href="https://brex.com">Brex</InlineLink> as a Software Engineer on the Cash team building cool stuff.
           </Typography>
 
           <Typography variant="body1">
@@ -82,7 +82,7 @@ const About = () => {
           </Typography>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

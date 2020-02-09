@@ -66,7 +66,7 @@ const About = () => {
         }}
       >
         {/* Brex */}
-        <React.Fragment>
+        <>
           <Lang.Translate>
             <Lang.English>
               A unicorn startup for corporate cards
@@ -79,9 +79,9 @@ const About = () => {
           <InlineLink href="https://www.brex.com">
             @Brex
           </InlineLink>
-        </React.Fragment>
+        </>
         {/* Two Sigma */}
-        <React.Fragment>
+        <>
           <Lang.Translate>
             <Lang.English>
               A quantitative hedge fund
@@ -94,9 +94,9 @@ const About = () => {
           <InlineLink href="https://www.twosigma.com">
             @TwoSigma
           </InlineLink>
-        </React.Fragment>
+        </>
         {/* CEED */}
-        <React.Fragment>
+        <>
           <Lang.Translate>
             <Lang.English>
               An exascale initiative for high-order numerical methods
@@ -109,9 +109,9 @@ const About = () => {
           <InlineLink href="http://ceed.exascaleproject.org">
             @CEED
           </InlineLink>
-        </React.Fragment>
+        </>
         {/* LLNL */}
-        <React.Fragment>
+        <>
           <Lang.Translate>
             <Lang.English>
               A government national laboratory
@@ -124,22 +124,7 @@ const About = () => {
           <InlineLink href="https://www.llnl.gov">
             @LLNL
           </InlineLink>
-        </React.Fragment>
-        {/* Harvest */}
-        <React.Fragment>
-          <Lang.Translate>
-            <Lang.English>
-              A fintech networking startup
-            </Lang.English>
-            <Lang.Chinese>
-              A fintech networking startup
-            </Lang.Chinese>
-          </Lang.Translate>
-          {' '}
-          <InlineLink href="https://www.hvst.com">
-            @Harvest
-          </InlineLink>
-        </React.Fragment>
+        </>
       </BulletList>
 
       <Typography variant="body1">

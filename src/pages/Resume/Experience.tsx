@@ -11,12 +11,20 @@ import ResumeSubsection from './ResumeSubsection';
 const Experience = () => (
   <ResumeSection title="Experience">
     <ResumeSubsection
-      title="Senior Software Engineer"
+      title="Software Engineer"
       start="October 2019"
+      end="Present"
       location="Brex"
     >
       <BulletList>
-        ???
+        <Lang.Translate>
+          <Lang.English>
+            Working on the Cash team building cool stuff
+          </Lang.English>
+          <Lang.Chinese>
+            Working on the Cash team building cool stuff
+          </Lang.Chinese>
+        </Lang.Translate>
       </BulletList>
     </ResumeSubsection>
 

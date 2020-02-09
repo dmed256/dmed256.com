@@ -8,6 +8,9 @@ import constants from '../common/constants';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
+    display: 'flex',
+    width: '4em',
+    justifyContent: 'center',
     padding: '0.5em 1.0em',
     transition: 'background-color 300ms, border-color 300ms, box-shadow 100ms',
     borderBottom: '1px solid transparent',

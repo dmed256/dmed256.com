@@ -51,11 +51,6 @@ const useStyles = makeStyles((theme: Theme) => ({
       color: theme.palette.primary.main,
       fontWeight: 400,
     },
-    [constants.media.mobile]: {
-      '&$present': {
-        color: 'inherit',
-      },
-    },
   },
   dateless: {
     width: 0,

@@ -80,7 +80,7 @@ class Clipboard extends React.Component<Props, State> {
     );
 
     return (
-      <React.Fragment>
+      <>
         <Tooltip
           title={tooltip}
           placement="bottom"
@@ -104,7 +104,7 @@ class Clipboard extends React.Component<Props, State> {
           } as any}
           onClose={this.closeSnackbar}
         />
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -38,7 +38,7 @@ const LanguageButton = ({
   }
 
   return (
-    <React.Fragment>
+    <>
       <IconButton
         color="inherit"
         classes={{
@@ -76,7 +76,7 @@ const LanguageButton = ({
           />
         ))}
       </Menu>
-    </React.Fragment>
+    </>
   );
 };
 

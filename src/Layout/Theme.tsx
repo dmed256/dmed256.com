@@ -65,14 +65,14 @@ interface Props {
 const Theme = ({
   children,
 }: Props) => (
-  <React.Fragment>
+  <>
     <StylesProvider jss={jss}>
       <ThemeProvider theme={theme}>
         <GlobalCSS />
         {children}
       </ThemeProvider>
     </StylesProvider>
-  </React.Fragment>
+  </>
 );
 
 export default Theme;

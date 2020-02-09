@@ -30,18 +30,14 @@ const BaseTranslate = ({
   const childrenArray = React.Children.toArray(children);
 
   // Find targetted language child
-  let renderedChild: any = childrenArray.find((child: any) => (
+  const renderedChild: any = childrenArray.find((child: any) => (
     child.type === currentComponent
   ));
 
   // Fallback to English
-  if (!renderedChild) {
-    renderedChild = childrenArray.find((child: any) => (
-      child.type === English
-    ));
-  }
-
-  return renderedChild;
+  return renderedChild || childrenArray.find((child: any) => (
+    child.type === English
+  ));
 };
 
 export const Translate = (

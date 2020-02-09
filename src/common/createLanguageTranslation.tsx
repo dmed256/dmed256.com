@@ -6,9 +6,9 @@ interface Props {
 }
 
 const LanguageTranslation = ({ children }: Props) => (
-  <React.Fragment>
+  <>
     {children}
-  </React.Fragment>
+  </>
 );
 
 const createLanguageTranslation = () => (
