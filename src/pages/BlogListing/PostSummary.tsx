@@ -101,7 +101,7 @@ const PostSummary = ({
           post={post}
         />
         <div className={classes.timeToRead}>
-          {`${post.minutesToRead} min read`}
+          {`~${post.minutesToRead} min read`}
         </div>
         <div className={classes.tags}>
           {post.tags.map((tag) => (
