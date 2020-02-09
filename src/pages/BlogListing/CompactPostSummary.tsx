@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
+import PostTitle from './PostTitle';
 import * as types from '../../types';
 import Tag from '../../common/Tag';
 
@@ -76,9 +77,10 @@ const CompactPostSummary = ({
           <div className={classes.date}>
             {post.date.format('MMM DD, YYYY')}
           </div>
-          <div className={classes.title}>
-            {post.title}
-          </div>
+          <PostTitle
+            classes={{ root: classes.title }}
+            post={post}
+          />
         </div>
         <div className={classes.content}>
           {post.summary}

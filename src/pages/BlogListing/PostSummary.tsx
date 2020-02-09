@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
+import PostTitle from './PostTitle';
 import * as types from '../../types';
 import Tag from '../../common/Tag';
 
@@ -91,9 +92,10 @@ const PostSummary = ({
         <div className={classes.dividerDot} />
       </div>
       <div className={classes.content}>
-        <div className={classes.title}>
-          {post.title}
-        </div>
+        <PostTitle
+          classes={{ root: classes.title }}
+          post={post}
+        />
         <div className={classes.timeToRead}>
           {`${post.minutesToRead} min read`}
         </div>
