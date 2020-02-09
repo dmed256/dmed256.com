@@ -1,7 +1,7 @@
 import React from 'react';
 
-import NotFoundPage from '../../pages/NotFoundPage';
-import { postsBySlug } from '../../posts';
+import NotFoundPage from '../pages/NotFoundPage';
+import { postsBySlug } from '../posts';
 
 
 interface Props {
