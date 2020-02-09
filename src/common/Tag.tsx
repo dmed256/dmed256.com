@@ -19,6 +19,9 @@ const styles = (theme: Theme) => (
       borderRadius: '0.2em',
       backgroundColor: theme.palette.grey[300],
       textTransform: 'uppercase',
+      '&$compact': {
+        padding: '0.3em 0.7em',
+      },
       '&$active, &:hover': {
         color: theme.palette.getContrastText(
           theme.palette.primary.main,
@@ -35,17 +38,20 @@ const styles = (theme: Theme) => (
       },
     },
     active: {},
+    compact: {},
   })
 );
 
 interface Props extends RouteComponentProps<any>, WithStyles<typeof styles> {
   label: string,
+  compact?: boolean,
 }
 
 const Tag = ({
   location,
   classes,
   label,
+  compact,
 }: Props) => {
   const search = queryString.parse(location.search);
 
@@ -55,7 +61,8 @@ const Tag = ({
   return (
     <Link
       className={classnames(classes.root,
-                            active && classes.active)}
+                            active && classes.active,
+                            compact && classes.compact)}
       to={{ search: active ? '' : `?tag=${safeLabel}` }}
     >
       {label}

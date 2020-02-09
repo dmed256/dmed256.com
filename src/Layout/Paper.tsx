@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: `-${constants.headerGap}px auto ${constants.headerHeight}px`,
     backgroundColor: theme.palette.background.paper,
     boxShadow: '0 7px 15px 0 rgba(1, 1, 1, 0.25)',
+    overflow: 'hidden',
     [constants.media.mobile]: {
       width: '100%',
       margin: 0,

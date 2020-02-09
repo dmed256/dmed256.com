@@ -5,37 +5,54 @@ import * as types from '../../types';
 import Tag from '../../common/Tag';
 
 
+const SUMMARY_GAP = 10;
+
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-  },
-  date: {
-    width: 80,
-    textAlign: 'right',
-    color: theme.palette.primary.main,
-    fontSize: '1.3em',
-    letterSpacing: '1px',
-    textTransform: 'uppercase',
-  },
-  content: {
-    flex: 1,
-  },
-  title: {
-    fontSize: '1.3em',
-    letterSpacing: '1px',
-  },
-  timeToRead: {
-    fontSize: '0.95em',
-    opacity: 0.65,
-    margin: '2px 0 12px 0',
+    display: 'flex',
+    flexDirection: 'row',
+    padding: `${SUMMARY_GAP}px 0`,
+    '&:first-child': {
+      paddingTop: 0,
+    },
+    '&:last-child': {
+      paddingBottom: 0,
+    },
   },
   tags: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     fontSize: '0.7em',
-    marginBottom: 25,
+    minWidth: '8em',
+    marginRight: '1em',
     '& > *': {
-      margin: '0 0.3em',
+      textAlign: 'center',
+      margin: '0.2em',
     },
+  },
+  contentContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  titleContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: '0.4em',
+  },
+  date: {
+    opacity: 0.7,
+    width: '7em',
+    fontSize: '1em',
+    letterSpacing: '1px',
+    textTransform: 'uppercase',
+  },
+  title: {
+    color: theme.palette.primary.main,
+    fontSize: '1em',
+    letterSpacing: '1px',
+  },
+  content: {
+    fontSize: '0.9em',
   },
 }));
 
@@ -49,22 +66,21 @@ const CompactPostSummary = ({
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <div className={classes.date}>
-        {post.date.format('MMM DD')}
+      <div className={classes.tags}>
+        {post.tags.map((tag) => (
+          <Tag key={tag} label={tag} compact />
+        ))}
       </div>
-      <div className={classes.content}>
-        <div className={classes.title}>
-          {post.title}
+      <div className={classes.contentContainer}>
+        <div className={classes.titleContainer}>
+          <div className={classes.date}>
+            {post.date.format('MMM DD, YYYY')}
+          </div>
+          <div className={classes.title}>
+            {post.title}
+          </div>
         </div>
-        <div className={classes.timeToRead}>
-          {`${post.minutesToRead} min read`}
-        </div>
-        <div className={classes.tags}>
-          {post.tags.map((tag) => (
-            <Tag key={tag} label={tag} />
-          ))}
-        </div>
-        <div>
+        <div className={classes.content}>
           {post.summary}
         </div>
       </div>

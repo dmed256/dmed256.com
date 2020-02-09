@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: 'flex',
     lineHeight: '1.5em',
+    pageBreakInside: "avoid",
     '&:first-child': {
       '& $divider': {
         marginTop: SECTION_PADDING,

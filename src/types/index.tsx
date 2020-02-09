@@ -3,6 +3,7 @@ export * from './DateMetadata';
 export * from './Language';
 export * from './PostSummary';
 export * from './PostView';
+export * from './PostsBySlug';
 export * from './TagMetadata';
 export * from './YearMetadata';
 

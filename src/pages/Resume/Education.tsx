@@ -23,7 +23,7 @@ const Education = () => (
       date="May 2011"
       location="University of Texas Pan-American"
     >
-      Double major in Computer Science
+      Double major in Mathematics and Computer Science
     </ResumeSubsection>
   </ResumeSection>
 );

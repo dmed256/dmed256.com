@@ -35,12 +35,12 @@ NotImplementedError: ${fileNotFound}
         lang="python"
       />
       <Code
-        source="Segmentation fault (core dumped)"
-        lang="cpp"
-      />
-      <Code
         source="[Object object]"
         lang="js"
+      />
+      <Code
+        source="Segmentation fault (core dumped)"
+        lang="cpp"
       />
     </div>
   );

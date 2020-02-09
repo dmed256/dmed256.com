@@ -10,6 +10,7 @@ const DUMMY_COMPONENT = () => null;
 const posts: types.PostSummary[] = [
   {
     title: 'Title 1',
+    slug: 'title-1',
     date: moment('2019-09-10'),
     minutesToRead: 10,
     summary: DUMMY_SUMMARY,
@@ -18,6 +19,7 @@ const posts: types.PostSummary[] = [
   },
   {
     title: 'Title 2',
+    slug: 'title-2',
     date: moment('2019-09-07'),
     minutesToRead: 10,
     summary: DUMMY_SUMMARY,
@@ -26,6 +28,7 @@ const posts: types.PostSummary[] = [
   },
   {
     title: 'Title 3',
+    slug: 'title-3',
     date: moment('2018-10-10'),
     minutesToRead: 10,
     summary: DUMMY_SUMMARY,
@@ -34,6 +37,7 @@ const posts: types.PostSummary[] = [
   },
   {
     title: 'Title 4',
+    slug: 'title-4',
     date: moment('2018-09-10'),
     minutesToRead: 10,
     summary: DUMMY_SUMMARY,

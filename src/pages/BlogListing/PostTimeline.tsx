@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 import * as types from '../../types';
 import { posts as allPosts } from '../../posts';
 import AnnualPostTimeline from './AnnualPostTimeline';
-import CompactPostSummary from './CompactPostSummary';
-import PostSummary from './PostSummary';
+import CompactPostTimeline from './CompactPostTimeline';
 
 
 interface PostsByYear {
@@ -23,16 +22,7 @@ const PostTimeline = ({
   // Compact view
   if (postView === 'compact') {
     return (
-      <div>
-        {
-          allPosts.map((post) => (
-            <CompactPostSummary
-              key={post.title}
-              post={post}
-            />
-          ))
-        }
-      </div>
+      <CompactPostTimeline />
     );
   }
 
