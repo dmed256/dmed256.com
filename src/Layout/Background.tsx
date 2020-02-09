@@ -6,6 +6,7 @@ import constants from '../common/constants';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
+    display: 'flex',
     flex: 1,
     marginTop: constants.headerHeight + constants.headerGap,
     backgroundColor: theme.palette.grey[100],
@@ -21,7 +22,7 @@ interface Props {
   children: React.ReactNode,
 }
 
-const Paper = ({
+const Background = ({
   children,
 }: Props) => {
   const classes = useStyles();
@@ -34,4 +35,4 @@ const Paper = ({
 }
 
 
-export default Paper;
+export default Background;

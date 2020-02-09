@@ -6,6 +6,7 @@ import constants from '../common/constants';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
+    display: 'flex',
     position: 'relative',
     width: constants.width,
     maxWidth: constants.maxWidth,
@@ -14,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: '0 7px 15px 0 rgba(1, 1, 1, 0.25)',
     overflow: 'hidden',
+    boxSizing: 'border-box',
     [constants.media.mobile]: {
       width: '100%',
       minHeight: `calc(100vh - ${constants.mobile.headerHeight}px)`,
@@ -33,6 +35,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   content: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
     padding: `0 ${constants.headerGap}px`,
     [constants.media.mobile]: {
       padding: `0 20px`,
