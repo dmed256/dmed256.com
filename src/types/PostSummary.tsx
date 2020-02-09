@@ -7,7 +7,6 @@ export interface PostSummary {
   slug: string,
   date: Moment,
   minutesToRead: number,
-  summary: string,
   tags: string[],
   component: React.ReactType,
 }

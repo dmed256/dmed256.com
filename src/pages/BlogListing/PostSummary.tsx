@@ -4,9 +4,10 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 import PostTitle from './PostTitle';
 import * as types from '../../types';
 import Tag from '../../common/Tag';
+import constants from '../../common/constants';
 
 
-const SUMMARY_GAP = 30;
+const SUMMARY_GAP = 15;
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&:first-child': {
       paddingTop: 0,
       '& $divider': {
-        marginTop: 9,
+        marginTop: 6,
       },
       '& $dividerDot': {
         top: 0,
@@ -40,8 +41,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   divider: {
     position: 'relative',
     width: 1,
-    margin: `-${SUMMARY_GAP}px 35px -${SUMMARY_GAP}px 15px`,
+    margin: `-30px 35px -${SUMMARY_GAP}px 15px`,
     backgroundColor: theme.palette.grey[300],
+    [constants.media.mobile]: {
+      margin: `-32px 35px -${SUMMARY_GAP}px 15px`,
+    },
   },
   dividerDot: {
     position: 'absolute',
@@ -68,7 +72,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'row',
     fontSize: '0.7em',
-    marginBottom: 25,
+    marginBottom: '0.7em',
     '& > *': {
       margin: '0 0.3em',
     },
@@ -103,9 +107,6 @@ const PostSummary = ({
           {post.tags.map((tag) => (
             <Tag key={tag} label={tag} />
           ))}
-        </div>
-        <div>
-          {post.summary}
         </div>
       </div>
     </div>

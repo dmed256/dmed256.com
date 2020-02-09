@@ -7,10 +7,15 @@ import constants from '../common/constants';
 
 
 const useStyles = makeStyles({
+  root: {
+    [constants.media.mobile]: {
+      marginTop: 10,
+    }
+  },
   title: {
     marginBottom: 30,
     [constants.media.mobile]: {
-      marginBottom: 20,
+      display: 'none',
     }
   },
   container: {
@@ -44,14 +49,13 @@ const useStyles = makeStyles({
 const About = () => {
   const classes = useStyles();
   return (
-    <>
+    <div className={classes.root}>
       <Typography
         className={classes.title}
         variant="h4"
       >
         About
       </Typography>
-
       <div className={classes.container}>
         <img
           className={classes.image}
@@ -82,7 +86,7 @@ const About = () => {
           </Typography>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

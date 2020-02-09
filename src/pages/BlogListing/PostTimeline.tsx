@@ -1,10 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux'
 
 import * as types from '../../types';
 import { posts as allPosts } from '../../posts';
 import AnnualPostTimeline from './AnnualPostTimeline';
-import CompactPostTimeline from './CompactPostTimeline';
 
 
 interface PostsByYear {
@@ -12,20 +10,7 @@ interface PostsByYear {
   posts: types.PostSummary[],
 }
 
-interface Props {
-  postView: types.PostView,
-}
-
-const PostTimeline = ({
-  postView,
-}: Props) => {
-  // Compact view
-  if (postView === 'compact') {
-    return (
-      <CompactPostTimeline />
-    );
-  }
-
+const PostTimeline = () => {
   // Aggregate posts by year
   const postsByYear: PostsByYear[] = [];
   let currentYear = 0;
@@ -54,6 +39,4 @@ const PostTimeline = ({
   );
 };
 
-export default connect((state: types.redux.State) => ({
-  postView: state.cache.postView,
-}))(PostTimeline);
+export default PostTimeline;

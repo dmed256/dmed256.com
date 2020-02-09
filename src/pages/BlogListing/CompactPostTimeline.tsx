@@ -9,7 +9,7 @@ const CompactPostTimeline = () => (
     {
       allPosts.map((post) => (
         <CompactPostSummary
-          key={post.title}
+          key={post.slug}
           post={post}
         />
       ))

@@ -10,8 +10,6 @@ const SUMMARY_GAP = 10;
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    display: 'flex',
-    flexDirection: 'row',
     padding: `${SUMMARY_GAP}px 0`,
     '&:first-child': {
       paddingTop: 0,
@@ -22,9 +20,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   tags: {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     fontSize: '0.7em',
-    minWidth: '8em',
     marginRight: '1em',
     '& > *': {
       textAlign: 'center',
@@ -67,11 +64,6 @@ const CompactPostSummary = ({
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <div className={classes.tags}>
-        {post.tags.map((tag) => (
-          <Tag key={tag} label={tag} compact />
-        ))}
-      </div>
       <div className={classes.contentContainer}>
         <div className={classes.titleContainer}>
           <div className={classes.date}>
@@ -82,9 +74,11 @@ const CompactPostSummary = ({
             post={post}
           />
         </div>
-        <div className={classes.content}>
-          {post.summary}
-        </div>
+      </div>
+      <div className={classes.tags}>
+        {post.tags.map((tag) => (
+          <Tag key={tag} label={tag} compact />
+        ))}
       </div>
     </div>
   );

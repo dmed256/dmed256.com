@@ -44,7 +44,7 @@ const AnnualPostTimeline = ({
     <div>
       {posts.map((post) => (
         <PostSummary
-          key={post.title}
+          key={post.slug}
           post={post}
         />
       ))}

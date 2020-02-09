@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     overflow: 'hidden',
     [constants.media.mobile]: {
       width: '100%',
+      minHeight: `calc(100vh - ${constants.mobile.headerHeight}px)`,
       margin: 0,
       padding: '2em 0',
       boxShadow: 'none',

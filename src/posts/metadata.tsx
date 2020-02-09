@@ -30,7 +30,7 @@ posts.forEach(({ date }) => {
 
 // Compute tag metadata
 posts.forEach(({ tags }) => {
-  tags.forEach((tag) => {
+  tags.forEach((tag: string) => {
     if (!(tag in tagMetadata)) {
       tagMetadata[tag] = 0;
     }
