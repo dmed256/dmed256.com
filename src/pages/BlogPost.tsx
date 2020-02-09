@@ -17,13 +17,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   date: {
     color: theme.palette.primary.main,
-    fontSize: '1.3em',
+    fontSize: '1.1em',
     letterSpacing: '1px',
     textTransform: 'uppercase',
     marginRight: '1em',
   },
   timeToRead: {
-    fontSize: '1.3em',
+    fontSize: '1.1em',
     opacity: 0.7,
   },
   tags: {
