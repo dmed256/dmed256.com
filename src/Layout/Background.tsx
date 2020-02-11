@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginTop: constants.mobile.headerHeight,
       backgroundColor: theme.palette.background.paper,
     },
+    [constants.media.print]: {
+      backgroundColor: 'white',
+    },
   },
 }));
 

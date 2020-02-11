@@ -11,7 +11,7 @@ import ResumeSubsection from './ResumeSubsection';
 const Experience = () => (
   <ResumeSection title="Experience">
     <ResumeSubsection
-      title="Software Engineer"
+      title="Full-Stack Software Engineer"
       start="October 2019"
       end="Present"
       location="Brex"
