@@ -3,13 +3,14 @@ code, pre {
 }
 
 pre {
-    background-color: #f8f8f8;
+    background-color: #4f4c4c;
     line-height: 1.5em;
     overflow: auto;
     position: relative;
     word-wrap: normal;
     margin: 0;
     margin-top: 1em;
+    border-radius: 4px;
 }
 
 pre:after {
@@ -17,7 +18,7 @@ pre:after {
     position: absolute;
     right: 0.5em;
     top: 0.5em;
-    color: #73797d;
+    color: #fafafa;
     font-size: 0.85em !important;
     font-weight: 300;
     text-transform: uppercase;
@@ -25,7 +26,7 @@ pre:after {
 
 code {
     background-color: transparent;
-    color: #525252;
+    color: #fafafa;
     display: block;
     font-size: 0.9em;
     line-height: inherit;
@@ -37,19 +38,19 @@ code {
 
 code .token.string,
 code .token.function {
-    color: var(--theme-primary-color);
+    color: #70c1e0;
 }
 
 code .token.keyword {
-    color: var(--theme-secondary-color);
+    color: #ffcd5a;
 }
 
 code .token.string {
-    color: #29b934;
+    color: #9ce8a2;
 }
 
 code .token.number {
-    color: #ce5b5b;
+    color: #d48282;
 }
 
 
@@ -57,11 +58,39 @@ code .token.number {
 @media print {
     pre, blockquote {
         break-inside: avoid;
+        page-break-inside: avoid;
     }
 
-    /* Convert background-color to border for printing */
+    /* Dark -> Light Mode */
     pre {
+        background-color: white;
         border: 1px solid #cbd2da;
+    }
+
+    pre:after {
+        color: #525252;
+    }
+
+    code {
+        background-color: transparent;
+        color: #525252;
+    }
+
+    code .token.string,
+    code .token.function {
+        color: #2991b9;
+    }
+
+    code .token.keyword {
+        color: #f9a753;
+    }
+
+    code .token.string {
+        color: #29b934;
+    }
+
+    code .token.number {
+        color: #ce5b5b;
     }
 }
 /*====================================*/
