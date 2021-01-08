@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     [constants.media.print]: {
       '&$present': {
         borderColor: `${theme.palette.grey[400]} !important`,
-        backgroundColor: `${theme.palette.grey[300]} !important`,
+        backgroundColor: `${theme.palette.grey[500]} !important`,
       },
     },
   },
@@ -105,6 +105,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     [constants.media.mobile]: {
       marginTop: SECTION_PADDING_MIDDLE / 2,
     },
+    [constants.media.print]: {
+      margin: `${SECTION_PADDING_MIDDLE / 2}px 0`,
+    }
   },
   title: {
     fontWeight: 600,

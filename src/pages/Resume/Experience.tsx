@@ -11,7 +11,7 @@ import ResumeSubsection from './ResumeSubsection';
 const Experience = () => (
   <ResumeSection title="Experience">
     <ResumeSubsection
-      title="Full-Stack Software Engineer"
+      title="Senior Software Engineer - Full Stack"
       start="October 2019"
       end="Present"
       location="Brex"
@@ -19,10 +19,34 @@ const Experience = () => (
       <BulletList>
         <Lang.Translate>
           <Lang.English>
-            Working on the Cash team building cool stuff
+            I worked on check deposits, where I helped enable a more secure and efficient workflow for our internal operations team
           </Lang.English>
           <Lang.Chinese>
-            Working on the Cash team building cool stuff
+            I worked on check deposits, where I helped enable a more secure and efficient workflow for our internal operations team
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Focused on reducing our cost to serve which involved working with our internal operations teams, learn their workflow, and automate through new services or internal tools, such as <Bold>Retool</Bold>
+          </Lang.English>
+          <Lang.Chinese>
+            Focused on reducing our cost to serve which involved working with our internal operations teams, learn their workflow, and automate through new services or internal tools, such as <Bold>Retool</Bold>
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Onboarded and mentored fellow team members, specially during our hypergrowth phase where our team grew 4x
+          </Lang.English>
+          <Lang.Chinese>
+            Onboarded and mentored fellow team members, specially during our hypergrowth phase where our team grew 4x
+          </Lang.Chinese>
+        </Lang.Translate>
+        <Lang.Translate>
+          <Lang.English>
+            Involved in internal incidents that occur which involves quickly finding root causes, coordination with other teams, and fast remediation plans
+          </Lang.English>
+          <Lang.Chinese>
+            Involved in internal incidents that occur which involves quickly finding root causes, coordination with other teams, and fast remediation plans
           </Lang.Chinese>
         </Lang.Translate>
       </BulletList>
@@ -85,7 +109,7 @@ const Experience = () => (
     </ResumeSubsection>
 
     <ResumeSubsection
-      title="Senior Software Engineer"
+      title="Senior Software Engineer - Infrastructure"
       start="April 2019"
       end="September 2019"
       location="Harvest Exchange Corp"
@@ -119,7 +143,7 @@ const Experience = () => (
     </ResumeSubsection>
 
     <ResumeSubsection
-      title="Software Engineer"
+      title="Software Engineer - Full Stack"
       start="August 2015"
       end="April 2019"
       location="Two Sigma"

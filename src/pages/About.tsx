@@ -69,7 +69,7 @@ const About = () => {
           </Typography>
 
           <Typography variant="body1">
-            I currently work at <InlineLink href="https://brex.com">Brex</InlineLink> as a Software Engineer on the Cash team building cool stuff.
+            I currently work at <InlineLink href="https://brex.com">Brex</InlineLink> as a Senior Software Engineer on the Cash team building cool stuff.
           </Typography>
 
           <Typography variant="body1">
@@ -78,11 +78,7 @@ const About = () => {
           </Typography>
 
           <Typography variant="body1">
-            When not spending time with family{','} I'm usually coding up some project {' :)'}
-          </Typography>
-
-          <Typography variant="body1">
-            Feel free to reach out if you're interested in chatting!
+            When not spending time with family{','} I'm usually coding up some project. Feel free to reach out if you're interested in chatting!
           </Typography>
         </div>
       </div>

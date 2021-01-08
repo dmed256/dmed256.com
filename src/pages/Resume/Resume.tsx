@@ -54,9 +54,9 @@ const Resume = () => {
       </div>
       <Header />
       <About/>
-      <Projects />
       <Experience />
       <Education />
+      <Projects />
       <Publications />
     </div>
   );

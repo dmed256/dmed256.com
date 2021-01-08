@@ -79,6 +79,7 @@ const Header = () => {
           David Medina
         </div>
         <div className={classes.spacing} />
+        {/*
         <HeaderLink
           label={(
             <Lang.Translate>
@@ -88,6 +89,7 @@ const Header = () => {
           )}
           href="/"
         />
+        */}
         <HeaderLink
           label={(
             <Lang.Translate>
@@ -95,7 +97,7 @@ const Header = () => {
               <Lang.Chinese>关于我</Lang.Chinese>
             </Lang.Translate>
           )}
-          href="/about"
+          href="/"
         />
         <HeaderLink
           label={(
@@ -106,10 +108,12 @@ const Header = () => {
           )}
           href="/resume"
         />
+        {/*
         <div className={classes.divider} />
         <LanguageButton
           classes={{ root: classes.iconButton }}
         />
+        */}
       </div>
     </div>
   );

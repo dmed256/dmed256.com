@@ -26,10 +26,10 @@ const About = () => {
         <Bold>
           <Lang.Translate>
             <Lang.English>
-              I really enjoy programming!
+              I really enjoy programming and debugging!
             </Lang.English>
             <Lang.Chinese>
-              I really enjoy programming!
+              I really enjoy programming and debugging!
             </Lang.Chinese>
           </Lang.Translate>
         </Bold>
