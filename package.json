@@ -5,7 +5,7 @@
   "scripts": {
     "start": "PORT=${PORT-3000} react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages --dist build --branch master"
+    "deploy": "gh-pages --dist build --branch github-pages"
   },
   "dependencies": {
     "@material-ui/core": "^4.4.2",
