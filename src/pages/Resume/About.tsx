@@ -65,6 +65,22 @@ const About = () => {
           listItem: classes.bulletListItem,
         }}
       >
+        {/* {/* OpenAI *}
+        <>
+          <Lang.Translate>
+            <Lang.English>
+              A world-class AI research and development company
+            </Lang.English>
+            <Lang.Chinese>
+              A world-class AI research and development company
+            </Lang.Chinese>
+          </Lang.Translate>
+          {' '}
+          <InlineLink href="https://openai.com/about">
+            @OpenAI
+          </InlineLink>
+        </>
+        /*}
         {/* Brex */}
         <>
           <Lang.Translate>

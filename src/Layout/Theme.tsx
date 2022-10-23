@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  createMuiTheme,
+  createTheme,
 } from '@material-ui/core/styles';
 import {
   jssPreset,
@@ -14,7 +14,7 @@ import GlobalCSS from './GlobalCSS';
 
 
 // Material UI Theme
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#2991b9',

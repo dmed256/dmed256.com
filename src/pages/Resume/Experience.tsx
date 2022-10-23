@@ -11,51 +11,79 @@ import ResumeSubsection from './ResumeSubsection';
 const Experience = () => (
   <ResumeSection title="Experience">
     <ResumeSubsection
-      title="Senior Software Engineer - Full Stack"
-      start="October 2019"
+      title={true ? "[object Object] // TODO(dmed): Fix Nov 7" : "Member of Technical Staff"}
+      start="November 2022"
       end="Present"
+      location={true ? 'Thread 0 "react" received signal SIGSEGV, Segmentation fault.' : "OpenAI"}
+    >
+      <BulletList>
+        <span>java.lang.NullPointerException</span>
+      </BulletList>
+    </ResumeSubsection>
+    <ResumeSubsection
+      title="Staff Software Engineer - Full Stack"
+      start="February 2022"
+      end="October 2022"
       location="Brex"
     >
       <BulletList>
-        <Lang.Translate>
-          <Lang.English>
-            I worked on check deposits, where I helped enable a more secure and efficient workflow for our internal operations team
-          </Lang.English>
-          <Lang.Chinese>
-            I worked on check deposits, where I helped enable a more secure and efficient workflow for our internal operations team
-          </Lang.Chinese>
-        </Lang.Translate>
-        <Lang.Translate>
-          <Lang.English>
-            Focused on reducing our cost to serve which involved working with our internal operations teams, learn their workflow, and automate through new services or internal tools, such as <Bold>Retool</Bold>
-          </Lang.English>
-          <Lang.Chinese>
-            Focused on reducing our cost to serve which involved working with our internal operations teams, learn their workflow, and automate through new services or internal tools, such as <Bold>Retool</Bold>
-          </Lang.Chinese>
-        </Lang.Translate>
-        <Lang.Translate>
-          <Lang.English>
-            Onboarded and mentored fellow team members, specially during our hypergrowth phase where our team grew 4x
-          </Lang.English>
-          <Lang.Chinese>
-            Onboarded and mentored fellow team members, specially during our hypergrowth phase where our team grew 4x
-          </Lang.Chinese>
-        </Lang.Translate>
-        <Lang.Translate>
-          <Lang.English>
-            Involved in internal incidents that occur which involves quickly finding root causes, coordination with other teams, and fast remediation plans
-          </Lang.English>
-          <Lang.Chinese>
-            Involved in internal incidents that occur which involves quickly finding root causes, coordination with other teams, and fast remediation plans
-          </Lang.Chinese>
-        </Lang.Translate>
+        <span><Bold>Tech lead</Bold> for a ~15 person team focusing with customer-facing products</span>
+
+        <BulletList>
+          <span>Worked closely with product and design to build reasonable Q2 / H2 engineering roadmaps, starting up the H1 2023 roadmap</span>
+          <span>Work closely with manager to split projects and align proper resourcing for each project</span>
+          <span>Leading the migration of an acquisition's product into the Brex ecosystem which has been an extremely challenging and fulfilling project</span>
+        </BulletList>
+
+        <span>Additional work/responsibilities include</span>
+
+        <BulletList>
+          <span>Member of ~5 person <Bold>Kotlin language group</Bold> with responsibilities such as being on the #kotlin on-call rotation, giving onboarding Kotlin talks, and improving the overall Kotlin ecosystem at Brex</span>
+          <span>Hop on high (L2) and critical (L1) incidents to quickly find root causes and remediations</span>
+          <span>Constantly look and implement ways to improve our engineering standards across Brex</span>
+        </BulletList>
+
+        <span>+ Many other random things :)</span>
+      </BulletList>
+    </ResumeSubsection>
+    <ResumeSubsection
+      title="Senior Software Engineer - Full Stack"
+      start="October 2019"
+      end="February 2022"
+      location="Brex"
+    >
+      <BulletList>
+        <span>Project led many end-to-end projects</span>
+        <BulletList>
+          <span>From the engineering side, this includes design docs describing in human-readable English with code snippets for the full end-to-end code flow: frontend &rarr; GraphQL API &rarr; protobuf/gRPC data contract &rarr; backend &rarr; Postgres tables, relationships, indices, and constraints</span>
+
+          <span>From the project lead side, this includes breaking down work into tickets, providing time estimates, and continuously providing updates and potential target date shifts</span>
+
+          <span>Onboarded and mentored fellow team members, specially during our hypergrowth phase where our team grew 4x</span>
+        </BulletList>
+
+        <span>Early engineer in the <Bold>Brex Cash</Bold> product</span>
+        <BulletList>
+          <span>I worked and maintained the engineering-side of check deposits for around a year, where I helped enable a more secure and efficient workflow for our internal operations team</span>
+          <span>Focused on reducing our cost to serve which involved working with our internal operations teams, learn their workflow, and automate through new services or internal tools, such as Retool</span>
+        </BulletList>
+
+        <span>Active in Engineering-wide initiatives while still working in a product team</span>
+        <BulletList>
+          <span>Commonly involved in internal incidents which involves quickly finding root causes, coordination with other teams, and fast remediation plans</span>
+          <span>I've been helping with our company's move from Elixir to Kotlin for product service development. This includes being one of the few Kotlin maintainers, introducing service best practices, improving company documentation, as well as library improvements</span>
+          <span>Part of many internal CAB groups (Customer Advisory Board) as a product engineer to provide feedback and reviews</span>
+          <span>Early adopter of many engineering advancements, such as our move to protobuf, transition to Kotlin, and improvements in our GraphQL layer</span>
+        </BulletList>
+
+        <span>+ Many other random things across my time at Brex :)</span>
       </BulletList>
     </ResumeSubsection>
 
     <ResumeSubsection
       title="HPC Contractor"
       start="December 2016"
-      end="Present"
+      end="October 2021"
       location="Lawrence Livermore National Laboratory"
     >
       <BulletList>

@@ -9,7 +9,7 @@ interface MakeSvgIconProps extends SvgIconProps {
 const makeSvgIcon = ({
   d,
   ...defaultProps
-}: MakeSvgIconProps): React.ReactType => (
+}: MakeSvgIconProps): React.ElementType => (
   (props: SvgIconProps) => (
     <SvgIcon
       {...{

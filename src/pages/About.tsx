@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { InlineLink } from '../common';
+import { Bold, InlineLink } from '../common';
 import constants from '../common/constants';
 
 
@@ -65,20 +65,19 @@ const About = () => {
 
         <div>
           <Typography variant="body1">
-            Howdy{','} my name is David Medina!
+            👋 My name is David Medina but I usually go by <Bold>dmed</Bold>
           </Typography>
 
           <Typography variant="body1">
-            I currently work at <InlineLink href="https://brex.com">Brex</InlineLink> as a Senior Software Engineer on the Cash team building cool stuff.
+            I'll be starting a new exciting role <Bold>November 7</Bold>!
           </Typography>
 
           <Typography variant="body1">
-            At night I work as a contractor with <InlineLink href="https://www.llnl.gov">Lawrence Livermore National Laboratory</InlineLink> through the&nbsp;
-            <InlineLink href="http://ceed.exascaleproject.org/">Center for Efficient Exascale Discretizations</InlineLink>.
+            When not spending time with family{','} I'm usually coding some fun side project
           </Typography>
 
           <Typography variant="body1">
-            When not spending time with family{','} I'm usually coding up some project. Feel free to reach out if you're interested in chatting!
+            Feel free to reach out if you're interested in chatting 😁
           </Typography>
         </div>
       </div>

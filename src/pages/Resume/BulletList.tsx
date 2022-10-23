@@ -31,11 +31,16 @@ const BulletList = ({
   <ul className={classes.root}>
     {
       React.Children.map(children, (child, index) => (
-        <li key={index}>
-          <Typography variant="body1" className={classes.listItem}>
-            {child}
-          </Typography>
-        </li>
+        // Hack to detect nested bullet lists
+        ((child as any)?.type?.Naked?.name === 'BulletList')
+          ? child
+          : (
+            <li key={index}>
+              <Typography variant="body1" className={classes.listItem}>
+                {child}
+              </Typography>
+            </li>
+          )
       ))
     }
   </ul>

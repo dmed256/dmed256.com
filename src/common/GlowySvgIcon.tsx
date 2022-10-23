@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 interface Props extends SvgIconProps {
-  Icon: React.ReactType,
+  Icon: React.ElementType,
   glowColor?: string,
 }
 

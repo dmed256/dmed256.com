@@ -18,13 +18,13 @@
     "moment": "^2.24.0",
     "prismjs": "^1.17.1",
     "query-string": "^6.8.3",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-ga": "^2.6.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-redux": "^7.1.1",
+    "react-ga": "^2.6.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1",
+    "react-scripts": "5.0.1",
     "store": "^2.0.12"
   },
   "devDependencies": {
@@ -35,19 +35,19 @@
     "@types/node": "12.7.5",
     "@types/prismjs": "^1.16.0",
     "@types/query-string": "^6.3.0",
-    "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.0",
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
     "@types/react-ga": "^2.3.0",
     "@types/react-redux": "^7.1.2",
     "@types/react-router": "^5.0.3",
     "@types/react-router-dom": "^4.3.5",
     "@types/store": "^2.0.2",
-    "@typescript-eslint/eslint-plugin": "^2.2.0",
-    "@typescript-eslint/parser": "^2.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
     "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
     "redux-devtools-extension": "^2.13.8",
-    "typescript": "3.6.3"
+    "typescript": "^4.6.3"
   },
   "browserslist": {
     "production": [

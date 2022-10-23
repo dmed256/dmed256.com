@@ -8,5 +8,5 @@ export interface PostSummary {
   date: Moment,
   minutesToRead: number,
   tags: string[],
-  component: React.ReactType,
+  component: React.ElementType,
 }
