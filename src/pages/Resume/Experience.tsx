@@ -11,13 +11,13 @@ import ResumeSubsection from './ResumeSubsection';
 const Experience = () => (
   <ResumeSection title="Experience">
     <ResumeSubsection
-      title={true ? "[object Object] // TODO(dmed): Fix Nov 7" : "Member of Technical Staff"}
+      title="Member of Technical Staff"
       start="November 2022"
       end="Present"
-      location={true ? 'Thread 0 "react" received signal SIGSEGV, Segmentation fault.' : "OpenAI"}
+      location="OpenAI"
     >
       <BulletList>
-        <span>java.lang.NullPointerException</span>
+        <span>// TODO(dmed): Fill out soon!</span>
       </BulletList>
     </ResumeSubsection>
     <ResumeSubsection

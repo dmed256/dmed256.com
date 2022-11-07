@@ -69,7 +69,11 @@ const About = () => {
           </Typography>
 
           <Typography variant="body1">
-            I'll be starting a new exciting role <Bold>November 7</Bold>!
+            I just started a new role at{' '}
+            <InlineLink href="https://openai.com/about">
+              OpenAI
+            </InlineLink>
+            {' '}as a Member of Technical Staff
           </Typography>
 
           <Typography variant="body1">
