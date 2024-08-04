@@ -42,10 +42,6 @@
     "favicon.png": {
       "type": "file",
       "name": "favicon.png"
-    },
-    "tree.json": {
-      "type": "file",
-      "name": "tree.json"
     }
   },
   "src": {
