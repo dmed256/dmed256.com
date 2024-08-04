@@ -6,8 +6,8 @@
   "scripts": {
     "start": "vite",
     "generate-tree": "node ./generate-tree.js",
-    "build": "generate-tree && tsc -b && vite build",
-    "typecheck": "tsc",
+    "build": "node generate-tree && vite build",
+    "typecheck": "tsc -b",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "prettier . --write",
     "deploy": "gh-pages --dist dist --branch github-pages"
