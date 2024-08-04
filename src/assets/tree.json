@@ -39,6 +39,10 @@
     "type": "directory",
     "name": "public",
     "children": {},
+    "CNAME": {
+      "type": "file",
+      "name": "CNAME"
+    },
     "favicon.png": {
       "type": "file",
       "name": "favicon.png"
