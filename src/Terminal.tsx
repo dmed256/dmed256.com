@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { useStore } from '@/store';
 import { useOnTerminalKeyPress } from '@/hooks/useOnTerminalKeyPress';
+import { isMobile } from 'react-device-detect';
 
 export const Terminal = () => {
   const terminalText = useStore((state) => state.terminalText);
@@ -51,6 +52,29 @@ export const Terminal = () => {
 const TerminalInput = () => {
   const input = useStore((state) => state.input);
   const inputPos = useStore((state) => state.inputPos);
+  const { updateInput, runCommand } = useStore((state) => state.actions);
+
+  if (isMobile) {
+    return (
+      <form
+        className="inline"
+        onSubmit={(e) => {
+          runCommand();
+          e.preventDefault();
+          e.stopPropagation();
+        }}
+      >
+        <input
+          className="bg-transparent text-white outline-none border-b-[1px] border-b-[#9AE8FF] w-[95%]"
+          value={input}
+          onChange={(e) => {
+            const nextInput = e.currentTarget.value;
+            updateInput(() => [nextInput, nextInput.length]);
+          }}
+        />
+      </form>
+    );
+  }
 
   // Show the cursor in the character
   if (inputPos < input.length) {

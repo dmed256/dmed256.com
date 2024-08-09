@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useStore } from '@/store';
 import { commands } from '@/commands';
 import { colored } from '@/utils/colors';
+import { isMobile } from 'react-device-detect';
 
 const VISIBLE_ASCII = ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~`;
 
@@ -138,6 +139,10 @@ export const useOnTerminalKeyPress = () => {
   );
 
   React.useEffect(() => {
+    if (isMobile) {
+      return;
+    }
+
     window.addEventListener('keydown', onKeyPress);
     return () => {
       window.removeEventListener('keydown', onKeyPress);
