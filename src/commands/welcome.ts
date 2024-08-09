@@ -1,6 +1,6 @@
 import { useStore } from '@/store';
 import type { Command, TerminalText } from '@/types';
-import { colored } from '@/utils';
+import { colored } from '@/utils/colors';
 
 export const welcomeText = (): TerminalText[] => [
   colored.white('\n'),

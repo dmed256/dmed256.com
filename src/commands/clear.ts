@@ -1,6 +1,6 @@
 import { useStore } from '@/store';
 import type { Command } from '@/types';
-import { colored } from '@/utils';
+import { colored } from '@/utils/colors';
 
 export const clear: Command = {
   help: [colored.white('Clear terminal contents')],

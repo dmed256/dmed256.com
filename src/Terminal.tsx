@@ -28,6 +28,7 @@ export const Terminal = () => {
       {/* Body */}
       <div className="flex-1 flex flex-col overflow-hidden">
         <div
+          id="terminal"
           className={classNames(
             'flex-1 overflow-auto p-2 rounded-b-lg select-text bg-black/80 text-white',
             'whitespace-pre-wrap font-mono text-[12px] leading-[18px]',
