@@ -38,110 +38,133 @@
   "public": {
     "type": "directory",
     "name": "public",
-    "children": {},
-    "CNAME": {
-      "type": "file",
-      "name": "CNAME"
-    },
-    "favicon.png": {
-      "type": "file",
-      "name": "favicon.png"
+    "children": {
+      "CNAME": {
+        "type": "file",
+        "name": "CNAME"
+      },
+      "favicon.png": {
+        "type": "file",
+        "name": "favicon.png"
+      }
     }
   },
   "src": {
     "type": "directory",
     "name": "src",
-    "children": {},
-    "App.tsx": {
-      "type": "file",
-      "name": "App.tsx"
-    },
-    "OsHeader.tsx": {
-      "type": "file",
-      "name": "OsHeader.tsx"
-    },
-    "Terminal.tsx": {
-      "type": "file",
-      "name": "Terminal.tsx"
-    },
-    "assets": {
-      "type": "directory",
-      "name": "assets",
-      "children": {},
-      "tree.json": {
+    "children": {
+      "App.tsx": {
         "type": "file",
-        "name": "tree.json"
+        "name": "App.tsx"
       },
-      "wallpaper.png": {
+      "OsHeader.tsx": {
         "type": "file",
-        "name": "wallpaper.png"
+        "name": "OsHeader.tsx"
+      },
+      "Terminal.tsx": {
+        "type": "file",
+        "name": "Terminal.tsx"
+      },
+      "assets": {
+        "type": "directory",
+        "name": "assets",
+        "children": {
+          "tree.json": {
+            "type": "file",
+            "name": "tree.json"
+          },
+          "wallpaper.png": {
+            "type": "file",
+            "name": "wallpaper.png"
+          }
+        }
+      },
+      "commands": {
+        "type": "directory",
+        "name": "commands",
+        "children": {
+          "cd.ts": {
+            "type": "file",
+            "name": "cd.ts"
+          },
+          "clear.ts": {
+            "type": "file",
+            "name": "clear.ts"
+          },
+          "help.ts": {
+            "type": "file",
+            "name": "help.ts"
+          },
+          "index.ts": {
+            "type": "file",
+            "name": "index.ts"
+          },
+          "ls.ts": {
+            "type": "file",
+            "name": "ls.ts"
+          },
+          "pwd.ts": {
+            "type": "file",
+            "name": "pwd.ts"
+          },
+          "welcome.ts": {
+            "type": "file",
+            "name": "welcome.ts"
+          }
+        }
+      },
+      "constants.ts": {
+        "type": "file",
+        "name": "constants.ts"
+      },
+      "hooks": {
+        "type": "directory",
+        "name": "hooks",
+        "children": {
+          "useOnTerminalKeyPress.ts": {
+            "type": "file",
+            "name": "useOnTerminalKeyPress.ts"
+          }
+        }
+      },
+      "index.css": {
+        "type": "file",
+        "name": "index.css"
+      },
+      "main.tsx": {
+        "type": "file",
+        "name": "main.tsx"
+      },
+      "store.ts": {
+        "type": "file",
+        "name": "store.ts"
+      },
+      "types.ts": {
+        "type": "file",
+        "name": "types.ts"
+      },
+      "utils": {
+        "type": "directory",
+        "name": "utils",
+        "children": {
+          "colors.ts": {
+            "type": "file",
+            "name": "colors.ts"
+          },
+          "path.ts": {
+            "type": "file",
+            "name": "path.ts"
+          },
+          "terminalHistory.ts": {
+            "type": "file",
+            "name": "terminalHistory.ts"
+          }
+        }
+      },
+      "vite-env.d.ts": {
+        "type": "file",
+        "name": "vite-env.d.ts"
       }
-    },
-    "commands": {
-      "type": "directory",
-      "name": "commands",
-      "children": {},
-      "clear.ts": {
-        "type": "file",
-        "name": "clear.ts"
-      },
-      "help.ts": {
-        "type": "file",
-        "name": "help.ts"
-      },
-      "index.ts": {
-        "type": "file",
-        "name": "index.ts"
-      },
-      "ls.ts": {
-        "type": "file",
-        "name": "ls.ts"
-      },
-      "reset.ts": {
-        "type": "file",
-        "name": "reset.ts"
-      },
-      "welcome.ts": {
-        "type": "file",
-        "name": "welcome.ts"
-      }
-    },
-    "constants.ts": {
-      "type": "file",
-      "name": "constants.ts"
-    },
-    "hooks": {
-      "type": "directory",
-      "name": "hooks",
-      "children": {},
-      "useOnTerminalKeyPress.ts": {
-        "type": "file",
-        "name": "useOnTerminalKeyPress.ts"
-      }
-    },
-    "index.css": {
-      "type": "file",
-      "name": "index.css"
-    },
-    "main.tsx": {
-      "type": "file",
-      "name": "main.tsx"
-    },
-    "store.ts": {
-      "type": "file",
-      "name": "store.ts"
-    },
-    "types.ts": {
-      "type": "file",
-      "name": "types.ts"
-    },
-    "utils.ts": {
-      "type": "file",
-      "name": "utils.ts"
-    },
-    "vite-env.d.ts": {
-      "type": "file",
-      "name": "vite-env.d.ts"
     }
   },
   "tailwind.config.js": {

@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import type { TerminalText } from '@/types';
-import { ps1, colored } from '@/utils';
+import { homeDirectory } from '@/constants';
+import { fakeBash, ps1, colored } from '@/utils/colors';
+import { terminalHistory } from '@/utils/terminalHistory';
 import { welcomeText } from '@/commands/welcome';
 import { commands } from '@/commands';
 
@@ -9,13 +11,19 @@ interface Store {
   input: string;
   inputPos: number;
   terminalText: TerminalText[];
+  terminalHistory: string[];
+  terminalHistoryPos: number | null;
   actions: {
+    setPwd: (pwd: string[]) => void;
     updateInput: (
       fn: (prevInput: string, prevInputPos: number) => [string, number]
     ) => void;
     appendTerminalText: (text: TerminalText[]) => void;
     appendPs1: () => void;
     clearTerminalText: () => void;
+    shiftTerminalHistoryPos: (delta: number) => void;
+    setPreviousTerminalHistory: () => void;
+    setNextTerminalHistory: () => void;
     runCommand: () => void;
   };
 }
@@ -35,16 +43,21 @@ const safeInputPos = ({
 };
 
 export const useStore = create<Store>((set, get) => ({
-  pwd: ['~'],
+  pwd: homeDirectory,
   input: '',
   inputPos: 0,
   terminalText: [
-    ...ps1(['~']),
+    ...ps1(homeDirectory),
     colored.white('welcome\n'),
     ...welcomeText(),
-    ...ps1(['~']),
+    ...ps1(homeDirectory),
   ],
+  terminalHistory: terminalHistory.get(),
+  terminalHistoryPos: null,
   actions: {
+    setPwd: (pwd: string[]) => {
+      set({ pwd });
+    },
     updateInput: (
       fn: (prevInput: string, prevInputPos: number) => [string, number]
     ) => {
@@ -66,16 +79,45 @@ export const useStore = create<Store>((set, get) => ({
       actions.appendTerminalText(ps1(pwd));
     },
     clearTerminalText: () => {
-      set({ terminalText: '' });
+      set({ terminalText: [] });
+    },
+    shiftTerminalHistoryPos: (delta: number) => {
+      const { terminalHistory, terminalHistoryPos } = get();
+
+      const safeTerminalHistoryPos =
+        terminalHistoryPos == null
+          ? terminalHistory.length
+          : terminalHistoryPos;
+      const nextTerminalHistoryPos = Math.min(
+        Math.max(0, safeTerminalHistoryPos + delta),
+        terminalHistory.length
+      );
+
+      const nextInput = terminalHistory[nextTerminalHistoryPos] ?? '';
+      set({
+        input: nextInput,
+        inputPos: nextInput.length,
+        terminalHistoryPos: nextTerminalHistoryPos,
+      });
+    },
+    setPreviousTerminalHistory: () => {
+      get().actions.shiftTerminalHistoryPos(-1);
+    },
+    setNextTerminalHistory: () => {
+      get().actions.shiftTerminalHistoryPos(1);
     },
     runCommand: () => {
       const { input } = get();
       const { appendTerminalText, appendPs1, updateInput } = get().actions;
 
       appendTerminalText([colored.white(input + '\n')]);
+      set({
+        terminalHistory: terminalHistory.push(input),
+        terminalHistoryPos: null,
+      });
 
       const commandParts = input
-        .split()
+        .split(' ')
         .map((part) => part.trim())
         .filter((part) => part);
       if (!commandParts.length) {
@@ -89,13 +131,25 @@ export const useStore = create<Store>((set, get) => ({
 
       const run = commands[commandName]?.run;
       if (run) {
-        run(args);
+        try {
+          run(args);
+        } catch (e) {
+          console.error(e);
+          appendTerminalText(
+            fakeBash([
+              colored.red(commandName),
+              colored.white(' something went wrong\n'),
+            ])
+          );
+          appendPs1();
+        }
       } else {
-        appendTerminalText([
-          colored.white('fake-bash: '),
-          colored.red(commandName),
-          colored.white(' command not found\n'),
-        ]);
+        appendTerminalText(
+          fakeBash([
+            colored.red(commandName),
+            colored.white(' command not found\n'),
+          ])
+        );
         appendPs1();
       }
       updateInput(() => ['', 0]);

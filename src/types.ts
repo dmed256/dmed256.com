@@ -1,12 +1,10 @@
-interface Directory {
+export interface Directory {
   type: 'directory';
-  name: string;
-  children: Record<str, INode>;
+  children: Record<string, INode>;
 }
 
-interface File {
+export interface File {
   type: 'file';
-  name: string;
 }
 
 export type INode = Directory | File;
@@ -18,5 +16,5 @@ export interface TerminalText {
 
 export interface Command {
   help: TerminalText[];
-  run: (args: string[]) => TerminalText[];
+  run: (args: string[]) => void;
 }

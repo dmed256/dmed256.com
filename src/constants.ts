@@ -1,7 +1,9 @@
-import type { INode } from '@/types';
-import untypedTree from '@assets/tree.json';
+import type { Directory } from '@/types';
+import untypedRoot from '@assets/root.json';
 
-export const tree = untypedTree as INode[];
+export const homeDirectory = ['Users', 'dmed'];
+
+export const root = untypedRoot as Directory;
 
 export const terminalColors = {
   white: '#FFFFFF',

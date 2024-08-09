@@ -1,60 +1,76 @@
 import * as React from 'react';
 import { useStore } from '@/store';
 import { commands } from '@/commands';
-import { colored } from '@/utils';
+import { colored } from '@/utils/colors';
 
-const VISIBLE_ASCII = `'!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~'`;
+const VISIBLE_ASCII = ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~`;
 
 export const useOnTerminalKeyPress = () => {
-  const { updateInput, appendTerminalText, appendPs1, runCommand } = useStore(
-    (state) => state.actions
-  );
+  const {
+    updateInput,
+    appendTerminalText,
+    appendPs1,
+    setPreviousTerminalHistory,
+    setNextTerminalHistory,
+    runCommand,
+  } = useStore((state) => state.actions);
 
   const onKeyPress = React.useCallback(
     (e: KeyboardEvent) => {
       const ctrl = e.ctrlKey || e.metaKey;
 
-      let updatedInput = false;
-      const doUpdateInput = (
-        fn: (prevInput: string, prevInputPos: number) => [string, number]
-      ) => {
-        updateInput(fn);
-        updatedInput = true;
-      };
-
+      let updatedInput = true;
       if (ctrl && e.key === 'a') {
+        // -----------------------------------------------
         // Go to beginning of line
-        doUpdateInput((prevInput) => [prevInput, 0]);
+        // -----------------------------------------------
+        updateInput((prevInput) => [prevInput, 0]);
       } else if (ctrl && e.key === 'e') {
+        // -----------------------------------------------
         // Go to end-of-line
-        doUpdateInput((prevInput) => [prevInput, prevInput.length]);
+        // -----------------------------------------------
+        updateInput((prevInput) => [prevInput, prevInput.length]);
       } else if (ctrl && e.key === 'b') {
+        // -----------------------------------------------
         // Go back a character
-        doUpdateInput((prevInput, prevInputPos) => [
-          prevInput,
-          prevInputPos - 1,
-        ]);
+        // -----------------------------------------------
+        updateInput((prevInput, prevInputPos) => [prevInput, prevInputPos - 1]);
       } else if (ctrl && e.key === 'f') {
+        // -----------------------------------------------
         // Go forward a character
-        doUpdateInput((prevInput, prevInputPos) => [
-          prevInput,
-          prevInputPos + 1,
-        ]);
+        // -----------------------------------------------
+        updateInput((prevInput, prevInputPos) => [prevInput, prevInputPos + 1]);
       } else if (ctrl && e.key === 'k') {
+        // -----------------------------------------------
         // Kill the characters after cursor
-        doUpdateInput((prevInput, prevInputPos) => [
+        // -----------------------------------------------
+        updateInput((prevInput, prevInputPos) => [
           prevInput.slice(0, prevInputPos),
           prevInputPos,
         ]);
-      } else if ((ctrl && e.key === 'd') || e.key === 'Delete') {
+      } else if (ctrl && (e.key === 'd' || e.key === 'Delete')) {
+        // -----------------------------------------------
         // Delete character on cursor
-        doUpdateInput((prevInput, prevInputPos) => [
+        // -----------------------------------------------
+        updateInput((prevInput, prevInputPos) => [
           prevInput.slice(0, prevInputPos) + prevInput.slice(prevInputPos + 1),
           prevInputPos,
         ]);
+      } else if ((ctrl && e.key === 'p') || e.key === 'ArrowUp') {
+        // -----------------------------------------------
+        // Go to previous terminal command
+        // -----------------------------------------------
+        setPreviousTerminalHistory();
+      } else if ((ctrl && e.key === 'n') || e.key === 'ArrowDown') {
+        // -----------------------------------------------
+        // Go to next terminal command
+        // -----------------------------------------------
+        setNextTerminalHistory();
       } else if (ctrl && (e.key === 'c' || e.key === 'd')) {
+        // -----------------------------------------------
         // Cancel current input
-        doUpdateInput((prevInput) => {
+        // -----------------------------------------------
+        updateInput((prevInput) => {
           appendTerminalText([
             colored.white(prevInput + '^' + e.key.toUpperCase() + '\n'),
           ]);
@@ -62,15 +78,17 @@ export const useOnTerminalKeyPress = () => {
           return ['', 0];
         });
       } else if (!ctrl && VISIBLE_ASCII.includes(e.key)) {
+        // -----------------------------------------------
         // Visible character
-        doUpdateInput((prevInput, prevInputPos) => [
+        // -----------------------------------------------
+        updateInput((prevInput, prevInputPos) => [
           prevInput.slice(0, prevInputPos) +
             e.key +
             prevInput.slice(prevInputPos),
           prevInputPos + 1,
         ]);
       } else if (!ctrl && e.key === 'Backspace') {
-        doUpdateInput((prevInput, prevInputPos) => [
+        updateInput((prevInput, prevInputPos) => [
           prevInput.slice(0, prevInputPos - 1) + prevInput.slice(prevInputPos),
           prevInputPos - 1,
         ]);
@@ -78,8 +96,10 @@ export const useOnTerminalKeyPress = () => {
         runCommand();
         updatedInput = true;
       } else if (!ctrl && e.key === 'Tab') {
+        // -----------------------------------------------
         // Auto-complete potential commands
-        doUpdateInput((prevInput, prevInputPos) => {
+        // -----------------------------------------------
+        updateInput((prevInput, prevInputPos) => {
           const potentialCommands = Object.keys(commands)
             .sort()
             .filter((commandName) => commandName.startsWith(prevInput));
@@ -105,6 +125,8 @@ export const useOnTerminalKeyPress = () => {
 
           return [prevInput, prevInput.length];
         });
+      } else {
+        updatedInput = false;
       }
 
       if (updatedInput) {

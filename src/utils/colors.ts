@@ -1,5 +1,7 @@
 import type { TerminalText } from '@/types';
-import { terminalColors } from '@/constants';
+import { homeDirectory, terminalColors } from '@/constants';
+import { joinPath } from '@/utils/path';
+import isEqual from 'lodash/isEqual';
 
 export const colored = {
   white: (text: string): TerminalText => ({
@@ -32,8 +34,20 @@ export const colored = {
   }),
 };
 
-export const ps1 = (pwd: string[]): TerminalText[] =>
-  [
-    { value: `[${pwd.join('/')}]\n`, color: terminalColors.yellow },
+export const ps1 = (pwd: string[]): TerminalText[] => {
+  let renderedPwd = pwd;
+  if (isEqual(pwd.slice(0, homeDirectory.length), homeDirectory)) {
+    renderedPwd = ['~', ...pwd.slice(homeDirectory.length)];
+  }
+
+  return [
+    { value: `[${joinPath(renderedPwd)}]\n`, color: terminalColors.yellow },
     { value: '> ', color: terminalColors.cyan },
   ] as const;
+};
+
+export const fakeBash = (message: TerminalText[]): TerminalText[] => [
+  colored.cyan('fake-bash'),
+  colored.white(': '),
+  ...message,
+];

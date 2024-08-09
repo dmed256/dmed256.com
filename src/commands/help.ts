@@ -1,6 +1,6 @@
 import { useStore } from '@/store';
 import { commands } from '@/commands';
-import { colored } from '@/utils';
+import { colored } from '@/utils/colors';
 import type { Command } from '@/types';
 
 export const help: Command = {
@@ -9,7 +9,7 @@ export const help: Command = {
     const { appendTerminalText, appendPs1 } = useStore.getState().actions;
     appendTerminalText([
       colored.white('\n'),
-      colored.green('# TODO(dmed): Implement cd, ls, resume\n'),
+      colored.green('# TODO(dmed): Implement resume\n'),
       colored.white('Commands:\n'),
       ...Object.keys(commands)
         .sort()
