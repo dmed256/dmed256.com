@@ -1,3 +1,5 @@
+import type { TerminalState } from '@/apps/Terminal/terminalStore';
+
 export interface Directory {
   type: 'directory';
   children: Record<string, INode>;
@@ -14,7 +16,12 @@ export interface TerminalText {
   color: string;
 }
 
+export interface CommandRunArgs {
+  state: TerminalState;
+  args: string[];
+}
+
 export interface Command {
   help: TerminalText[];
-  run: (args: string[]) => void;
+  run: (_: CommandRunArgs) => void;
 }

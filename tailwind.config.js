@@ -26,5 +26,27 @@ export default {
         { values: theme('width') }
       );
     }),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'fixed-w': (value) => ({
+            minWidth: value,
+            maxWidth: value,
+          }),
+        },
+        { values: theme('width') }
+      );
+    }),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'fixed-h': (value) => ({
+            minHeight: value,
+            maxHeight: value,
+          }),
+        },
+        { values: theme('height') }
+      );
+    }),
   ],
 };

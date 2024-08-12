@@ -1,6 +1,9 @@
-import { useStore } from '@/store';
-import type { Command, TerminalText } from '@/types';
-import { colored } from '@/utils/colors';
+import type {
+  Command,
+  CommandRunArgs,
+  TerminalText,
+} from '@/apps/Terminal/types';
+import { colored } from '@/apps/Terminal/utils/colors';
 
 export const welcomeText = (): TerminalText[] => [
   colored.white('\n'),
@@ -39,8 +42,8 @@ export const welcomeText = (): TerminalText[] => [
 
 export const welcome: Command = {
   help: [colored.white('Prints welcome message')],
-  run: () => {
-    const { appendTerminalText, appendPs1 } = useStore.getState().actions;
+  run: ({ state }: CommandRunArgs) => {
+    const { appendTerminalText, appendPs1 } = state.actions;
     appendTerminalText(welcomeText());
     appendPs1();
   },

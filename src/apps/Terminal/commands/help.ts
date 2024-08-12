@@ -1,12 +1,11 @@
-import { useStore } from '@/store';
-import { commands } from '@/commands';
-import { colored } from '@/utils/colors';
-import type { Command } from '@/types';
+import { commands } from '@/apps/Terminal/commands';
+import { colored } from '@/apps/Terminal/utils/colors';
+import type { Command, CommandRunArgs } from '@/apps/Terminal/types';
 
 export const help: Command = {
   help: [colored.white('Prints this set of commands')],
-  run: () => {
-    const { appendTerminalText, appendPs1 } = useStore.getState().actions;
+  run: ({ state }: CommandRunArgs) => {
+    const { appendTerminalText, appendPs1 } = state.actions;
     appendTerminalText([
       colored.white('\n'),
       colored.green('# TODO(dmed): Implement resume\n'),

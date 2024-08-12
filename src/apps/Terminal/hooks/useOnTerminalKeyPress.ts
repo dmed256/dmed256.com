@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { useStore } from '@/store';
-import { commands } from '@/commands';
-import { colored } from '@/utils/colors';
+import { useOsStore } from '@/os/osStore';
+import { useTerminalStore } from '@/apps/Terminal/terminalStore';
+import { commands } from '@/apps/Terminal/commands';
+import { colored } from '@/apps/Terminal/utils/colors';
 import { isMobile } from 'react-device-detect';
 
 const VISIBLE_ASCII = ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~`;
 
-export const useOnTerminalKeyPress = () => {
+export const useOnTerminalKeyPress = (appId: string) => {
   const {
     updateInput,
     appendTerminalText,
@@ -14,10 +15,14 @@ export const useOnTerminalKeyPress = () => {
     setPreviousTerminalHistory,
     setNextTerminalHistory,
     runCommand,
-  } = useStore((state) => state.actions);
+  } = useTerminalStore((state) => state.actions);
 
-  const onKeyPress = React.useCallback(
-    (e: KeyboardEvent) => {
+  React.useEffect(() => {
+    const onKeyPress = (e: KeyboardEvent) => {
+      if (isMobile || useOsStore.getState().focusedApp !== appId) {
+        return;
+      }
+
       const ctrl = e.ctrlKey || e.metaKey;
 
       let updatedInput = true;
@@ -134,18 +139,11 @@ export const useOnTerminalKeyPress = () => {
         e.preventDefault();
         e.stopPropagation();
       }
-    },
-    [updateInput, appendTerminalText, appendPs1, runCommand]
-  );
-
-  React.useEffect(() => {
-    if (isMobile) {
-      return;
-    }
+    };
 
     window.addEventListener('keydown', onKeyPress);
     return () => {
       window.removeEventListener('keydown', onKeyPress);
     };
-  }, [onKeyPress]);
+  }, []);
 };

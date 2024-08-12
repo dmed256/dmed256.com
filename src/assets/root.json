@@ -80,14 +80,84 @@
                     "src": {
                       "type": "directory",
                       "children": {
-                        "App.tsx": {
-                          "type": "file"
-                        },
-                        "OsHeader.tsx": {
-                          "type": "file"
-                        },
-                        "Terminal.tsx": {
-                          "type": "file"
+                        "apps": {
+                          "type": "directory",
+                          "children": {
+                            "App.tsx": {
+                              "type": "file"
+                            },
+                            "Terminal": {
+                              "type": "directory",
+                              "children": {
+                                "Terminal.tsx": {
+                                  "type": "file"
+                                },
+                                "commands": {
+                                  "type": "directory",
+                                  "children": {
+                                    "cd.ts": {
+                                      "type": "file"
+                                    },
+                                    "clear.ts": {
+                                      "type": "file"
+                                    },
+                                    "help.ts": {
+                                      "type": "file"
+                                    },
+                                    "index.ts": {
+                                      "type": "file"
+                                    },
+                                    "ls.ts": {
+                                      "type": "file"
+                                    },
+                                    "pwd.ts": {
+                                      "type": "file"
+                                    },
+                                    "tree.ts": {
+                                      "type": "file"
+                                    },
+                                    "welcome.ts": {
+                                      "type": "file"
+                                    }
+                                  }
+                                },
+                                "constants.ts": {
+                                  "type": "file"
+                                },
+                                "hooks": {
+                                  "type": "directory",
+                                  "children": {
+                                    "useOnTerminalKeyPress.ts": {
+                                      "type": "file"
+                                    }
+                                  }
+                                },
+                                "terminalStore.ts": {
+                                  "type": "file"
+                                },
+                                "types.ts": {
+                                  "type": "file"
+                                },
+                                "utils": {
+                                  "type": "directory",
+                                  "children": {
+                                    "colors.ts": {
+                                      "type": "file"
+                                    },
+                                    "path.ts": {
+                                      "type": "file"
+                                    },
+                                    "terminalHistory.ts": {
+                                      "type": "file"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "constants.ts": {
+                              "type": "file"
+                            }
+                          }
                         },
                         "assets": {
                           "type": "directory",
@@ -103,68 +173,53 @@
                             }
                           }
                         },
-                        "commands": {
+                        "icons": {
                           "type": "directory",
                           "children": {
-                            "cd.ts": {
+                            "MaximizeIcon.tsx": {
                               "type": "file"
                             },
-                            "clear.ts": {
+                            "TerminalAppIcon.tsx": {
                               "type": "file"
                             },
-                            "help.ts": {
-                              "type": "file"
-                            },
-                            "index.ts": {
-                              "type": "file"
-                            },
-                            "ls.ts": {
-                              "type": "file"
-                            },
-                            "pwd.ts": {
-                              "type": "file"
-                            },
-                            "tree.ts": {
-                              "type": "file"
-                            },
-                            "welcome.ts": {
+                            "UnmaximizeIcon.tsx": {
                               "type": "file"
                             }
                           }
                         },
-                        "constants.ts": {
-                          "type": "file"
-                        },
-                        "hooks": {
-                          "type": "directory",
-                          "children": {
-                            "useOnTerminalKeyPress.ts": {
-                              "type": "file"
-                            }
-                          }
-                        },
-                        "index.css": {
+                        "main.css": {
                           "type": "file"
                         },
                         "main.tsx": {
                           "type": "file"
                         },
-                        "store.ts": {
-                          "type": "file"
-                        },
-                        "types.ts": {
-                          "type": "file"
+                        "os": {
+                          "type": "directory",
+                          "children": {
+                            "Desktop.tsx": {
+                              "type": "file"
+                            },
+                            "OsDock.tsx": {
+                              "type": "file"
+                            },
+                            "OsHeader.tsx": {
+                              "type": "file"
+                            },
+                            "Window.tsx": {
+                              "type": "file"
+                            },
+                            "osStore.ts": {
+                              "type": "file"
+                            },
+                            "types.ts": {
+                              "type": "file"
+                            }
+                          }
                         },
                         "utils": {
                           "type": "directory",
                           "children": {
-                            "colors.ts": {
-                              "type": "file"
-                            },
-                            "path.ts": {
-                              "type": "file"
-                            },
-                            "terminalHistory.ts": {
+                            "createContextStore.tsx": {
                               "type": "file"
                             }
                           }

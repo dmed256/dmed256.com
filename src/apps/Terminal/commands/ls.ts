@@ -1,7 +1,11 @@
-import { useStore } from '@/store';
-import type { Command, INode, TerminalText } from '@/types';
-import { colored, fakeBash } from '@/utils/colors';
-import { getPathDirectory } from '@/utils/path';
+import type {
+  Command,
+  CommandRunArgs,
+  INode,
+  TerminalText,
+} from '@/apps/Terminal/types';
+import { colored, fakeBash } from '@/apps/Terminal/utils/colors';
+import { getPathDirectory } from '@/apps/Terminal/utils/path';
 import groupBy from 'lodash/groupBy';
 import padEnd from 'lodash/padEnd';
 import range from 'lodash/range';
@@ -10,11 +14,11 @@ import sum from 'lodash/sum';
 
 export const ls: Command = {
   help: [colored.white('Lists directory contents')],
-  run: (args: string[]) => {
+  run: ({ state, args }: CommandRunArgs) => {
     const {
       pwd,
       actions: { appendPs1, appendTerminalText },
-    } = useStore.getState();
+    } = state;
 
     if (args.length) {
       appendTerminalText(
@@ -92,10 +96,6 @@ const getGrid = (directoryChildren: Record<string, INode>): string[][] => {
     terminalWidth = Math.floor(
       (terminal.clientWidth - approxPadding) / ctx.measureText('a').width
     );
-    console.log({
-      'terminal.clientWidth': terminal.clientWidth,
-      terminalWidth,
-    });
   } catch (_) {}
 
   const unsortedEntries = Object.keys(directoryChildren)

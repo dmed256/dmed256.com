@@ -1,15 +1,14 @@
-import { useStore } from '@/store';
-import type { Command, Directory } from '@/types';
-import { colored, fakeBash } from '@/utils/colors';
-import { getPathDirectory } from '@/utils/path';
+import type { Command, CommandRunArgs, Directory } from '@/apps/Terminal/types';
+import { colored, fakeBash } from '@/apps/Terminal/utils/colors';
+import { getPathDirectory } from '@/apps/Terminal/utils/path';
 
 export const tree: Command = {
   help: [colored.white('List contents of directories in a tree-like format')],
-  run: () => {
+  run: ({ state }: CommandRunArgs) => {
     const {
       pwd,
       actions: { appendPs1, appendTerminalText },
-    } = useStore.getState();
+    } = state;
 
     const pwdDirectory = getPathDirectory(pwd);
     if (!pwdDirectory?.children) {

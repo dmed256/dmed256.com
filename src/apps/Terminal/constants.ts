@@ -1,4 +1,4 @@
-import type { Directory } from '@/types';
+import type { Directory } from '@/apps/Terminal/types';
 import untypedRoot from '@assets/root.json';
 
 export const homeDirectory = ['Users', 'dmed'];

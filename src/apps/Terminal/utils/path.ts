@@ -1,6 +1,6 @@
-import { homeDirectory } from '@/constants';
-import type { Directory } from '@/types';
-import { root } from '@/constants';
+import { homeDirectory } from '@/apps/Terminal/constants';
+import type { Directory } from '@/apps/Terminal/types';
+import { root } from '@/apps/Terminal/constants';
 
 export const joinPath = (path: string[]) => {
   const pathWithoutSlash = path.join('/');

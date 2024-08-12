@@ -1,16 +1,15 @@
-import { useStore } from '@/store';
-import type { Command } from '@/types';
-import { colored, fakeBash } from '@/utils/colors';
-import { absPath, getPathDirectory } from '@/utils/path';
-import { homeDirectory } from '@/constants';
+import type { Command, CommandRunArgs } from '@/apps/Terminal/types';
+import { colored, fakeBash } from '@/apps/Terminal/utils/colors';
+import { absPath, getPathDirectory } from '@/apps/Terminal/utils/path';
+import { homeDirectory } from '@/apps/Terminal/constants';
 
 export const cd: Command = {
   help: [colored.white('Change directory')],
-  run: (args: string[]) => {
+  run: ({ state, args }: CommandRunArgs) => {
     const {
       pwd,
       actions: { setPwd, appendPs1, appendTerminalText },
-    } = useStore.getState();
+    } = state;
 
     if (args.length === 0) {
       setPwd(homeDirectory);
