@@ -86,6 +86,14 @@
                             "App.tsx": {
                               "type": "file"
                             },
+                            "PdfViewer": {
+                              "type": "directory",
+                              "children": {
+                                "PdfViewer.tsx": {
+                                  "type": "file"
+                                }
+                              }
+                            },
                             "Terminal": {
                               "type": "directory",
                               "children": {
@@ -179,6 +187,9 @@
                             "MaximizeIcon.tsx": {
                               "type": "file"
                             },
+                            "PdfViewerAppIcon.tsx": {
+                              "type": "file"
+                            },
                             "TerminalAppIcon.tsx": {
                               "type": "file"
                             },
@@ -202,7 +213,13 @@
                             "OsDock.tsx": {
                               "type": "file"
                             },
+                            "OsDockAppIcon.tsx": {
+                              "type": "file"
+                            },
                             "OsHeader.tsx": {
+                              "type": "file"
+                            },
+                            "OsMenu.tsx": {
                               "type": "file"
                             },
                             "Window.tsx": {
@@ -223,6 +240,9 @@
                           "type": "directory",
                           "children": {
                             "createContextStore.tsx": {
+                              "type": "file"
+                            },
+                            "usePopover.ts": {
                               "type": "file"
                             }
                           }

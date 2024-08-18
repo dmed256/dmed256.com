@@ -89,6 +89,9 @@ export const Window = ({ appId, children }: WindowProps) => {
         positionLocation && 'rounded-t-lg'
       )}
       style={getPositionedStyle()}
+      onContextMenu={(e) => {
+        e.stopPropagation();
+      }}
     >
       {/* Header */}
       <div

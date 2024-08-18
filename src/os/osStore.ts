@@ -29,6 +29,7 @@ interface OsState {
   };
   focusedApp: string | null;
   appRenderOrder: string[];
+  dockMenuOpenAppType: AppType | null;
   actions: {
     setDesktopDimensions: ({ width, height }: SetDesktopDimensionsArgs) => void;
     focusApp: (id: string | null) => void;
@@ -38,6 +39,8 @@ interface OsState {
     unmaximizeApp: (id: string) => void;
     closeApp: (id: string) => void;
     moveAppWindow: (_: MoveAppWindowArgs) => void;
+    openDockAppMenu: (type: AppType) => void;
+    closeDockAppMenu: () => void;
   };
 }
 
@@ -85,6 +88,7 @@ export const useOsStore = create<OsState>()(
       },
       focusedApp: terminalId,
       appRenderOrder: [terminalId],
+      dockMenuOpenAppType: null,
       actions: {
         setDesktopDimensions: ({ width, height }: SetDesktopDimensionsArgs) => {
           set((state) => {
@@ -215,6 +219,16 @@ export const useOsStore = create<OsState>()(
               0,
               desktopDimensions.height - WINDOW_HEADER_HEIGHT
             );
+          });
+        },
+        openDockAppMenu: (type: AppType) => {
+          set((state) => {
+            state.dockMenuOpenAppType = type;
+          });
+        },
+        closeDockAppMenu: () => {
+          set((state) => {
+            state.dockMenuOpenAppType = null;
           });
         },
       },
