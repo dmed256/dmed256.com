@@ -6,16 +6,16 @@ import {
 } from '@/apps/Terminal/terminalStore';
 import { useOnTerminalKeyPress } from '@/apps/Terminal/hooks/useOnTerminalKeyPress';
 import { Window } from '@/os/Window';
-import type { AppProps } from '@/os/types';
+import type { TerminalProps } from '@/os/types';
 import { isMobile } from 'react-device-detect';
 
-export const Terminal = (app: AppProps) => (
+export const Terminal = (app: TerminalProps) => (
   <TerminalStoreProvider>
     <TerminalInner {...app} />
   </TerminalStoreProvider>
 );
 
-export const TerminalInner = (app: AppProps) => {
+export const TerminalInner = (app: TerminalProps) => {
   const terminalText = useTerminalStore((state) => state.terminalText);
   const input = useTerminalStore((state) => state.input);
   const inputPos = useTerminalStore((state) => state.inputPos);

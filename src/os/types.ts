@@ -1,12 +1,22 @@
-export type AppType = 'terminal';
-
-export interface AppProps {
+export interface BaseAppProps {
   id: string;
-  type: AppType;
   preMinimizedLocation: WindowLocation;
   lastPositionedLocation: PositionedWindowLocation;
   location: WindowLocation;
 }
+
+export interface TerminalProps extends BaseAppProps {
+  type: 'terminal';
+}
+
+export interface PdfViewerProps extends BaseAppProps {
+  type: 'pdfViewer';
+  src: string;
+}
+
+export type AppProps = TerminalProps | PdfViewerProps;
+
+export type AppType = AppProps['type'];
 
 export interface MinimizedWindowLocation {
   type: 'minimized';

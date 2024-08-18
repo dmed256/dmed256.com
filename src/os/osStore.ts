@@ -24,7 +24,9 @@ interface OsState {
     height: number;
   };
   apps: Record<string, AppProps>;
-  lastPositionedLocationByAppType: Record<AppType, PositionedWindowLocation>;
+  lastPositionedLocationByAppType: {
+    [appType in AppType]?: PositionedWindowLocation;
+  };
   focusedApp: string | null;
   appRenderOrder: string[];
   actions: {

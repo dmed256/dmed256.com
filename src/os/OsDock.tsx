@@ -23,6 +23,7 @@ export const OsDock = () => (
         )}
       >
         <AppIcon type="terminal" />
+        <AppIcon type="pdfViewer" />
       </div>
     </div>
   </div>
@@ -56,12 +57,12 @@ const AppIcon = ({ type }: AppIconProps) => {
           !isUsingApp && 'opacity-0'
         )}
       />
-      <Icon className="!text-[60px] hover:!text-[80px]" />
+      <Icon className="!text-[50px] hover:!text-[80px]" />
       <div
         className={classNames(
           'flex items-start justify-center flex-col rounded px-1',
           'backdrop-blur-lg bg-neutral-600/90 border-[1px] border-neutral-400/20 text-white',
-          'opacity-0 group-hover/app:opacity-100'
+          'opacity-0 group-hover/app:opacity-100 whitespace-pre'
         )}
       >
         {name}
