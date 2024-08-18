@@ -1,7 +1,9 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import type { AppType, AppProps, PositionedWindowLocation } from '@/os/types';
+import { WINDOW_HEADER_HEIGHT, WINDOW_MIN_PEEK } from '@/os/constants';
 import { v4 as uuidv4 } from 'uuid';
+import clamp from 'lodash/clamp';
 
 interface SetDesktopDimensionsArgs {
   width: number;
@@ -10,23 +12,7 @@ interface SetDesktopDimensionsArgs {
 
 interface MoveAppWindowArgs {
   id: string;
-  from: {
-    x: number;
-    y: number;
-  };
-  to: {
-    x: number;
-    y: number;
-  };
-}
-
-interface ResizeAppWindowArgs {
-  id: string;
-  from: {
-    x: number;
-    y: number;
-  };
-  to: {
+  delta: {
     x: number;
     y: number;
   };
@@ -50,7 +36,6 @@ interface OsState {
     unmaximizeApp: (id: string) => void;
     closeApp: (id: string) => void;
     moveAppWindow: (_: MoveAppWindowArgs) => void;
-    resizeAppWindow: (_: ResizeAppWindowArgs) => void;
   };
 }
 
@@ -64,6 +49,20 @@ export const useOsStore = create<OsState>()(
       width: window.innerWidth - 60,
       height: window.innerHeight - 100,
     } as const;
+
+    const focusAppAndExists = (id: string) => {
+      const {
+        apps,
+        actions: { focusApp },
+      } = get();
+
+      if (apps[id]) {
+        focusApp(id);
+        return true;
+      }
+
+      return false;
+    };
 
     return {
       desktopDimensions: {
@@ -132,13 +131,7 @@ export const useOsStore = create<OsState>()(
           });
         },
         unminimizeApp: (id: string) => {
-          const {
-            apps,
-            actions: { focusApp },
-          } = get();
-          if (apps[id]) {
-            focusApp(id);
-          } else {
+          if (!focusAppAndExists(id)) {
             return;
           }
 
@@ -151,13 +144,7 @@ export const useOsStore = create<OsState>()(
           });
         },
         maximizeApp: (id: string) => {
-          const {
-            apps,
-            actions: { focusApp },
-          } = get();
-          if (apps[id]) {
-            focusApp(id);
-          } else {
+          if (!focusAppAndExists(id)) {
             return;
           }
 
@@ -173,13 +160,7 @@ export const useOsStore = create<OsState>()(
           });
         },
         unmaximizeApp: (id: string) => {
-          const {
-            apps,
-            actions: { focusApp },
-          } = get();
-          if (apps[id]) {
-            focusApp(id);
-          } else {
+          if (!focusAppAndExists(id)) {
             return;
           }
 
@@ -193,11 +174,10 @@ export const useOsStore = create<OsState>()(
         },
         closeApp: (id: string) => {
           const {
-            apps,
             appRenderOrder,
             actions: { focusApp },
           } = get();
-          if (!apps[id]) {
+          if (!focusAppAndExists(id)) {
             return;
           }
 
@@ -211,8 +191,30 @@ export const useOsStore = create<OsState>()(
             );
           });
         },
-        moveAppWindow: ({ id, from, to }: MoveAppWindowArgs) => {},
-        resizeAppWindow: ({ id, from, to }: ResizeAppWindowArgs) => {},
+        moveAppWindow: ({ id, delta }: MoveAppWindowArgs) => {
+          if (!focusAppAndExists(id)) {
+            return;
+          }
+
+          const { desktopDimensions } = get();
+          set((state) => {
+            const app = state.apps[id]!;
+            if (app.location.type !== 'positioned') {
+              return;
+            }
+
+            app.location.x = clamp(
+              app.location.x + delta.x,
+              -app.location.width + WINDOW_MIN_PEEK,
+              desktopDimensions.width - WINDOW_MIN_PEEK
+            );
+            app.location.y = clamp(
+              app.location.y + delta.y,
+              0,
+              desktopDimensions.height - WINDOW_HEADER_HEIGHT
+            );
+          });
+        },
       },
     };
   })

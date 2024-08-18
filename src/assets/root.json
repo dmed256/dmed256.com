@@ -208,6 +208,9 @@
                             "Window.tsx": {
                               "type": "file"
                             },
+                            "constants.ts": {
+                              "type": "file"
+                            },
                             "osStore.ts": {
                               "type": "file"
                             },
