@@ -17,20 +17,24 @@ export const Terminal = (app: TerminalProps) => (
 
 export const TerminalInner = (app: TerminalProps) => {
   const terminalText = useTerminalStore((state) => state.terminalText);
-  const input = useTerminalStore((state) => state.input);
-  const inputPos = useTerminalStore((state) => state.inputPos);
-  const endRef = React.useRef<HTMLSpanElement>(null);
+  const inputHash = useTerminalStore(
+    (state) => `${terminalText.length}:${state.input}:${state.inputPos}`
+  );
+
+  const terminalRef = React.useRef<HTMLDivElement>(null);
 
   useOnTerminalKeyPress(app.id);
 
   React.useEffect(() => {
-    endRef.current?.scrollIntoView();
-  }, [endRef, input, inputPos, terminalText]);
+    if (terminalRef.current) {
+      terminalRef.current.scrollTop = 1_000_000;
+    }
+  }, [terminalRef, inputHash]);
 
   return (
     <Window appId={app.id}>
       <div
-        id="terminal"
+        ref={terminalRef}
         className={classNames(
           'flex-1 overflow-auto p-2 rounded-b-lg select-text bg-black/80 text-white',
           'whitespace-pre-wrap font-mono text-[12px] leading-[18px]',
@@ -43,7 +47,6 @@ export const TerminalInner = (app: TerminalProps) => {
           </span>
         ))}
         <TerminalInput />
-        <span ref={endRef} />
       </div>
     </Window>
   );

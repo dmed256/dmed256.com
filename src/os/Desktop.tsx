@@ -26,7 +26,9 @@ export const Desktop = () => {
   const touchSensor = useSensor(TouchSensor);
   const sensors = useSensors(mouseSensor, touchSensor);
 
-  const [rightClickPos, setRightClickPos] = React.useState<DOMRect | null>(null);
+  const [rightClickPos, setRightClickPos] = React.useState<DOMRect | null>(
+    null
+  );
   const unsetRightClickPos = () => setRightClickPos(null);
 
   React.useEffect(() => {
@@ -98,7 +100,7 @@ export const Desktop = () => {
               x,
               y,
               toJSON: () => {},
-            })
+            });
           }}
         >
           {appRenderOrder.map((appId) => (
@@ -109,10 +111,13 @@ export const Desktop = () => {
       </div>
       <OsMenu
         open={!!rightClickPos}
-        anchorEl={rightClickPos && (() => ({
-          nodeType: 1,
-          getBoundingClientRect: () => rightClickPos,
-        }))}
+        anchorEl={
+          rightClickPos &&
+          (() => ({
+            nodeType: 1,
+            getBoundingClientRect: () => rightClickPos,
+          }))
+        }
         container={document.getElementById('root')!}
         onClose={unsetRightClickPos}
         anchorOrigin={{
