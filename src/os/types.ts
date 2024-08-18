@@ -20,7 +20,7 @@ export interface InterwebProps extends BaseAppProps {
 }
 
 export interface FoldersProps extends BaseAppProps {
-  type: 'Folders';
+  type: 'folders';
   initialPath: string[];
 }
 

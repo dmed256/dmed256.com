@@ -1,39 +1,13 @@
-import type { AppType, AppProps } from '@/os/types';
-import { TerminalAppIcon } from '@/icons/TerminalAppIcon';
-import { PdfViewerAppIcon } from '@/icons/PdfViewerAppIcon';
-import { InterwebAppIcon } from '@/icons/InterwebAppIcon';
-import { FoldersAppIcon } from '@/icons/FoldersAppIcon';
-import type { SvgIconProps } from '@mui/material/SvgIcon';
-import { Terminal } from '@/apps/Terminal/Terminal';
-import { PdfViewer } from '@/apps/PdfViewer/PdfViewer';
-import { Interweb } from '@/apps/Interweb/Interweb';
-import { Folders } from '@/apps/Folders/Folders';
+import type { AppType } from '@/os/types';
+import type { AppConfig } from '@/apps/types';
+import { TerminalConfig } from '@/apps/Terminal';
+import { PdfViewerConfig } from '@/apps/PdfViewer';
+import { InterwebConfig } from '@/apps/Interweb';
+import { FoldersConfig } from '@/apps/Folders';
 
-interface AppInfo<T extends AppProps> {
-  Component: React.FC<T>;
-  Icon: React.FC<SvgIconProps>;
-  name: string;
-}
-
-export const APP_REGISTRY: Record<AppType, AppInfo<any>> = {
-  terminal: {
-    Component: Terminal,
-    Icon: TerminalAppIcon,
-    name: 'Terminal',
-  },
-  pdfViewer: {
-    Component: PdfViewer,
-    Icon: PdfViewerAppIcon,
-    name: 'PDF Viewer',
-  },
-  interweb: {
-    Component: Interweb,
-    Icon: InterwebAppIcon,
-    name: 'Interweb',
-  },
-  folders: {
-    Component: Folders,
-    Icon: FoldersAppIcon,
-    name: 'Folders',
-  },
+export const APP_REGISTRY: Record<AppType, AppConfig<any>> = {
+  terminal: TerminalConfig,
+  pdfViewer: PdfViewerConfig,
+  interweb: InterwebConfig,
+  folders: FoldersConfig,
 };

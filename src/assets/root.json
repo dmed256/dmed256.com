@@ -91,6 +91,9 @@
                               "children": {
                                 "Folders.tsx": {
                                   "type": "file"
+                                },
+                                "index.ts": {
+                                  "type": "file"
                                 }
                               }
                             },
@@ -99,6 +102,9 @@
                               "children": {
                                 "Interweb.tsx": {
                                   "type": "file"
+                                },
+                                "index.ts": {
+                                  "type": "file"
                                 }
                               }
                             },
@@ -106,6 +112,9 @@
                               "type": "directory",
                               "children": {
                                 "PdfViewer.tsx": {
+                                  "type": "file"
+                                },
+                                "index.ts": {
                                   "type": "file"
                                 }
                               }
@@ -156,6 +165,9 @@
                                     }
                                   }
                                 },
+                                "index.ts": {
+                                  "type": "file"
+                                },
                                 "terminalStore.ts": {
                                   "type": "file"
                                 },
@@ -179,6 +191,9 @@
                               }
                             },
                             "constants.ts": {
+                              "type": "file"
+                            },
+                            "types.ts": {
                               "type": "file"
                             }
                           }
