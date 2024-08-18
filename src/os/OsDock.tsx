@@ -26,6 +26,8 @@ export const OsDock = () => {
             'backdrop-blur-lg bg-neutral-400/10 border-[1px] border-neutral-400/20'
           )}
         >
+          <OsDockAppIcon type="folders" />
+          <OsDockAppIcon type="interweb" />
           <OsDockAppIcon type="terminal" />
           <OsDockAppIcon type="pdfViewer" />
         </div>

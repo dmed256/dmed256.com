@@ -14,7 +14,21 @@ export interface PdfViewerProps extends BaseAppProps {
   src: string;
 }
 
-export type AppProps = TerminalProps | PdfViewerProps;
+export interface InterwebProps extends BaseAppProps {
+  type: 'interweb';
+  initialUrl?: string;
+}
+
+export interface FoldersProps extends BaseAppProps {
+  type: 'Folders';
+  initialPath: string[];
+}
+
+export type AppProps =
+  | TerminalProps
+  | PdfViewerProps
+  | InterwebProps
+  | FoldersProps;
 
 export type AppType = AppProps['type'];
 
