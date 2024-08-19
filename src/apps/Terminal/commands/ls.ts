@@ -21,6 +21,12 @@ export const ls: Command = {
       actions: { appendPs1, appendTerminalText },
     } = state;
 
+    let flags = '';
+    if (args.length && args[0].startsWith('-') && !args[0].startsWith('--')) {
+      flags = args[0];
+      args = args.slice(1);
+    }
+
     if (args.length) {
       appendTerminalText(
         fakeBash([
@@ -39,7 +45,12 @@ export const ls: Command = {
       return;
     }
 
-    const grid = getGrid(state.appId, directoryChildren);
+    const grid = getGrid({
+      appId: state.appId,
+      directoryChildren,
+      showDot: flags.includes('a'),
+      showDotDot: flags.includes('A'),
+    });
     const rows = grid.length;
     const cols = grid[0]?.length ?? 0;
 
@@ -78,10 +89,18 @@ export const ls: Command = {
   },
 };
 
-const getGrid = (
-  appId: string,
-  directoryChildren: Record<string, INode>
-): string[][] => {
+interface GetGridArgs {
+  appId: string;
+  directoryChildren: Record<string, INode>;
+  showDot: boolean;
+  showDotDot: boolean;
+}
+
+const getGrid = ({
+  appId,
+  directoryChildren,
+  showDot,
+}: GetGridArgs): string[][] => {
   const terminal = document.getElementById(getAppHtmlId(appId))!;
 
   // Best effort in case something isn't supported by the browser ¯\_(ツ)_/¯
@@ -103,7 +122,7 @@ const getGrid = (
   } catch (_) {}
 
   const unsortedEntries = Object.keys(directoryChildren)
-    .filter((entry) => !entry.startsWith('.'))
+    .filter((entry) => showDot || !entry.startsWith('.'))
     .sort();
   const contents: {
     directory?: string[];
