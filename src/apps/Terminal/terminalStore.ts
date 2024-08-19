@@ -7,6 +7,7 @@ import { welcomeText } from '@/apps/Terminal/commands/welcome';
 import { commands } from '@/apps/Terminal/commands';
 
 export interface TerminalState {
+  appId: string;
   pwd: string[];
   input: string;
   inputPos: number;
@@ -14,6 +15,7 @@ export interface TerminalState {
   terminalHistory: string[];
   terminalHistoryPos: number | null;
   actions: {
+    setAppId: (appId: string) => void;
     setPwd: (pwd: string[]) => void;
     updateInput: (
       fn: (prevInput: string, prevInputPos: number) => [string, number]
@@ -44,6 +46,7 @@ const safeInputPos = ({
 
 export const { Provider: TerminalStoreProvider, useStore: useTerminalStore } =
   createContextStore<TerminalState>(({ set, get }) => ({
+    appId: '',
     pwd: homeDirectory,
     input: '',
     inputPos: 0,
@@ -56,6 +59,11 @@ export const { Provider: TerminalStoreProvider, useStore: useTerminalStore } =
     terminalHistory: terminalHistory.get(),
     terminalHistoryPos: null,
     actions: {
+      setAppId: (appId: string) => {
+        set((state) => {
+          state.appId = appId;
+        });
+      },
       setPwd: (pwd: string[]) => {
         set((state) => {
           state.pwd = pwd;

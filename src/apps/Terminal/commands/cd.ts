@@ -17,7 +17,7 @@ export const cd: Command = {
       const arg = args[0].trim();
 
       let nextPwd: string[];
-      if (arg.startsWith('/') || arg.startsWith('~/')) {
+      if (arg.startsWith('/') || arg.startsWith('~')) {
         nextPwd = absPath(arg.split('/'));
       } else {
         nextPwd = absPath([...pwd, ...arg.split('/')]);

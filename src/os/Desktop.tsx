@@ -4,6 +4,7 @@ import { useOsStore } from '@/os/osStore';
 import { OsHeader } from '@/os/OsHeader';
 import { OsDock } from '@/os/OsDock';
 import { OsMenu, OsMenuItem, OsMenuDivider } from '@/os/OsMenu';
+import { getAppHtmlId } from '@/utils/html';
 import { App } from '@/apps/App';
 import {
   DndContext,
@@ -104,7 +105,9 @@ export const Desktop = () => {
           }}
         >
           {appRenderOrder.map((appId) => (
-            <App key={appId} {...apps[appId]!} />
+            <div key={appId} id={getAppHtmlId(appId)}>
+              <App key={appId} {...apps[appId]!} />
+            </div>
           ))}
           <OsDock />
         </div>

@@ -146,6 +146,9 @@
                                     "pwd.ts": {
                                       "type": "file"
                                     },
+                                    "touch.ts": {
+                                      "type": "file"
+                                    },
                                     "tree.ts": {
                                       "type": "file"
                                     },
@@ -299,6 +302,9 @@
                           "type": "directory",
                           "children": {
                             "createContextStore.tsx": {
+                              "type": "file"
+                            },
+                            "html.ts": {
                               "type": "file"
                             },
                             "usePopover.ts": {

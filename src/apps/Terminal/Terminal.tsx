@@ -20,11 +20,18 @@ export const TerminalInner = (app: TerminalProps) => {
   const inputHash = useTerminalStore(
     (state) => `${terminalText.length}:${state.input}:${state.inputPos}`
   );
+  const { setAppId } = useTerminalStore((state) => state.actions);
 
   const terminalRef = React.useRef<HTMLDivElement>(null);
 
   useOnTerminalKeyPress(app.id);
 
+  // Make sure the appId is in the store
+  React.useEffect(() => {
+    setAppId(app.id);
+  }, [app.id, setAppId]);
+
+  // When the input changes, scroll to the bottom of the terminal
   React.useEffect(() => {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = 1_000_000;

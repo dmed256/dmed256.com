@@ -6,6 +6,7 @@ import type {
 } from '@/apps/Terminal/types';
 import { colored, fakeBash } from '@/apps/Terminal/utils/colors';
 import { getPathDirectory } from '@/os/utils/path';
+import { getAppHtmlId } from '@/utils/html';
 import groupBy from 'lodash/groupBy';
 import padEnd from 'lodash/padEnd';
 import range from 'lodash/range';
@@ -38,7 +39,7 @@ export const ls: Command = {
       return;
     }
 
-    const grid = getGrid(directoryChildren);
+    const grid = getGrid(state.appId, directoryChildren);
     const rows = grid.length;
     const cols = grid[0]?.length ?? 0;
 
@@ -77,8 +78,11 @@ export const ls: Command = {
   },
 };
 
-const getGrid = (directoryChildren: Record<string, INode>): string[][] => {
-  const terminal = document.getElementById('terminal')!;
+const getGrid = (
+  appId: string,
+  directoryChildren: Record<string, INode>
+): string[][] => {
+  const terminal = document.getElementById(getAppHtmlId(appId))!;
 
   // Best effort in case something isn't supported by the browser ¯\_(ツ)_/¯
   let terminalWidth = terminal.clientWidth * 0.13;
