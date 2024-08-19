@@ -5,11 +5,17 @@ import { getPathDirectory } from '@/os/utils/path';
 
 export const tree: Command = {
   help: [colored.white('List contents of directories in a tree-like format')],
-  run: ({ state }: CommandRunArgs) => {
+  run: ({ state, args }: CommandRunArgs) => {
     const {
       pwd,
       actions: { appendPs1, appendTerminalText },
     } = state;
+
+    let flags = '';
+    if (args.length && args[0].startsWith('-') && !args[0].startsWith('--')) {
+      flags = args[0];
+      args = args.slice(1);
+    }
 
     const pwdDirectory = getPathDirectory({ path: pwd });
     if (!pwdDirectory?.children) {
@@ -21,7 +27,7 @@ export const tree: Command = {
     const { lines, directoryCount, fileCount } = getDirectoryInfo({
       directory: pwdDirectory,
       prefix: '',
-      viewHidden: false,
+      viewHidden: flags.includes('a'),
     });
 
     appendTerminalText([
