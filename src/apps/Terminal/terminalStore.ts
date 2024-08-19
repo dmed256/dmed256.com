@@ -1,6 +1,6 @@
 import { createContextStore } from '@/utils/createContextStore';
 import type { TerminalText } from '@/apps/Terminal/types';
-import { homeDirectory } from '@/apps/Terminal/constants';
+import { homeDirectory } from '@/os/constants';
 import { fakeBash, ps1, colored } from '@/apps/Terminal/utils/colors';
 import { terminalHistory } from '@/apps/Terminal/utils/terminalHistory';
 import { welcomeText } from '@/apps/Terminal/commands/welcome';
@@ -141,7 +141,10 @@ export const { Provider: TerminalStoreProvider, useStore: useTerminalStore } =
         const run = commands[commandName]?.run;
         if (run) {
           try {
-            run({ state, args });
+            run({
+              state,
+              args,
+            });
           } catch (e) {
             console.error(e);
             appendTerminalText(

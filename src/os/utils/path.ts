@@ -1,6 +1,6 @@
-import { homeDirectory } from '@/apps/Terminal/constants';
-import type { Directory } from '@/apps/Terminal/types';
-import { root } from '@/apps/Terminal/constants';
+import { homeDirectory } from '@/os/constants';
+import type { Directory } from '@/os/types';
+import { useOsStore } from '@/os/osStore';
 
 export const joinPath = (path: string[]) => {
   const pathWithoutSlash = path.join('/');
@@ -27,8 +27,11 @@ export const absPath = (path: string[]): string[] => {
   return currentPath;
 };
 
-export const getPathDirectory = (path: string[]): Directory | null => {
-  let node: any = root;
+export const getPathDirectory = (
+  path: string[],
+  root: Directory | null = null
+): Directory | null => {
+  let node: any = root ?? useOsStore.getState().root;
   absPath(path).forEach((part) => {
     node = node?.children?.[part];
   });

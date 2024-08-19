@@ -91,6 +91,7 @@ export const Window = ({ appId, children }: WindowProps) => {
       style={getPositionedStyle()}
       onContextMenu={(e) => {
         e.stopPropagation();
+        e.preventDefault();
       }}
     >
       {/* Header */}

@@ -1,6 +1,7 @@
+import { homeDirectory } from '@/os/constants';
 import type { TerminalText } from '@/apps/Terminal/types';
-import { homeDirectory, terminalColors } from '@/apps/Terminal/constants';
-import { joinPath } from '@/apps/Terminal/utils/path';
+import { terminalColors } from '@/apps/Terminal/constants';
+import { joinPath } from '@/os/utils/path';
 import isEqual from 'lodash/isEqual';
 
 export const colored = {

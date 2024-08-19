@@ -1,7 +1,16 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-import type { AppType, AppProps, PositionedWindowLocation } from '@/os/types';
-import { WINDOW_HEADER_HEIGHT, WINDOW_MIN_PEEK } from '@/os/constants';
+import type {
+  AppType,
+  AppProps,
+  PositionedWindowLocation,
+  Directory,
+} from '@/os/types';
+import {
+  WINDOW_HEADER_HEIGHT,
+  WINDOW_MIN_PEEK,
+  originalRoot,
+} from '@/os/constants';
 import { v4 as uuidv4 } from 'uuid';
 import clamp from 'lodash/clamp';
 
@@ -19,6 +28,7 @@ interface MoveAppWindowArgs {
 }
 
 interface OsState {
+  root: Directory;
   desktopDimensions: {
     width: number;
     height: number;
@@ -70,6 +80,7 @@ export const useOsStore = create<OsState>()(
     };
 
     return {
+      root: originalRoot,
       desktopDimensions: {
         width: 0,
         height: 0,

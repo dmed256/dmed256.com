@@ -180,13 +180,21 @@
                                     "colors.ts": {
                                       "type": "file"
                                     },
-                                    "path.ts": {
-                                      "type": "file"
-                                    },
                                     "terminalHistory.ts": {
                                       "type": "file"
                                     }
                                   }
+                                }
+                              }
+                            },
+                            "Trash": {
+                              "type": "directory",
+                              "children": {
+                                "Trash.tsx": {
+                                  "type": "file"
+                                },
+                                "index.tsx": {
+                                  "type": "file"
                                 }
                               }
                             },
@@ -230,6 +238,12 @@
                             "TerminalAppIcon.tsx": {
                               "type": "file"
                             },
+                            "TrashEmptyAppIcon.tsx": {
+                              "type": "file"
+                            },
+                            "TrashNonEmptyAppIcon.tsx": {
+                              "type": "file"
+                            },
                             "UnmaximizeIcon.tsx": {
                               "type": "file"
                             }
@@ -270,6 +284,14 @@
                             },
                             "types.ts": {
                               "type": "file"
+                            },
+                            "utils": {
+                              "type": "directory",
+                              "children": {
+                                "path.ts": {
+                                  "type": "file"
+                                }
+                              }
                             }
                           }
                         },

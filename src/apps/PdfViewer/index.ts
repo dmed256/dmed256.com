@@ -5,7 +5,7 @@ import { PdfViewer } from '@/apps/PdfViewer/PdfViewer';
 
 export const PdfViewerConfig: AppConfig<PdfViewerProps> = {
   type: 'pdfViewer',
-  name: 'PdfViewer browser',
+  name: 'PDF Viewer',
   Component: PdfViewer,
   Icon: PdfViewerAppIcon,
 };

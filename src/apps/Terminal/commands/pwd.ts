@@ -1,6 +1,6 @@
 import type { Command, CommandRunArgs } from '@/apps/Terminal/types';
 import { colored } from '@/apps/Terminal/utils/colors';
-import { joinPath } from '@/apps/Terminal/utils/path';
+import { joinPath } from '@/os/utils/path';
 
 export const pwd: Command = {
   help: [colored.white('Print working directory name')],

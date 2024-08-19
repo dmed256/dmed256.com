@@ -1,7 +1,7 @@
 import type { Command, CommandRunArgs } from '@/apps/Terminal/types';
 import { colored, fakeBash } from '@/apps/Terminal/utils/colors';
-import { absPath, getPathDirectory } from '@/apps/Terminal/utils/path';
-import { homeDirectory } from '@/apps/Terminal/constants';
+import { absPath, getPathDirectory } from '@/os/utils/path';
+import { homeDirectory } from '@/os/constants';
 
 export const cd: Command = {
   help: [colored.white('Change directory')],

@@ -1,6 +1,7 @@
-import type { Command, CommandRunArgs, Directory } from '@/apps/Terminal/types';
+import type { Directory } from '@/os/types';
+import type { Command, CommandRunArgs } from '@/apps/Terminal/types';
 import { colored, fakeBash } from '@/apps/Terminal/utils/colors';
-import { getPathDirectory } from '@/apps/Terminal/utils/path';
+import { getPathDirectory } from '@/os/utils/path';
 
 export const tree: Command = {
   help: [colored.white('List contents of directories in a tree-like format')],

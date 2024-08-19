@@ -1,3 +1,16 @@
+// ---[ Filesystem ]------------------------------
+export interface Directory {
+  type: 'directory';
+  children: Record<string, INode>;
+}
+
+export interface File {
+  type: 'file';
+}
+
+export type INode = Directory | File;
+
+// ---[ Apps ]------------------------------------
 export interface BaseAppProps {
   id: string;
   preMinimizedLocation: WindowLocation;
@@ -24,11 +37,16 @@ export interface FoldersProps extends BaseAppProps {
   initialPath: string[];
 }
 
+export interface TrashProps extends BaseAppProps {
+  type: 'trash';
+}
+
 export type AppProps =
   | TerminalProps
   | PdfViewerProps
   | InterwebProps
-  | FoldersProps;
+  | FoldersProps
+  | TrashProps;
 
 export type AppType = AppProps['type'];
 

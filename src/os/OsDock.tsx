@@ -1,6 +1,8 @@
 import { OsDockAppIcon } from '@/os/OsDockAppIcon';
 import { useOsStore } from '@/os/osStore';
 import classNames from 'classnames';
+import { Divider } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 export const OsDock = () => {
   const isAppMenuOpen = useOsStore((state) => !!state.dockMenuOpenAppType);
@@ -30,8 +32,15 @@ export const OsDock = () => {
           <OsDockAppIcon type="interweb" />
           <OsDockAppIcon type="terminal" />
           <OsDockAppIcon type="pdfViewer" />
+          <OsDockDivider flexItem />
+          <OsDockAppIcon type="trash" />
         </div>
       </div>
     </div>
   );
 };
+
+export const OsDockDivider = styled(Divider)({
+  borderColor: '#777c7f',
+  margin: '4px 10px !important',
+});

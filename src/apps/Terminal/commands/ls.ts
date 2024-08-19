@@ -1,11 +1,11 @@
+import type { INode } from '@/os/types';
 import type {
   Command,
   CommandRunArgs,
-  INode,
   TerminalText,
 } from '@/apps/Terminal/types';
 import { colored, fakeBash } from '@/apps/Terminal/utils/colors';
-import { getPathDirectory } from '@/apps/Terminal/utils/path';
+import { getPathDirectory } from '@/os/utils/path';
 import groupBy from 'lodash/groupBy';
 import padEnd from 'lodash/padEnd';
 import range from 'lodash/range';
