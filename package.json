@@ -6,7 +6,7 @@
   "scripts": {
     "start": "vite",
     "generate-root": "node ./generate-root.js",
-    "build": "node generate-root && vite build",
+    "build": "node generate-root && yarn lint:fix && vite build",
     "typecheck": "tsc -b",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "prettier . --write",
