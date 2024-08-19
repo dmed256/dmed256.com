@@ -1,6 +1,6 @@
 import type { Command, CommandRunArgs } from '@/apps/Terminal/types';
 import { colored, fakeBash } from '@/apps/Terminal/utils/colors';
-import { absPath, getPathDirectory } from '@/os/utils/path';
+import { splitPath, getPathDirectory } from '@/os/utils/path';
 import { homeDirectory } from '@/os/constants';
 
 export const cd: Command = {
@@ -14,23 +14,18 @@ export const cd: Command = {
     if (args.length === 0) {
       setPwd(homeDirectory);
     } else if (args.length === 1) {
-      const arg = args[0].trim();
+      const arg = args[0];
 
-      let nextPwd: string[];
-      if (arg.startsWith('/') || arg.startsWith('~')) {
-        nextPwd = absPath(arg.split('/'));
-      } else {
-        nextPwd = absPath([...pwd, ...arg.split('/')]);
-      }
+      const nextPwd = splitPath({ path: arg, pwd });
 
-      const directoryChildren = getPathDirectory(nextPwd)?.children;
+      const directoryChildren = getPathDirectory({ path: nextPwd })?.children;
       if (directoryChildren) {
         setPwd(nextPwd);
       } else {
         appendTerminalText(
           fakeBash([
             colored.red('cd'),
-            colored.white(` ${arg}: No such file or directory\n`),
+            colored.white(`: ${arg}: No such file or directory\n`),
           ])
         );
       }

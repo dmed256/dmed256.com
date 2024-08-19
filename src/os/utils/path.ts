@@ -7,6 +7,18 @@ export const joinPath = (path: string[]) => {
   return path[0] === '~' ? pathWithoutSlash : `/${pathWithoutSlash}`;
 };
 
+interface SplitPathArgs {
+  path: string;
+  pwd: string[];
+}
+
+export const splitPath = ({ path, pwd }: SplitPathArgs): string[] => {
+  if (path.startsWith('/') || path.startsWith('~')) {
+    return absPath(path.split('/'));
+  }
+  return absPath([...pwd, ...path.split('/')]);
+};
+
 export const absPath = (path: string[]): string[] => {
   let currentPath: string[] = [];
 
@@ -27,10 +39,15 @@ export const absPath = (path: string[]): string[] => {
   return currentPath;
 };
 
-export const getPathDirectory = (
-  path: string[],
-  root: Directory | null = null
-): Directory | null => {
+interface GetPathDirectoryArgs {
+  path: string[];
+  root?: Directory | null | undefined;
+}
+
+export const getPathDirectory = ({
+  path,
+  root,
+}: GetPathDirectoryArgs): Directory | null => {
   let node: any = root ?? useOsStore.getState().root;
   absPath(path).forEach((part) => {
     node = node?.children?.[part];

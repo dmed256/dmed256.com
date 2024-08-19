@@ -146,6 +146,9 @@
                                     "pwd.ts": {
                                       "type": "file"
                                     },
+                                    "rm.ts": {
+                                      "type": "file"
+                                    },
                                     "touch.ts": {
                                       "type": "file"
                                     },

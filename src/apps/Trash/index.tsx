@@ -10,7 +10,10 @@ import { homeDirectory } from '@/os/constants';
 
 const TrashAppIcon = (props: SvgIconProps) => {
   const trashDirectory = useOsStore((state) =>
-    getPathDirectory([...homeDirectory, '.Trash'], state.root)
+    getPathDirectory({
+      path: [...homeDirectory, '.Trash'],
+      root: state.root,
+    })
   );
   if (trashDirectory?.children && Object.keys(trashDirectory.children).length) {
     return <TrashNonEmptyAppIcon {...props} />;

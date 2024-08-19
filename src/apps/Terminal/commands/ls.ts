@@ -32,7 +32,7 @@ export const ls: Command = {
       return;
     }
 
-    const directoryChildren = getPathDirectory(pwd)?.children;
+    const directoryChildren = getPathDirectory({ path: pwd })?.children;
     if (!directoryChildren) {
       appendTerminalText(fakeBash([colored.red('where are you!?!?!?\n')]));
       appendPs1();

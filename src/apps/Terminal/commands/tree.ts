@@ -11,7 +11,7 @@ export const tree: Command = {
       actions: { appendPs1, appendTerminalText },
     } = state;
 
-    const pwdDirectory = getPathDirectory(pwd);
+    const pwdDirectory = getPathDirectory({ path: pwd });
     if (!pwdDirectory?.children) {
       appendTerminalText(fakeBash([colored.red('where are you!?!?!?\n')]));
       appendPs1();

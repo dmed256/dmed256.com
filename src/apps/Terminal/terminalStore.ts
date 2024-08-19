@@ -144,7 +144,10 @@ export const { Provider: TerminalStoreProvider, useStore: useTerminalStore } =
         }
 
         const commandName = commandParts[0];
-        const args = commandParts.slice(1);
+        const args = commandParts
+          .slice(1)
+          .map((arg) => arg.trim())
+          .filter((arg) => arg);
 
         const run = commands[commandName]?.run;
         if (run) {
