@@ -82,6 +82,10 @@ export const Desktop = () => {
           backgroundImage: `url(${wallpaper})`,
           backgroundSize: 'cover',
         }}
+        onContextMenu={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        }}
       >
         <OsHeader />
         <div
